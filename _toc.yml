@@ -3,7 +3,23 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+
+parts:
+  - caption: Introduction to Actuarial Science
+    chapters:
+    - file: Chapter1_Introduction.ipynb
+    - file: Chapter1_Exercise.ipynb
+#  - caption: Chapter 2  
+#    chapters:
+#    - file: Chapter2.ipynb
+  - caption: Bibliography  
+    chapters:
+    - file: Chapter_Bibliography.ipynb
+
+#chapters:
+#- file: Chapter1_Introduction.ipynb
+#- file: Chapter2.ipynb
+#- file: Chapter_Biography.ipynb
+# - file: markdown
+# - file: notebooks
+# - file: markdown-notebooks
