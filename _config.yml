@@ -5,6 +5,14 @@ title: SCMA138 Principles of Actuarial Science
 author: Pairote Satiracoo
 logo: logo.png
 
+
+
+sphinx:
+  config:
+    html_theme: sphinx_book_theme
+
+
+
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
@@ -30,3 +38,7 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+sphinx:
+    extra_extensions:
+        - sphinx_exercise

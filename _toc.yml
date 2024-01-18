@@ -9,6 +9,7 @@ parts:
     chapters:
     - file: Chapter1_Introduction.ipynb
     - file: Chapter1_Exercise.ipynb
+    - file: Chapter1_EndNote.ipynb
 #  - caption: Chapter 2  
 #    chapters:
 #    - file: Chapter2.ipynb
