@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2.1 Data Collection and Descriptive Statistics" href="Chapter2_1.html" />
+    <link rel="prev" title="End Note for Chapter 1" href="Chapter1_EndNote.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,6 +182,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Chapter1_Introduction.html"><span style="color: dimgray;"><strong>Chapter 1</strong></span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Chapter1_Exercise.html">Exercises for Chapter 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Chapter1_EndNote.html">End Note for Chapter 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical and Probabilistic Framework</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><span style="color: dimgray;"><strong>Chapter 2</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliography</span></p>
 <ul class="nav bd-sidenav">
@@ -356,7 +363,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -367,11 +376,37 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 2</h1>
+    <h1><span style="color: dimgray;">Chapter 2</span></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-statistical-and-probabilistic-framework-span"><span style="color: dimgray;"><strong>Statistical and Probabilistic Framework</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-how-do-probability-and-statistical-inference-work-together-span"><span style="color: dimgray;"><strong>How Do Probability and Statistical Inference Work Together?</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-outline-of-chapter-2-span"><span style="color: dimgray;"><strong>Outline of Chapter 2</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-probability-span"><span style="color: dimgray;"><strong>Probability</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-1-data-collection-and-descriptive-statistics-span"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-2-probability-basics-span"><span style="color: dimgray;"><strong>2.2 Probability Basics</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-3-probability-distributions-span"><span style="color: dimgray;"><strong>2.3 Probability Distributions</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-statistical-inference-span"><span style="color: dimgray;"><strong>Statistical Inference</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-4-sampling-distributions-span"><span style="color: dimgray;"><strong>2.4 Sampling Distributions</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-5-confidence-intervals-span"><span style="color: dimgray;"><strong>2.5 Confidence Intervals</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-6-hypothesis-testing-span"><span style="color: dimgray;"><strong>2.6 Hypothesis Testing</strong></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -381,8 +416,77 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-2">
-<span id="chapter2-label"></span><h1>Chapter 2<a class="headerlink" href="#chapter-2" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="span-style-color-dimgray-chapter-2-span">
+<span id="chapter2-label"></span><h1><span style="color: dimgray;"><strong>Chapter 2</strong></span><a class="headerlink" href="#span-style-color-dimgray-chapter-2-span" title="Permalink to this heading">#</a></h1>
+<section id="span-style-color-dimgray-statistical-and-probabilistic-framework-span">
+<h2><span style="color: dimgray;"><strong>Statistical and Probabilistic Framework</strong></span><a class="headerlink" href="#span-style-color-dimgray-statistical-and-probabilistic-framework-span" title="Permalink to this heading">#</a></h2>
+<p><strong>Statistics</strong> is essential in various fields, including actuarial science, where it’s a key tool for managing risks and making decisions. In actuarial science, actuaries use statistical methods, especially <strong>statistical inferential methods</strong>, to analyze data related to insurance, pensions, and financial risks.</p>
+<p>Actuaries employ inferential statistics to predict and derive meaningful insights from limited datasets, undertaking vital tasks such as</p>
+<ul class="simple">
+<li><p>estimating life expectancies,</p></li>
+<li><p>calculating insurance premiums, and</p></li>
+<li><p>evaluating investment risks.</p></li>
+</ul>
+<p>This application of statistical methods enables them to assess the <strong>probability</strong> of future events and understand their potential impact on financial systems.</p>
+<p>By using these statistical techniques, actuaries can better understand and deal with the uncertainties that come with their work. The combination of statistics and actuarial science emphasizes the importance of using data to make well-informed decisions in finance and insurance.</p>
+<section id="span-style-color-dimgray-how-do-probability-and-statistical-inference-work-together-span">
+<h3><span style="color: dimgray;"><strong>How Do Probability and Statistical Inference Work Together?</strong></span><a class="headerlink" href="#span-style-color-dimgray-how-do-probability-and-statistical-inference-work-together-span" title="Permalink to this heading">#</a></h3>
+<p>In the world of statistics, probability and inferential statistics work together like puzzle pieces, helping us build a clearer picture. Think of probability as the foundation – it’s like the starting point that assists us in understanding real-life situations through statistical inference.</p>
+<p>In simpler terms, when we have some information from a smaller group (sample), we use statistical methods and probability to make conclusions about a larger group (population).</p>
+<div class="admonition-example-2-1 admonition">
+<p class="admonition-title"><strong>Example 2.1</strong> </p>
+<p>For instance, let’s say we measure the heights of a few students (our sample) to guess the average height of all students in a school (the population). This is where probability and statistical inference come into play – helping us make educated guesses about the whole group based on the limited information we have. Here, we are emphasizing “<strong>inferential statistics</strong>.”</p>
+</div>
+<div class="admonition-example-2-2 admonition">
+<p class="admonition-title"><strong>Example 2.2</strong>  </p>
+<p>Now, let’s explore a different scenario where we already know all the details about the entire group (population). Here, we use probability to predict what information we might obtain if we were to take a hypothetical sample. It’s like saying, “We know everything about all the students; now, what can we expect if we only look at a few randomly chosen students?” In this case, we are emphasizing “<strong>probability</strong>.”</p>
+</div>
+<p>So, in a nutshell, probability and inferential statistics team up – using what we know to understand what we don’t know, whether it’s making guesses about a big group from a small one (inferential statistics) or predicting what we might find in a sample from a known population (probability). The relationship between probability and inferential statistics is illustrated in Figure</p>
+<figure class="align-default" id="figure-relationship-prob-stat">
+<img alt="_images/RelationshipProbStat.png" src="_images/RelationshipProbStat.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Fundamental relationship between probability and inferential statistics.</span><a class="headerlink" href="#figure-relationship-prob-stat" title="Permalink to this image">#</a></p>
+<div class="legend">
+<p>Source: <span id="id1">Walpole, Myers, Myers, and Ye [<a class="reference internal" href="Chapter_Bibliography.html#id5" title="Ronald E Walpole, Raymond H Myers, Sharon L Myers, and Keying Ye. Probability and statistics for engineers and scientists, 9th. 2011.">WMMY11</a>]</span>.</p>
+</div>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="span-style-color-dimgray-outline-of-chapter-2-span">
+<h2><span style="color: dimgray;"><strong>Outline of Chapter 2</strong></span><a class="headerlink" href="#span-style-color-dimgray-outline-of-chapter-2-span" title="Permalink to this heading">#</a></h2>
+<p>In this chapter, we establish a comprehensive understanding of statistics and probability, laying the groundwork for subsequent lessons.</p>
+<section id="span-style-color-dimgray-probability-span">
+<h3><span style="color: dimgray;"><strong>Probability</strong></span><a class="headerlink" href="#span-style-color-dimgray-probability-span" title="Permalink to this heading">#</a></h3>
+<section id="span-style-color-dimgray-2-1-data-collection-and-descriptive-statistics-span">
+<h4><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span><a class="headerlink" href="#span-style-color-dimgray-2-1-data-collection-and-descriptive-statistics-span" title="Permalink to this heading">#</a></h4>
+<p>Before delving into probabilistic concepts, we initiate with the crucial step of collecting and summarizing data. Topics include data collection methods, descriptive statistics, and graphical representations, providing the essential foundation for meaningful analysis.</p>
+</section>
+<section id="span-style-color-dimgray-2-2-probability-basics-span">
+<h4><span style="color: dimgray;"><strong>2.2 Probability Basics</strong></span><a class="headerlink" href="#span-style-color-dimgray-2-2-probability-basics-span" title="Permalink to this heading">#</a></h4>
+<p>Building on the groundwork laid in 2.1, we explore the fundamentals of probability. This encompasses understanding sample spaces, events, and calculating probabilities, setting the stage for probabilistic reasoning.</p>
+</section>
+<section id="span-style-color-dimgray-2-3-probability-distributions-span">
+<h4><span style="color: dimgray;"><strong>2.3 Probability Distributions</strong></span><a class="headerlink" href="#span-style-color-dimgray-2-3-probability-distributions-span" title="Permalink to this heading">#</a></h4>
+<p>Moving forward, we delve into probability distributions and random variables, elucidating how they form the basis for statistical analyses by describing the likelihood of different outcomes.</p>
+</section>
+</section>
+<section id="span-style-color-dimgray-statistical-inference-span">
+<h3><span style="color: dimgray;"><strong>Statistical Inference</strong></span><a class="headerlink" href="#span-style-color-dimgray-statistical-inference-span" title="Permalink to this heading">#</a></h3>
+<section id="span-style-color-dimgray-2-4-sampling-distributions-span">
+<h4><span style="color: dimgray;"><strong>2.4 Sampling Distributions</strong></span><a class="headerlink" href="#span-style-color-dimgray-2-4-sampling-distributions-span" title="Permalink to this heading">#</a></h4>
+<p>As an extension of probability distributions, we discuss sampling distributions, highlighting their importance in statistical inference.</p>
+</section>
+<section id="span-style-color-dimgray-2-5-confidence-intervals-span">
+<h4><span style="color: dimgray;"><strong>2.5 Confidence Intervals</strong></span><a class="headerlink" href="#span-style-color-dimgray-2-5-confidence-intervals-span" title="Permalink to this heading">#</a></h4>
+<p>Transitioning into statistical inference, we cover confidence intervals, demonstrating how they provide a range of plausible values for population parameters.</p>
+</section>
+<section id="span-style-color-dimgray-2-6-hypothesis-testing-span">
+<h4><span style="color: dimgray;"><strong>2.6 Hypothesis Testing</strong></span><a class="headerlink" href="#span-style-color-dimgray-2-6-hypothesis-testing-span" title="Permalink to this heading">#</a></h4>
+<p>The chapter concludes by addressing hypothesis testing. This practical application integrates probability concepts into statistical inference, showcasing their collaborative role.</p>
+</section>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -394,16 +498,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "r"
         },
         kernelOptions: {
-            name: "python3",
+            name: "ir",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ir'</script>
 
                 </article>
               
@@ -415,6 +519,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Chapter1_EndNote.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">End Note for Chapter 1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Chapter2_1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -422,7 +544,38 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-statistical-and-probabilistic-framework-span"><span style="color: dimgray;"><strong>Statistical and Probabilistic Framework</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-how-do-probability-and-statistical-inference-work-together-span"><span style="color: dimgray;"><strong>How Do Probability and Statistical Inference Work Together?</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-outline-of-chapter-2-span"><span style="color: dimgray;"><strong>Outline of Chapter 2</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-probability-span"><span style="color: dimgray;"><strong>Probability</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-1-data-collection-and-descriptive-statistics-span"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-2-probability-basics-span"><span style="color: dimgray;"><strong>2.2 Probability Basics</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-3-probability-distributions-span"><span style="color: dimgray;"><strong>2.3 Probability Distributions</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-statistical-inference-span"><span style="color: dimgray;"><strong>Statistical Inference</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-4-sampling-distributions-span"><span style="color: dimgray;"><strong>2.4 Sampling Distributions</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-5-confidence-intervals-span"><span style="color: dimgray;"><strong>2.5 Confidence Intervals</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-6-hypothesis-testing-span"><span style="color: dimgray;"><strong>2.6 Hypothesis Testing</strong></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

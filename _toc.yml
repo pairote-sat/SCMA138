@@ -10,9 +10,11 @@ parts:
     - file: Chapter1_Introduction.ipynb
     - file: Chapter1_Exercise.ipynb
     - file: Chapter1_EndNote.ipynb
-#  - caption: Chapter 2  
-#    chapters:
-#    - file: Chapter2.ipynb
+  - caption: Statistical and Probabilistic Framework
+    chapters:
+    - file: Chapter2.ipynb
+    - file: Chapter2_1.ipynb
+    - file: Chapter2_1_Exercise.ipynb
   - caption: Bibliography  
     chapters:
     - file: Chapter_Bibliography.ipynb
