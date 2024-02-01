@@ -1,0 +1,1378 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>2.1 Data Collection and Descriptive Statistics (Part 2) &#8212; SCMA138 Principles of Actuarial Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter2_1_Part2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exercises for Chapter 2.1" href="Chapter2_1_Exercise.html" />
+    <link rel="prev" title="2.1 Data Collection and Descriptive Statistics" href="Chapter2_1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="SCMA138 Principles of Actuarial Science - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="SCMA138 Principles of Actuarial Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to SCMA 138 Principles of Actuarial Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Actuarial Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Introduction.html"><span style="color: dimgray;"><strong>Chapter 1</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Exercise.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_EndNote.html">End Note for Chapter 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical and Probabilistic Framework</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter2.html"><span style="color: dimgray;"><strong>Chapter 2</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics (Part 2)</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise.html">Exercises for Chapter 2.1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliography</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter_Bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FChapter2_1_Part2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Chapter2_1_Part2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><span style="color: dimgray;">2.1 Data Collection and Descriptive Statistics (Part 2)</span></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-summarizing-and-visualizing-one-qualitative-variable-span"><span style="color: dimgray;"><strong>Summarizing and Visualizing One Qualitative Variable</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-1-frequency-distribution-span"><span style="color: dimgray;"><strong>1. Frequency Distribution</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-bar-charts-span"><span style="color: dimgray;"><strong>2. Bar Charts</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-3-pie-charts-span"><span style="color: dimgray;"><strong>3. Pie Charts</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-using-pivottables-in-excel-span"><span style="color: dimgray;"><strong>Using PivotTables in Excel</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-summarizing-and-visualizing-one-quantitative-variable-span"><span style="color: dimgray;"><strong>Summarizing and Visualizing One Quantitative Variable</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-summarizing-span"><span style="color: dimgray;"><strong>Summarizing</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-1-descriptive-statistics-span"><span style="color: dimgray;"><strong>1. Descriptive Statistics</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-measures-of-central-tendency-span"><span style="color: dimgray;"><strong>Measures of Central Tendency</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-mean-span"><span style="color: dimgray;"><strong>Mean</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-median-span"><span style="color: dimgray;"><strong>Median</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-mode-span"><span style="color: dimgray;"><strong>Mode</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-measures-of-variability-span"><span style="color: dimgray;"><strong>Measures of Variability</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-frequency-distribution-span"><span style="color: dimgray;"><strong>2. Frequency Distribution</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-visualizing-span"><span style="color: dimgray;"><strong>Visualizing</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-3-histogram-span"><span style="color: dimgray;"><strong>3. Histogram</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-4-density-plot-span"><span style="color: dimgray;"><strong>4. Density Plot</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-5-box-plot-span"><span style="color: dimgray;"><strong>5. Box Plot</strong></span></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="span-style-color-dimgray-2-1-data-collection-and-descriptive-statistics-part-2-span">
+<h1><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics (Part 2)</strong></span><a class="headerlink" href="#span-style-color-dimgray-2-1-data-collection-and-descriptive-statistics-part-2-span" title="Permalink to this heading">#</a></h1>
+<section id="span-style-color-dimgray-summarizing-and-visualizing-one-qualitative-variable-span">
+<h2><span style="color: dimgray;"><strong>Summarizing and Visualizing One Qualitative Variable</strong></span><a class="headerlink" href="#span-style-color-dimgray-summarizing-and-visualizing-one-qualitative-variable-span" title="Permalink to this heading">#</a></h2>
+<p>In the upcoming discussion, we will be exploring into a dataset that encompasses both qualitative and quantitative variables. Our initial focus will be on the qualitative aspect of the data, where we aim to systematically summarize and subsequently visualize these categorical variables.</p>
+<p>We explore the <strong>freMTPL2freq</strong> dataset from the R package <code class="docutils literal notranslate"><span class="pre">CASdatasets</span></code>, which comprises a French motor third-party liability (MTPL) insurance portfolio with observed claim counts in a single accounting year.</p>
+<ol class="arabic simple">
+<li><p><strong>IDpol:</strong> Unique identifier representing the policy number.</p></li>
+<li><p><strong>ClaimNb:</strong> Number of claims associated with the policy.</p></li>
+<li><p><strong>Exposure:</strong> Total exposure in yearly units, indicating the <strong>duration of the policy</strong>.</p></li>
+<li><p><strong>Area:</strong> Categorical variable denoting the area code.</p></li>
+<li><p><strong>VehPower:</strong> Ordered categorical variable representing the power of the car.</p></li>
+<li><p><strong>VehAge:</strong> Age of the car in years.</p></li>
+<li><p><strong>DrivAge:</strong> Age of the driver in years.</p></li>
+<li><p><strong>BonusMalus:</strong> Bonus-malus level ranging from 50 to 230, with a reference level of 100.</p></li>
+<li><p><strong>VehBrand:</strong> Categorical variable indicating the car brand.</p></li>
+<li><p><strong>VehGas:</strong> Binary variable indicating whether the car uses diesel or regular fuel.</p></li>
+<li><p><strong>Density:</strong> Density of inhabitants per square kilometer in the city of the driver’s residence.</p></li>
+<li><p><strong>Region:</strong> Categorical variable representing regions in France prior to 2016.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Students interested in understanding how different models, from traditional statistics to advanced machine learning, explain and predict the number of insurance claims, should check out the article ‘Case Study_ French Motor Third-Party Liability Claims (<span id="id1">Noll, Salzmann, and Wuthrich [<a class="reference internal" href="Chapter_Bibliography.html#id6" title="Alexander Noll, Robert Salzmann, and Mario V Wuthrich. Case study: french motor third-party liability claims. Available at SSRN 3164764, 2020.">NSW20</a>]</span>)’. It provides valuable insights into the topic and offers a great learning experience in insurance analytics.</p>
+</div>
+<p>Summarizing one qualitative variable involves describing the essential characteristics of a categorical data set. Here are several ways to summarize a qualitative variable:</p>
+<section id="span-style-color-dimgray-1-frequency-distribution-span">
+<h3><span style="color: dimgray;"><strong>1. Frequency Distribution</strong></span><a class="headerlink" href="#span-style-color-dimgray-1-frequency-distribution-span" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Create a table that shows the count or frequency of each category in the qualitative variable.</p></li>
+<li><p>Include both the <strong>absolute frequencies (counts)</strong> and <strong>relative frequencies (percentages)</strong>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">suppressMessages</span><span class="p">({</span>
+  <span class="nf">suppressWarnings</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">CASdatasets</span><span class="p">))</span>
+<span class="p">})</span>
+
+
+<span class="nf">data</span><span class="p">(</span><span class="n">freMTPL2freq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">str</span><span class="p">(</span><span class="n">freMTPL2freq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;data.frame&#39;:	677991 obs. of  12 variables:
+ $ IDpol     : Factor w/ 677991 levels &quot;1&quot;,&quot;3&quot;,&quot;5&quot;,&quot;10&quot;,..: 1 2 3 4 5 6 7 8 9 10 ...
+ $ ClaimNb   : num  0 0 0 0 0 0 0 0 0 0 ...
+ $ Exposure  : num  0.1 0.77 0.75 0.09 0.84 0.52 0.45 0.27 0.71 0.15 ...
+ $ VehPower  : int  5 5 6 7 7 6 6 7 7 7 ...
+ $ VehAge    : int  0 0 2 0 0 2 2 0 0 0 ...
+ $ DrivAge   : int  55 55 52 46 46 38 38 33 33 41 ...
+ $ BonusMalus: int  50 50 50 50 50 50 50 68 68 50 ...
+ $ VehBrand  : Factor w/ 11 levels &quot;B1&quot;,&quot;B10&quot;,&quot;B11&quot;,..: 4 4 4 4 4 4 4 4 4 4 ...
+ $ VehGas    : chr  &quot;Regular&quot; &quot;Regular&quot; &quot;Diesel&quot; &quot;Diesel&quot; ...
+ $ Area      : Factor w/ 6 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,..: 4 4 2 2 2 5 5 3 3 2 ...
+ $ Density   : int  1217 1217 54 76 76 3003 3003 137 137 60 ...
+ $ Region    : Factor w/ 22 levels &quot;Alsace&quot;,&quot;Aquitaine&quot;,..: 22 22 19 2 2 17 17 13 13 18 ...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-example-2-13-summarizing-one-qualitative-variable-fremtpl2freq-dataset admonition">
+<p class="admonition-title"><strong>Example 2.13</strong> Summarizing one qualitative variable: freMTPL2freq dataset</p>
+<p>What are the different categories present in the “Area” variable, and how frequently do each of these categories occur in the dataset? Provide both the absolute frequencies (counts) and the relative frequencies (percentages).</p>
+</div>
+<p>To answer Example 2.13 and create a frequency distribution for the “Area” variable in the “freMTPL2freq” dataset, you can use R. Here’s a step-by-step guide:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install and load the CASdatasets package</span>
+<span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">requireNamespace</span><span class="p">(</span><span class="s">&quot;CASdatasets&quot;</span><span class="p">,</span> <span class="n">quietly</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;CASdatasets&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">suppressMessages</span><span class="p">({</span>
+  <span class="nf">suppressWarnings</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">CASdatasets</span><span class="p">))</span>
+<span class="p">})</span>
+
+<span class="c1"># Load the freMTPL2freq dataset</span>
+<span class="nf">data</span><span class="p">(</span><span class="s">&quot;freMTPL2freq&quot;</span><span class="p">)</span>
+
+<span class="c1"># View the unique categories in the &quot;Area&quot; variable</span>
+<span class="n">unique_areas</span> <span class="o">&lt;-</span> <span class="nf">unique</span><span class="p">(</span><span class="n">freMTPL2freq</span><span class="o">$</span><span class="n">Area</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">unique_areas</span><span class="p">)</span>
+
+<span class="c1"># Create a frequency table</span>
+<span class="n">frequency_table</span> <span class="o">&lt;-</span> <span class="nf">table</span><span class="p">(</span><span class="n">freMTPL2freq</span><span class="o">$</span><span class="n">Area</span><span class="p">)</span>
+
+<span class="c1"># Convert absolute frequencies to percentages</span>
+<span class="n">relative_frequencies</span> <span class="o">&lt;-</span> <span class="nf">prop.table</span><span class="p">(</span><span class="n">frequency_table</span><span class="p">)</span> <span class="o">*</span> <span class="m">100</span>
+
+<span class="c1"># Combine absolute and relative frequencies</span>
+<span class="n">result</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">Area</span> <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">frequency_table</span><span class="p">),</span>
+                     <span class="n">Absolute_Frequency</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">frequency_table</span><span class="p">),</span>
+                     <span class="n">Relative_Frequency</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">relative_frequencies</span><span class="p">))</span>
+
+<span class="c1"># Print the result</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] D B E C F A
+Levels: A B C D E F
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Area Absolute_Frequency Relative_Frequency
+1    A             103952           15.33236
+2    B              75457           11.12950
+3    C             191874           28.30038
+4    D             151592           22.35900
+5    E             137163           20.23080
+6    F              17953            2.64797
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code snippet does the following:</p>
+<ol class="arabic simple">
+<li><p>Installs and loads the CASdatasets package (if not already installed).</p></li>
+<li><p>Loads the “freMTPL2freq” dataset.</p></li>
+<li><p>Prints the unique categories in the “Area” variable.</p></li>
+<li><p>Creates a frequency table for the “Area” variable using the <code class="docutils literal notranslate"><span class="pre">table()</span></code> function.</p></li>
+<li><p>Converts absolute frequencies to relative frequencies using the <code class="docutils literal notranslate"><span class="pre">prop.table()</span></code> function.</p></li>
+<li><p>Combines absolute and relative frequencies into a data frame for a comprehensive result.</p></li>
+<li><p>Prints the final result, showing both absolute and relative frequencies.</p></li>
+</ol>
+<div class="admonition-example-2-14-summarizing-one-qualitative-variable-fremtpl2freq-dataset admonition">
+<p class="admonition-title"><strong>Example 2.14</strong> Summarizing one qualitative variable: freMTPL2freq dataset</p>
+<p>Can you provide a breakdown of the distribution of car brands (“VehBrand”) in the dataset, highlighting the frequency of each brand? Show both the absolute frequencies (counts) and the relative frequencies (percentages).</p>
+</div>
+<div class="admonition-example-2-15-summarizing-one-qualitative-variable-fremtpl2freq-dataset admonition">
+<p class="admonition-title"><strong>Example 2.15</strong> Summarizing one qualitative variable: freMTPL2freq dataset</p>
+<p>For the “Region” variable, which represents regions in France, could you outline the frequency distribution of each region within the dataset? Present both the absolute frequencies (counts) and the relative frequencies (percentages).</p>
+</div>
+</section>
+<section id="span-style-color-dimgray-2-bar-charts-span">
+<h3><span style="color: dimgray;"><strong>2. Bar Charts</strong></span><a class="headerlink" href="#span-style-color-dimgray-2-bar-charts-span" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Represent the frequencies visually using a bar chart.</p></li>
+<li><p>Each category is represented by a bar, and the height of the bar corresponds to the frequency or percentage.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To create a bar chart for the “Area” variable in R, you can use the <code class="docutils literal notranslate"><span class="pre">barplot()</span></code> function. Here’s a step-by-step guide:</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load necessary libraries</span>
+<span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">CASdatasets</span><span class="p">))</span>
+
+<span class="c1"># Load the freMTPL2freq dataset</span>
+<span class="nf">data</span><span class="p">(</span><span class="s">&quot;freMTPL2freq&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a frequency table for the &quot;Area&quot; variable</span>
+<span class="n">frequency_table</span> <span class="o">&lt;-</span> <span class="nf">table</span><span class="p">(</span><span class="n">freMTPL2freq</span><span class="o">$</span><span class="n">Area</span><span class="p">)</span>
+
+<span class="c1"># Convert absolute frequencies to percentages</span>
+<span class="n">relative_frequencies</span> <span class="o">&lt;-</span> <span class="nf">prop.table</span><span class="p">(</span><span class="n">frequency_table</span><span class="p">)</span> <span class="o">*</span> <span class="m">100</span>
+
+<span class="c1"># Combine absolute and relative frequencies into a data frame</span>
+<span class="n">result</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">Area</span> <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">frequency_table</span><span class="p">),</span>
+                     <span class="n">Absolute_Frequency</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">frequency_table</span><span class="p">),</span>
+                     <span class="n">Relative_Frequency</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">relative_frequencies</span><span class="p">))</span>
+
+<span class="c1"># Create a bar chart</span>
+<span class="nf">barplot</span><span class="p">(</span><span class="n">frequency_table</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Frequency Distribution of Areas&quot;</span><span class="p">,</span>
+        <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Area Categories&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Frequency&quot;</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;skyblue&quot;</span><span class="p">)</span>
+
+<span class="c1"># Add data labels</span>
+<span class="nf">text</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="nf">barplot</span><span class="p">(</span><span class="n">frequency_table</span><span class="p">,</span> <span class="n">plot</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">frequency_table</span> <span class="o">+</span> <span class="m">1</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">frequency_table</span><span class="p">,</span> <span class="n">pos</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="c1"># Display the result</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Area Absolute_Frequency Relative_Frequency
+1    A             103952           15.33236
+2    B              75457           11.12950
+3    C             191874           28.30038
+4    D             151592           22.35900
+5    E             137163           20.23080
+6    F              17953            2.64797
+</pre></div>
+</div>
+<img alt="_images/a978ee201db906d49b3344355230cf69c8c29a0fbd57fabbbd6d810347799bf8.png" src="_images/a978ee201db906d49b3344355230cf69c8c29a0fbd57fabbbd6d810347799bf8.png" />
+</div>
+</div>
+</section>
+<section id="span-style-color-dimgray-3-pie-charts-span">
+<h3><span style="color: dimgray;"><strong>3. Pie Charts</strong></span><a class="headerlink" href="#span-style-color-dimgray-3-pie-charts-span" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Display the relative frequencies of each category in a circular pie chart.</p></li>
+<li><p>Each category is represented by a slice, and the size of the slice corresponds to the percentage of occurrences.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To create a pie chart for the “Area” variable in R, you can use the <code class="docutils literal notranslate"><span class="pre">pie()</span></code> function. Here’s a step-by-step guide:</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load necessary libraries</span>
+<span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">CASdatasets</span><span class="p">))</span>
+
+<span class="c1"># Load the freMTPL2freq dataset</span>
+<span class="nf">data</span><span class="p">(</span><span class="s">&quot;freMTPL2freq&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a frequency table for the &quot;Area&quot; variable</span>
+<span class="n">frequency_table</span> <span class="o">&lt;-</span> <span class="nf">table</span><span class="p">(</span><span class="n">freMTPL2freq</span><span class="o">$</span><span class="n">Area</span><span class="p">)</span>
+
+<span class="c1"># Convert absolute frequencies to percentages</span>
+<span class="n">relative_frequencies</span> <span class="o">&lt;-</span> <span class="nf">prop.table</span><span class="p">(</span><span class="n">frequency_table</span><span class="p">)</span> <span class="o">*</span> <span class="m">100</span>
+
+<span class="c1"># Combine absolute and relative frequencies into a data frame</span>
+<span class="n">result</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">Area</span> <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">frequency_table</span><span class="p">),</span>
+                     <span class="n">Absolute_Frequency</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">frequency_table</span><span class="p">),</span>
+                     <span class="n">Relative_Frequency</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">relative_frequencies</span><span class="p">))</span>
+
+<span class="c1"># Create a pie chart</span>
+<span class="nf">pie</span><span class="p">(</span><span class="n">frequency_table</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">result</span><span class="o">$</span><span class="n">Area</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Pie Chart of Areas&quot;</span><span class="p">,</span>
+    <span class="n">col</span> <span class="o">=</span> <span class="nf">rainbow</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">result</span><span class="o">$</span><span class="n">Area</span><span class="p">)),</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">1.8</span><span class="p">)</span>
+
+<span class="c1"># Display the result</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Area Absolute_Frequency Relative_Frequency
+1    A             103952           15.33236
+2    B              75457           11.12950
+3    C             191874           28.30038
+4    D             151592           22.35900
+5    E             137163           20.23080
+6    F              17953            2.64797
+</pre></div>
+</div>
+<img alt="_images/cd1e3629327d0611fe8ee308cf560cbe835cd4c6a465f3220336106645badc89.png" src="_images/cd1e3629327d0611fe8ee308cf560cbe835cd4c6a465f3220336106645badc89.png" />
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol class="arabic simple">
+<li><p>The <strong>cxex</strong> parameter in the <code class="docutils literal notranslate"><span class="pre">pie()</span></code> function controls the size of the labels in the pie chart. Specifically, it stands for “character expansion,” and it is used to adjust the size of the labels relative to the default size.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">pie()</span></code> function in R does not automatically arrange the slices in descending or ascending order based on frequencies or percentages. It plots the slices in the order they appear in the data.</p></li>
+</ol>
+<p>If you want to arrange the slices in descending order of frequencies or percentages, you should sort the data frame before creating the pie chart. Here’s an example:</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort the result data frame by Absolute_Frequency in descending order</span>
+<span class="n">result_sorted</span> <span class="o">&lt;-</span> <span class="n">result</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">result</span><span class="o">$</span><span class="n">Absolute_Frequency</span><span class="p">,</span> <span class="n">decreasing</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">),</span> <span class="p">]</span>
+
+<span class="c1"># Create a pie chart with the sorted data</span>
+<span class="nf">pie</span><span class="p">(</span><span class="n">result_sorted</span><span class="o">$</span><span class="n">Absolute_Frequency</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">result_sorted</span><span class="o">$</span><span class="n">Area</span><span class="p">,</span>
+    <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Pie Chart of Areas&quot;</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="nf">rainbow</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">result_sorted</span><span class="o">$</span><span class="n">Area</span><span class="p">)),</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">1.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/83cb2cef4720701a3b951b9fbc12e2a9e15d1f1ba2ce501d99b62c4cdc4fd55f.png" src="_images/83cb2cef4720701a3b951b9fbc12e2a9e15d1f1ba2ce501d99b62c4cdc4fd55f.png" />
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This code below uses <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> to create a pie chart with labels that include both the “Area” and “Absolute_Frequency” values. You may need to adjust the size, colors, or other parameters based on your preferences.</p>
+<p>Further information about pie charts with <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> can be found at <a class="reference external" href="https://r-graph-gallery.com/piechart-ggplot2.html">https://r-graph-gallery.com/piechart-ggplot2.html</a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install and load the ggplot2 package</span>
+<span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">requireNamespace</span><span class="p">(</span><span class="s">&quot;ggplot2&quot;</span><span class="p">,</span> <span class="n">quietly</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggplot2&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+
+<span class="c1"># Create a data frame for ggplot2</span>
+<span class="n">df_ggplot</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
+  <span class="n">Area</span> <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">frequency_table</span><span class="p">),</span>
+  <span class="n">Absolute_Frequency</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">frequency_table</span><span class="p">),</span>
+  <span class="n">Relative_Frequency</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">relative_frequencies</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Create a pie chart with ggplot2</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">df_ggplot</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Absolute_Frequency</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">Area</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">geom_bar</span><span class="p">(</span><span class="n">stat</span> <span class="o">=</span> <span class="s">&quot;identity&quot;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;white&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">coord_polar</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="m">0</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">theme_void</span><span class="p">()</span> <span class="o">+</span>
+  <span class="nf">geom_text</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">label</span> <span class="o">=</span> <span class="nf">paste0</span><span class="p">(</span><span class="n">Area</span><span class="p">,</span> <span class="s">&quot;: &quot;</span><span class="p">,</span> <span class="nf">round</span><span class="p">(</span><span class="n">Relative_Frequency</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="s">&quot;%&quot;</span><span class="p">)),</span>
+            <span class="n">position</span> <span class="o">=</span> <span class="nf">position_stack</span><span class="p">(</span><span class="n">vjust</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Pie Chart of Areas with Data Labels&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6bcba86703bc4dcdf7fa1c65b9ccbefa0be175e3bd0ff0e3745d7c4ee8dcb003.png" src="_images/6bcba86703bc4dcdf7fa1c65b9ccbefa0be175e3bd0ff0e3745d7c4ee8dcb003.png" />
+</div>
+</div>
+<div class="admonition-example-2-16-visualizing-one-qualitative-variable-fremtpl2freq-dataset admonition">
+<p class="admonition-title"><strong>Example 2.16</strong> Visualizing one qualitative variable: freMTPL2freq dataset</p>
+<p>How can we effectively visualize the distribution of car brands (‘VehBrand’) and regions (‘Region’) in the ‘freMTPL2freq’ dataset?</p>
+<p>Using R, create both a bar chart and a pie chart for the ‘VehBrand’ variable, illustrating the counts of each car brand (if possible). Additionally, generate similar visualizations for the ‘Region’ variable, providing insights into the geographical distribution of insurance claims.</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title"><strong>Example 2.17</strong> Excel: Visualizing one qualitative variable</p>
+<p>In Excel, how can we effectively summarize and visualize the ‘Area’ variable based on the first 100 observations of the dataset?</p>
+<ol class="arabic simple">
+<li><p>Which specific ‘Area’ categories appear most frequently within the subset of the first 100 observations, and how do their frequencies differ from the entire dataset?</p></li>
+<li><p>How do the frequency distribution and visual representation of the ‘Area’ variable among the first 100 observations compare to the overall dataset?</p></li>
+</ol>
+</div>
+<p>In Excel,</p>
+<ul class="simple">
+<li><p>one can analyze the ‘Area’ variable by initially selecting the first 100 observations to streamline the dataset.</p></li>
+<li><p>Subsequently, one should employ <strong>Excel functions</strong> or <strong>PivotTables</strong> to compute the frequency distribution of ‘Area’ within this subset, facilitating a concise overview of categorical occurrences.</p></li>
+<li><p>To enhance comprehension, one can then create visual representations, such as bar charts or pie charts, effectively illustrating the distribution patterns.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">freMTPL2freq</span><span class="p">,</span><span class="m">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 100 × 12</caption>
+<thead>
+	<tr><th></th><th scope=col>IDpol</th><th scope=col>ClaimNb</th><th scope=col>Exposure</th><th scope=col>VehPower</th><th scope=col>VehAge</th><th scope=col>DrivAge</th><th scope=col>BonusMalus</th><th scope=col>VehBrand</th><th scope=col>VehGas</th><th scope=col>Area</th><th scope=col>Density</th><th scope=col>Region</th></tr>
+	<tr><th></th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>1 </td><td>0</td><td>0.10</td><td>5</td><td>0</td><td>55</td><td> 50</td><td>B12</td><td>Regular</td><td>D</td><td> 1217</td><td>Rhone-Alpes                </td></tr>
+	<tr><th scope=row>2</th><td>3 </td><td>0</td><td>0.77</td><td>5</td><td>0</td><td>55</td><td> 50</td><td>B12</td><td>Regular</td><td>D</td><td> 1217</td><td>Rhone-Alpes                </td></tr>
+	<tr><th scope=row>3</th><td>5 </td><td>0</td><td>0.75</td><td>6</td><td>2</td><td>52</td><td> 50</td><td>B12</td><td>Diesel </td><td>B</td><td>   54</td><td>Picardie                   </td></tr>
+	<tr><th scope=row>4</th><td>10</td><td>0</td><td>0.09</td><td>7</td><td>0</td><td>46</td><td> 50</td><td>B12</td><td>Diesel </td><td>B</td><td>   76</td><td>Aquitaine                  </td></tr>
+	<tr><th scope=row>5</th><td>11</td><td>0</td><td>0.84</td><td>7</td><td>0</td><td>46</td><td> 50</td><td>B12</td><td>Diesel </td><td>B</td><td>   76</td><td>Aquitaine                  </td></tr>
+	<tr><th scope=row>6</th><td>13</td><td>0</td><td>0.52</td><td>6</td><td>2</td><td>38</td><td> 50</td><td>B12</td><td>Regular</td><td>E</td><td> 3003</td><td>Nord-Pas-de-Calais         </td></tr>
+	<tr><th scope=row>7</th><td>15</td><td>0</td><td>0.45</td><td>6</td><td>2</td><td>38</td><td> 50</td><td>B12</td><td>Regular</td><td>E</td><td> 3003</td><td>Nord-Pas-de-Calais         </td></tr>
+	<tr><th scope=row>8</th><td>17</td><td>0</td><td>0.27</td><td>7</td><td>0</td><td>33</td><td> 68</td><td>B12</td><td>Diesel </td><td>C</td><td>  137</td><td>Languedoc-Roussillon       </td></tr>
+	<tr><th scope=row>9</th><td>18</td><td>0</td><td>0.71</td><td>7</td><td>0</td><td>33</td><td> 68</td><td>B12</td><td>Diesel </td><td>C</td><td>  137</td><td>Languedoc-Roussillon       </td></tr>
+	<tr><th scope=row>10</th><td>21</td><td>0</td><td>0.15</td><td>7</td><td>0</td><td>41</td><td> 50</td><td>B12</td><td>Diesel </td><td>B</td><td>   60</td><td>Pays-de-la-Loire           </td></tr>
+	<tr><th scope=row>11</th><td>25</td><td>0</td><td>0.75</td><td>7</td><td>0</td><td>41</td><td> 50</td><td>B12</td><td>Diesel </td><td>B</td><td>   60</td><td>Pays-de-la-Loire           </td></tr>
+	<tr><th scope=row>12</th><td>27</td><td>0</td><td>0.87</td><td>7</td><td>0</td><td>56</td><td> 50</td><td>B12</td><td>Diesel </td><td>C</td><td>  173</td><td>Provence-Alpes-Cotes-D'Azur</td></tr>
+	<tr><th scope=row>13</th><td>30</td><td>0</td><td>0.81</td><td>4</td><td>1</td><td>27</td><td> 90</td><td>B12</td><td>Regular</td><td>D</td><td>  695</td><td>Aquitaine                  </td></tr>
+	<tr><th scope=row>14</th><td>32</td><td>0</td><td>0.05</td><td>4</td><td>0</td><td>27</td><td> 90</td><td>B12</td><td>Regular</td><td>D</td><td>  695</td><td>Aquitaine                  </td></tr>
+	<tr><th scope=row>15</th><td>35</td><td>0</td><td>0.76</td><td>4</td><td>9</td><td>23</td><td>100</td><td>B6 </td><td>Regular</td><td>E</td><td> 7887</td><td>Nord-Pas-de-Calais         </td></tr>
+	<tr><th scope=row>16</th><td>36</td><td>0</td><td>0.34</td><td>9</td><td>0</td><td>44</td><td> 76</td><td>B12</td><td>Regular</td><td>F</td><td>27000</td><td>Ile-de-France              </td></tr>
+	<tr><th scope=row>17</th><td>38</td><td>0</td><td>0.10</td><td>6</td><td>2</td><td>32</td><td> 56</td><td>B12</td><td>Diesel </td><td>A</td><td>   23</td><td>Centre                     </td></tr>
+	<tr><th scope=row>18</th><td>42</td><td>0</td><td>0.77</td><td>6</td><td>2</td><td>32</td><td> 56</td><td>B12</td><td>Diesel </td><td>A</td><td>   23</td><td>Centre                     </td></tr>
+	<tr><th scope=row>19</th><td>44</td><td>0</td><td>0.74</td><td>6</td><td>2</td><td>55</td><td> 50</td><td>B12</td><td>Regular</td><td>A</td><td>   37</td><td>Corse                      </td></tr>
+	<tr><th scope=row>20</th><td>45</td><td>0</td><td>0.10</td><td>6</td><td>2</td><td>55</td><td> 50</td><td>B12</td><td>Regular</td><td>A</td><td>   37</td><td>Corse                      </td></tr>
+	<tr><th scope=row>21</th><td>47</td><td>0</td><td>0.03</td><td>6</td><td>2</td><td>55</td><td> 50</td><td>B12</td><td>Regular</td><td>A</td><td>   37</td><td>Corse                      </td></tr>
+	<tr><th scope=row>22</th><td>49</td><td>0</td><td>0.81</td><td>7</td><td>0</td><td>73</td><td> 50</td><td>B12</td><td>Regular</td><td>E</td><td> 3317</td><td>Provence-Alpes-Cotes-D'Azur</td></tr>
+	<tr><th scope=row>23</th><td>50</td><td>0</td><td>0.06</td><td>7</td><td>0</td><td>73</td><td> 50</td><td>B12</td><td>Regular</td><td>E</td><td> 3317</td><td>Provence-Alpes-Cotes-D'Azur</td></tr>
+	<tr><th scope=row>24</th><td>52</td><td>0</td><td>0.10</td><td>6</td><td>8</td><td>27</td><td> 76</td><td>B3 </td><td>Diesel </td><td>B</td><td>   85</td><td>Provence-Alpes-Cotes-D'Azur</td></tr>
+	<tr><th scope=row>25</th><td>53</td><td>0</td><td>0.55</td><td>5</td><td>0</td><td>33</td><td>100</td><td>B12</td><td>Regular</td><td>D</td><td> 1746</td><td>Ile-de-France              </td></tr>
+	<tr><th scope=row>26</th><td>54</td><td>0</td><td>0.19</td><td>5</td><td>0</td><td>33</td><td>100</td><td>B12</td><td>Regular</td><td>D</td><td> 1746</td><td>Ile-de-France              </td></tr>
+	<tr><th scope=row>27</th><td>55</td><td>0</td><td>0.01</td><td>5</td><td>0</td><td>33</td><td>100</td><td>B12</td><td>Regular</td><td>D</td><td> 1746</td><td>Ile-de-France              </td></tr>
+	<tr><th scope=row>28</th><td>58</td><td>0</td><td>0.03</td><td>5</td><td>0</td><td>59</td><td> 50</td><td>B12</td><td>Regular</td><td>C</td><td>  455</td><td>Languedoc-Roussillon       </td></tr>
+	<tr><th scope=row>29</th><td>59</td><td>0</td><td>0.79</td><td>5</td><td>0</td><td>59</td><td> 50</td><td>B12</td><td>Regular</td><td>C</td><td>  455</td><td>Languedoc-Roussillon       </td></tr>
+	<tr><th scope=row>30</th><td>60</td><td>0</td><td>0.04</td><td>5</td><td>0</td><td>59</td><td> 50</td><td>B12</td><td>Regular</td><td>C</td><td>  455</td><td>Languedoc-Roussillon       </td></tr>
+	<tr><th scope=row>⋮</th><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
+	<tr><th scope=row>71</th><td>148</td><td>0</td><td>0.12</td><td> 5</td><td>0</td><td>55</td><td> 50</td><td>B12</td><td>Regular</td><td>C</td><td>  480</td><td>Picardie                   </td></tr>
+	<tr><th scope=row>72</th><td>149</td><td>0</td><td>0.06</td><td> 5</td><td>0</td><td>55</td><td> 50</td><td>B12</td><td>Regular</td><td>C</td><td>  480</td><td>Picardie                   </td></tr>
+	<tr><th scope=row>73</th><td>150</td><td>0</td><td>0.11</td><td>15</td><td>0</td><td>51</td><td> 50</td><td>B12</td><td>Diesel </td><td>C</td><td>  480</td><td>Picardie                   </td></tr>
+	<tr><th scope=row>74</th><td>151</td><td>0</td><td>0.04</td><td>15</td><td>0</td><td>55</td><td> 50</td><td>B12</td><td>Diesel </td><td>C</td><td>  480</td><td>Picardie                   </td></tr>
+	<tr><th scope=row>75</th><td>153</td><td>0</td><td>0.74</td><td> 7</td><td>0</td><td>59</td><td> 50</td><td>B12</td><td>Regular</td><td>C</td><td>  364</td><td>Midi-Pyrenees              </td></tr>
+	<tr><th scope=row>76</th><td>155</td><td>0</td><td>0.12</td><td> 7</td><td>0</td><td>59</td><td> 50</td><td>B12</td><td>Regular</td><td>C</td><td>  364</td><td>Midi-Pyrenees              </td></tr>
+	<tr><th scope=row>77</th><td>158</td><td>0</td><td>0.07</td><td> 7</td><td>0</td><td>51</td><td> 50</td><td>B12</td><td>Regular</td><td>D</td><td>  721</td><td>Provence-Alpes-Cotes-D'Azur</td></tr>
+	<tr><th scope=row>78</th><td>159</td><td>0</td><td>0.79</td><td> 7</td><td>0</td><td>51</td><td> 50</td><td>B12</td><td>Regular</td><td>D</td><td>  721</td><td>Provence-Alpes-Cotes-D'Azur</td></tr>
+	<tr><th scope=row>79</th><td>161</td><td>0</td><td>0.81</td><td> 5</td><td>0</td><td>53</td><td> 50</td><td>B12</td><td>Regular</td><td>E</td><td> 3430</td><td>Provence-Alpes-Cotes-D'Azur</td></tr>
+	<tr><th scope=row>80</th><td>163</td><td>0</td><td>0.05</td><td> 5</td><td>0</td><td>53</td><td> 50</td><td>B12</td><td>Regular</td><td>E</td><td> 3430</td><td>Provence-Alpes-Cotes-D'Azur</td></tr>
+	<tr><th scope=row>81</th><td>166</td><td>0</td><td>0.09</td><td> 4</td><td>0</td><td>55</td><td> 50</td><td>B12</td><td>Regular</td><td>E</td><td> 2715</td><td>Provence-Alpes-Cotes-D'Azur</td></tr>
+	<tr><th scope=row>82</th><td>167</td><td>0</td><td>0.77</td><td> 4</td><td>0</td><td>55</td><td> 50</td><td>B12</td><td>Regular</td><td>E</td><td> 2715</td><td>Provence-Alpes-Cotes-D'Azur</td></tr>
+	<tr><th scope=row>83</th><td>170</td><td>0</td><td>0.87</td><td>10</td><td>0</td><td>31</td><td> 72</td><td>B12</td><td>Diesel </td><td>F</td><td>27000</td><td>Ile-de-France              </td></tr>
+	<tr><th scope=row>84</th><td>173</td><td>0</td><td>0.87</td><td> 5</td><td>0</td><td>65</td><td> 50</td><td>B12</td><td>Regular</td><td>D</td><td>  645</td><td>Languedoc-Roussillon       </td></tr>
+	<tr><th scope=row>85</th><td>175</td><td>0</td><td>0.78</td><td> 6</td><td>1</td><td>47</td><td> 53</td><td>B2 </td><td>Regular</td><td>B</td><td>   93</td><td>Languedoc-Roussillon       </td></tr>
+	<tr><th scope=row>86</th><td>178</td><td>0</td><td>0.04</td><td> 6</td><td>1</td><td>47</td><td> 53</td><td>B2 </td><td>Regular</td><td>B</td><td>   93</td><td>Languedoc-Roussillon       </td></tr>
+	<tr><th scope=row>87</th><td>179</td><td>0</td><td>0.03</td><td> 6</td><td>1</td><td>47</td><td> 53</td><td>B2 </td><td>Regular</td><td>B</td><td>   93</td><td>Languedoc-Roussillon       </td></tr>
+	<tr><th scope=row>88</th><td>181</td><td>0</td><td>0.69</td><td> 5</td><td>8</td><td>46</td><td> 52</td><td>B5 </td><td>Regular</td><td>E</td><td> 3023</td><td>Ile-de-France              </td></tr>
+	<tr><th scope=row>89</th><td>183</td><td>0</td><td>0.12</td><td> 5</td><td>8</td><td>46</td><td> 52</td><td>B5 </td><td>Regular</td><td>E</td><td> 3023</td><td>Ile-de-France              </td></tr>
+	<tr><th scope=row>90</th><td>184</td><td>0</td><td>0.04</td><td> 5</td><td>8</td><td>46</td><td> 52</td><td>B5 </td><td>Regular</td><td>E</td><td> 3023</td><td>Ile-de-France              </td></tr>
+	<tr><th scope=row>91</th><td>186</td><td>0</td><td>0.83</td><td> 5</td><td>0</td><td>75</td><td> 50</td><td>B12</td><td>Regular</td><td>C</td><td>  215</td><td>Alsace                     </td></tr>
+	<tr><th scope=row>92</th><td>188</td><td>0</td><td>0.03</td><td> 5</td><td>0</td><td>75</td><td> 50</td><td>B12</td><td>Regular</td><td>C</td><td>  215</td><td>Alsace                     </td></tr>
+	<tr><th scope=row>93</th><td>189</td><td>0</td><td>0.55</td><td>12</td><td>5</td><td>50</td><td> 60</td><td>B12</td><td>Diesel </td><td>B</td><td>   56</td><td>Basse-Normandie            </td></tr>
+	<tr><th scope=row>94</th><td>190</td><td>1</td><td>0.14</td><td>12</td><td>5</td><td>50</td><td> 60</td><td>B12</td><td>Diesel </td><td>B</td><td>   56</td><td>Basse-Normandie            </td></tr>
+	<tr><th scope=row>95</th><td>193</td><td>0</td><td>0.77</td><td> 7</td><td>4</td><td>39</td><td> 50</td><td>B10</td><td>Diesel </td><td>A</td><td>   30</td><td>Aquitaine                  </td></tr>
+	<tr><th scope=row>96</th><td>194</td><td>0</td><td>0.09</td><td> 7</td><td>4</td><td>39</td><td> 50</td><td>B10</td><td>Diesel </td><td>A</td><td>   30</td><td>Aquitaine                  </td></tr>
+	<tr><th scope=row>97</th><td>195</td><td>0</td><td>0.14</td><td>10</td><td>0</td><td>67</td><td> 95</td><td>B12</td><td>Diesel </td><td>E</td><td> 5460</td><td>Ile-de-France              </td></tr>
+	<tr><th scope=row>98</th><td>196</td><td>0</td><td>0.67</td><td> 5</td><td>0</td><td>22</td><td> 90</td><td>B12</td><td>Regular</td><td>D</td><td> 1324</td><td>Ile-de-France              </td></tr>
+	<tr><th scope=row>99</th><td>197</td><td>0</td><td>0.13</td><td> 4</td><td>0</td><td>39</td><td>100</td><td>B12</td><td>Regular</td><td>E</td><td> 6736</td><td>Ile-de-France              </td></tr>
+	<tr><th scope=row>100</th><td>198</td><td>0</td><td>0.59</td><td> 4</td><td>0</td><td>39</td><td>100</td><td>B12</td><td>Regular</td><td>E</td><td> 6736</td><td>Ile-de-France              </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+<section id="span-style-color-dimgray-using-pivottables-in-excel-span">
+<h2><span style="color: dimgray;"><strong>Using PivotTables in Excel</strong></span><a class="headerlink" href="#span-style-color-dimgray-using-pivottables-in-excel-span" title="Permalink to this heading">#</a></h2>
+<p>Using PivotTables in Excel to analyze the ‘Area’ variable based on the first 100 observations involves the following steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Data Selection:</strong></p>
+<ul class="simple">
+<li><p>Open your Excel workbook and navigate to the worksheet containing the dataset.</p></li>
+<li><p>Select the first 100 observations of the ‘Area’ variable, ensuring you include the column headers.</p></li>
+</ul>
+</li>
+<li><p><strong>Insert PivotTable:</strong></p>
+<ul class="simple">
+<li><p>Go to the “Insert” tab on the Excel ribbon.</p></li>
+<li><p>Click on “PivotTable” and choose the range of the selected data. Ensure the “New Worksheet” option is selected.</p></li>
+</ul>
+</li>
+<li><p><strong>Configure PivotTable Fields:</strong></p>
+<ul class="simple">
+<li><p>In the newly created PivotTable, drag the ‘Area’ field to the “Rows” area. This will list unique ‘Area’ categories.</p></li>
+<li><p>Drag the ‘Area’ field again to the “Values” area. This will default to counting the occurrences, providing the frequency distribution.</p></li>
+</ul>
+</li>
+<li><p><strong>Adjust PivotTable Options:</strong></p>
+<ul class="simple">
+<li><p>Customize the PivotTable by right-clicking on the count in the “Values” area, selecting “Value Field Settings,” and renaming it to “Frequency.”</p></li>
+</ul>
+</li>
+<li><p><strong>Create a PivotChart (Optional):</strong></p>
+<ul class="simple">
+<li><p>For a visual representation, select any cell within the PivotTable, go to the “Insert” tab, and choose “PivotChart.”</p></li>
+<li><p>Choose the chart type (e.g., bar chart or pie chart) to visualize the frequency distribution.</p></li>
+</ul>
+</li>
+</ol>
+<p>By following these steps, students can efficiently use PivotTables to summarize and visualize the ‘Area’ variable based on the first 100 observations in Excel. The resulting table and optional chart provide a clear representation of the categorical distribution within the subset.</p>
+</section>
+<section id="span-style-color-dimgray-summarizing-and-visualizing-one-quantitative-variable-span">
+<h2><span style="color: dimgray;"><strong>Summarizing and Visualizing One Quantitative Variable</strong></span><a class="headerlink" href="#span-style-color-dimgray-summarizing-and-visualizing-one-quantitative-variable-span" title="Permalink to this heading">#</a></h2>
+<p>In the world of data analysis, diving into the characteristics of a dataset is essential for extracting meaningful insights. When we focus on summarizing and visualizing one <strong>quantitative</strong> variable, a crucial aspect is central tendency. This represents the typical value around which other data points cluster.</p>
+<p>Descriptive measures like the <strong>mean</strong> and <strong>median</strong> offer insights into this central tendency. Another important aspect is understanding the variability in the data – how much the data points differ from the central value. Measures such as the <strong>range</strong>, <strong>interquartile range</strong>, and <strong>standard deviation</strong> quantify this spread.
+Visualization complements these measures, providing a graphical representation of the data’s distribution. This visual representation helps us identify patterns, outliers, and the overall shape of the dataset.</p>
+<p>Essentially, these analytical tools collectively enable us to explain the complexities of quantitative variables, facilitating a deeper understanding of datasets.</p>
+<p>In this analysis, we will use the same dataset that was employed when examining the qualitative variable. Summarizing and visualizing the variable “Exposure” in the freMTPL2freq dataset involves a series of steps:</p>
+<section id="span-style-color-dimgray-summarizing-span">
+<h3><span style="color: dimgray;"><strong>Summarizing</strong></span><a class="headerlink" href="#span-style-color-dimgray-summarizing-span" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="span-style-color-dimgray-1-descriptive-statistics-span">
+<h3><span style="color: dimgray;"><strong>1. Descriptive Statistics</strong></span><a class="headerlink" href="#span-style-color-dimgray-1-descriptive-statistics-span" title="Permalink to this heading">#</a></h3>
+<p>Calculate basic descriptive statistics for “Exposure,” such as the mean, median, minimum, maximum, and standard deviation. This provides a summary of the central tendency and variability of the variable.</p>
+<section id="span-style-color-dimgray-measures-of-central-tendency-span">
+<h4><span style="color: dimgray;"><strong>Measures of Central Tendency</strong></span><a class="headerlink" href="#span-style-color-dimgray-measures-of-central-tendency-span" title="Permalink to this heading">#</a></h4>
+<p>Measures of central tendency are essential statistical metrics that provide insights into the central or typical value within a dataset. These indicators help us understand the central position around which data points cluster. Commonly used measures of central tendency include the mean, median, and mode. Each of these measures offers a unique perspective on the central tendencies of a dataset, aiding in the interpretation and analysis of numerical information.</p>
+</section>
+<section id="span-style-color-dimgray-mean-span">
+<h4><span style="color: dimgray;"><strong>Mean</strong></span><a class="headerlink" href="#span-style-color-dimgray-mean-span" title="Permalink to this heading">#</a></h4>
+<p>The average, often referred to as the mean, is a fundamental measure of central tendency. It is calculated by summing up all the values in a dataset and dividing the sum by the total number of values. The mean provides a numeric representation of the central position of the data, making it a widely used and easily interpretable indicator.</p>
+<p>Let <span class="math notranslate nohighlight">\(x_1, x_2, x_3, \ldots, x_n\)</span> be our sample. The sample mean <span class="math notranslate nohighlight">\(\bar{x}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}.\]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol class="arabic simple">
+<li><p>The population mean, <span class="math notranslate nohighlight">\(\mu\)</span> (lowercase mu, Greek alphabet), is the mean of all <span class="math notranslate nohighlight">\(x\)</span> values for the entire population.</p></li>
+<li><p>The mean is sensitive to extreme values, making it important to consider the distribution and characteristics of the data when interpreting this central tendency measure.</p></li>
+</ol>
+</div>
+</section>
+<section id="span-style-color-dimgray-median-span">
+<h4><span style="color: dimgray;"><strong>Median</strong></span><a class="headerlink" href="#span-style-color-dimgray-median-span" title="Permalink to this heading">#</a></h4>
+<p>The median is another important measure of central tendency. It represents the middle value in a dataset when arranged in ascending or descending order. To calculate the median, the dataset is first sorted, and then the middle value is determined. If the dataset has an even number of observations, the median is the average of the two middle values.</p>
+<p>Let <span class="math notranslate nohighlight">\(x_1, x_2, x_3, \ldots, x_n\)</span> be our sample. The median is denoted as <span class="math notranslate nohighlight">\(\tilde{x}\)</span>, and it is determined based on the position of the middle values in the ordered dataset.</p>
+<p><strong>Odd Number of Observations:</strong></p>
+<div class="math notranslate nohighlight">
+\[\tilde{x} = x_{\frac{n+1}{2}}\]</div>
+<p><strong>Even Number of Observations:</strong></p>
+<div class="math notranslate nohighlight">
+\[\tilde{x} = \frac{x_{\frac{n}{2}} + x_{\frac{n}{2}+1}}{2}\]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol class="arabic simple">
+<li><p>The population median, <span class="math notranslate nohighlight">\(M\)</span> (uppercase mu in the Greek alphabet), is the data value in the middle position of the entire ranked population.</p></li>
+<li><p>The median is less sensitive to extreme values, making it a robust measure of central tendency that is not heavily influenced by outliers. This characteristic is particularly advantageous when dealing with datasets with skewed distributions or significant outliers.</p></li>
+</ol>
+</div>
+</section>
+<section id="span-style-color-dimgray-mode-span">
+<h4><span style="color: dimgray;"><strong>Mode</strong></span><a class="headerlink" href="#span-style-color-dimgray-mode-span" title="Permalink to this heading">#</a></h4>
+<p>The mode is the value that occurs most frequently in a dataset. Unlike the mean and median, a dataset can have multiple modes, making it a multimodal distribution. If no value repeats, the dataset is considered to have no mode.</p>
+<p>Let <span class="math notranslate nohighlight">\(x_1, x_2, x_3, \ldots, x_n\)</span> be our sample. The mode is denoted as <span class="math notranslate nohighlight">\(Mo\)</span> and it is the value(s) with the highest frequency.</p>
+<p>If there is one mode: <span class="math notranslate nohighlight">\(Mo = x_i\)</span> with the highest frequency.</p>
+<p>If there are multiple modes: <span class="math notranslate nohighlight">\(Mo  = \{x_1, x_2, \ldots, x_k\}\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the number of modes.</p>
+<div class="admonition-example-2-18-descriptive-statistics-for-the-exposure-variable-fremtpl2freq-dataset admonition">
+<p class="admonition-title"><strong>Example 2.18</strong> Descriptive statistics for the “Exposure” variable: freMTPL2freq dataset</p>
+<p>What are the basic descriptive statistics for the “Exposure” variable in the freMTPL2freq dataset?</p>
+<p>To explore and understand the characteristics of the “Exposure” variable in the freMTPL2freq dataset, we will use the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> function in R. This function provides key descriptive statistics, such as the mean, median, minimum, maximum, and quartiles, offering a comprehensive overview of the distribution and central tendencies of the “Exposure” variable.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load necessary libraries</span>
+<span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">CASdatasets</span><span class="p">))</span>
+
+<span class="c1"># Load the freMTPL2freq dataset</span>
+<span class="nf">data</span><span class="p">(</span><span class="s">&quot;freMTPL2freq&quot;</span><span class="p">)</span>
+
+<span class="nf">summary</span><span class="p">(</span><span class="n">freMTPL2freq</span><span class="o">$</span><span class="n">Exposure</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+0.002732 0.180000 0.490000 0.528743 0.990000 2.010000 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Measures of Position</p>
+<p>Quartiles are specific values within a dataset that partition the ordered data into four equal parts. In any dataset, there are three quartiles.</p>
+<ul class="simple">
+<li><p>The first quartile, denoted as Q1, is a value such that at most 25% of the data are smaller than Q1, and at most 75% are larger.</p></li>
+<li><p>The second quartile is synonymous with the median, representing the middle value of the dataset.</p></li>
+<li><p>The third quartile, denoted as Q3, is a value such that at most 75% of the data are smaller than Q3, and at most 25% are larger.</p></li>
+</ul>
+<p>In essence, quartiles provide valuable insights into the distribution of data by identifying key points that divide it into quarters.</p>
+</div>
+</section>
+<section id="span-style-color-dimgray-measures-of-variability-span">
+<h4><span style="color: dimgray;"><strong>Measures of Variability</strong></span><a class="headerlink" href="#span-style-color-dimgray-measures-of-variability-span" title="Permalink to this heading">#</a></h4>
+<p>Measures of variability complement measures of central tendency by providing insights into the spread or dispersion of data points within a dataset. Two commonly used measures of variability are Variance (<span class="math notranslate nohighlight">\(\sigma^2\)</span> or <span class="math notranslate nohighlight">\(s^2\)</span>) and Standard Deviation (<span class="math notranslate nohighlight">\(\sigma\)</span> or <span class="math notranslate nohighlight">\(s\)</span>). These metrics quantify the extent to which individual data points deviate from the central tendency, offering a comprehensive understanding of the data’s distribution.</p>
+<p><strong>Population Variance (<span class="math notranslate nohighlight">\(\sigma^2\)</span>):</strong></p>
+<div class="math notranslate nohighlight">
+\[\sigma^2 = \frac{\sum_{i=1}^{N} (X_i - \mu)^2}{N}\]</div>
+<p><strong>Sample Variance (<span class="math notranslate nohighlight">\(s^2\)</span>):</strong></p>
+<div class="math notranslate nohighlight">
+\[s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}\]</div>
+<p><strong>Population Standard Deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>):</strong></p>
+<div class="math notranslate nohighlight">
+\[\sigma = \sqrt{\sigma^2}\]</div>
+<p><strong>Sample Standard Deviation (<span class="math notranslate nohighlight">\(s\)</span>):</strong></p>
+<div class="math notranslate nohighlight">
+\[s = \sqrt{s^2}\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X_i\)</span> or <span class="math notranslate nohighlight">\(x_i\)</span> represents each individual data point in the population or sample.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> is the population mean.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{x}\)</span> is the sample mean.</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span> is the total number of data points in the population.</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> is the total number of data points in the sample.</p></li>
+</ul>
+<p>These measures offer valuable insights into the variability of data points, helping to identify the degree of dispersion and assess the overall stability of the dataset.</p>
+<div class="admonition-example-2-19-measures-of-dispersion-fremtpl2freq-dataset admonition">
+<p class="admonition-title"><strong>Example 2.19</strong> Measures of dispersion: freMTPL2freq dataset</p>
+<p>What are the key measures of dispersion for the “Exposure” variable in the freMTPL2freq dataset?</p>
+<p>To explore the variability and spread of the “Exposure” variable in the freMTPL2freq dataset, we can employ the <code class="docutils literal notranslate"><span class="pre">sd()</span></code> function in R for the standard deviation and the <code class="docutils literal notranslate"><span class="pre">var()</span></code> function for the variance. These measures provide valuable insights into how individual values deviate from the central tendency, contributing to a more comprehensive understanding of the dataset’s distribution.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load necessary libraries</span>
+<span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">CASdatasets</span><span class="p">))</span>
+
+<span class="c1"># Load the freMTPL2freq dataset</span>
+<span class="nf">data</span><span class="p">(</span><span class="s">&quot;freMTPL2freq&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate the standard deviation and variance for the &quot;Exposure&quot; variable</span>
+<span class="n">standard_deviation</span> <span class="o">&lt;-</span> <span class="nf">sd</span><span class="p">(</span><span class="n">freMTPL2freq</span><span class="o">$</span><span class="n">Exposure</span><span class="p">)</span>
+<span class="n">variance</span> <span class="o">&lt;-</span> <span class="nf">var</span><span class="p">(</span><span class="n">freMTPL2freq</span><span class="o">$</span><span class="n">Exposure</span><span class="p">)</span>
+
+<span class="c1"># Output the measures of dispersion</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Standard Deviation:&quot;</span><span class="p">,</span> <span class="n">standard_deviation</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Variance:&quot;</span><span class="p">,</span> <span class="n">variance</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Standard Deviation: 0.3644406 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variance: 0.132817 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In R, one popular package that provides comprehensive summary statistics is the <strong>psych</strong> package. It offers the <code class="docutils literal notranslate"><span class="pre">describe()</span></code> function, which generates a detailed summary including</p>
+<ul class="simple">
+<li><p>measures of central tendency,</p></li>
+<li><p>dispersion, and</p></li>
+<li><p>distribution shape for each variable in a dataset.</p></li>
+</ul>
+<p>The output includes mean, standard deviation, skewness, kurtosis, minimum, 25th percentile, median, 75th percentile, and maximum.</p>
+<p>Here is an example with the <code class="docutils literal notranslate"><span class="pre">describe()</span></code> function.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the psych package</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">psych</span><span class="p">)</span>
+
+<span class="c1"># Load the freMTPL2freq dataset</span>
+<span class="nf">data</span><span class="p">(</span><span class="s">&quot;freMTPL2freq&quot;</span><span class="p">)</span>
+
+<span class="c1"># Use describe() to get comprehensive summary statistics for the dataset</span>
+<span class="n">summary_stats</span> <span class="o">&lt;-</span> <span class="nf">describe</span><span class="p">(</span><span class="n">freMTPL2freq</span><span class="p">)</span>
+
+<span class="c1"># View the summary statistics</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">summary_stats</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘psych’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:ggplot2’:
+
+    %+%, alpha
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           vars      n      mean        sd    median   trimmed       mad min
+IDpol*        1 677991 338996.00 195719.29 338996.00 338996.00 251297.73   1
+ClaimNb       2 677991      0.04      0.21      0.00      0.00      0.00   0
+Exposure      3 677991      0.53      0.36      0.49      0.53      0.55   0
+VehPower      4 677991      6.45      2.05      6.00      6.19      1.48   4
+VehAge        5 677991      7.04      5.67      6.00      6.56      5.93   0
+DrivAge       6 677991     45.50     14.14     44.00     44.73     14.83  18
+BonusMalus    7 677991     59.76     15.64     50.00     56.34      0.00  50
+VehBrand*     8 677991      5.05      3.07      4.00      4.89      4.45   1
+VehGas*       9 677991      1.51      0.50      2.00      1.51      0.00   1
+Area*        10 677991      3.29      1.38      3.00      3.33      1.48   1
+Density      11 677991   1792.41   3958.57    393.00    921.94    526.32   1
+Region*      12 677991     12.96      6.55     12.00     13.04      7.41   1
+                 max     range  skew kurtosis     se
+IDpol*     677991.00 677990.00  0.00    -1.20 237.70
+ClaimNb        16.00     16.00  6.80   118.71   0.00
+Exposure        2.01      2.01  0.09    -1.52   0.00
+VehPower       15.00     11.00  1.17     1.67   0.00
+VehAge        100.00    100.00  1.15     6.52   0.01
+DrivAge       100.00     82.00  0.44    -0.34   0.02
+BonusMalus    230.00    180.00  1.73     2.67   0.02
+VehBrand*      11.00     10.00  0.14    -1.10   0.00
+VehGas*         2.00      1.00 -0.04    -2.00   0.00
+Area*           6.00      5.00 -0.18    -0.88   0.00
+Density     27000.00  26999.00  4.65    24.87   4.81
+Region*        22.00     21.00  0.04    -1.43   0.01
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="span-style-color-dimgray-2-frequency-distribution-span">
+<h3><span style="color: dimgray;"><strong>2. Frequency Distribution</strong></span><a class="headerlink" href="#span-style-color-dimgray-2-frequency-distribution-span" title="Permalink to this heading">#</a></h3>
+<p>Create a frequency distribution to understand the distribution of different exposure values. This can help identify common exposure levels and potential outliers.</p>
+<p><strong>Frequency Distribution</strong></p>
+<p><strong>Definition:</strong>
+A frequency distribution is a tabular representation of a set of data that shows the number of times each distinct value or range of values occurs in a dataset. It provides a systematic way to organize and summarize quantitative data, allowing for a clearer understanding of the data’s distribution and patterns.</p>
+<p><strong>Creating a Frequency Distribution for a Quantitative Variable:</strong>
+The process of creating a frequency distribution for a quantitative variable involves several steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Identify the Range of Values:</strong>
+Determine the range of values present in the quantitative variable. This involves finding the minimum and maximum values.</p></li>
+<li><p><strong>Divide the Range into Intervals (Bins):</strong>
+Divide the range of values into intervals or bins. Each bin represents a range of values, and the number of values falling within each bin will be counted.</p></li>
+<li><p><strong>Count the Frequencies:</strong>
+Count the number of data points that fall into each bin. This is done by examining each data point and determining which bin it belongs to.</p></li>
+<li><p><strong>Create a Table:</strong>
+Construct a table with two columns – one for the bins (intervals) and another for the frequencies. Each row in the table represents a bin, and the corresponding frequency indicates how many values fall within that bin.</p></li>
+<li><p><strong>Display the Information:</strong>
+Present the frequency distribution in a clear and visually accessible format. This can be done through a table, histogram, or other graphical representation.</p></li>
+</ol>
+<p>The resulting frequency distribution provides a snapshot of the data’s distribution, highlighting the concentration of values within specific intervals and revealing any patterns or outliers. It is a fundamental tool for exploring and summarizing quantitative data.</p>
+<div class="tip admonition">
+<p class="admonition-title">The rules of thumb for choosing the number of bins</p>
+<p>When determining the number of bins for a histogram, the Square Root Rule is a straightforward guideline suggesting that the number of bins should be approximately equal to the square root of the total number of data points,</p>
+<div class="math notranslate nohighlight">
+\[\text{Number of bins} ≈ \sqrt{n},\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is the number of data points.</p>
+<p>This provides a balanced representation, avoiding excessive detail or oversimplification. Additionally, alternative rules, such as Sturges’ Rule, Freedman-Diaconis Rule, Scott’s Rule, and Doane’s Formula, offer refined  approaches.</p>
+</div>
+</section>
+<section id="span-style-color-dimgray-visualizing-span">
+<h3><span style="color: dimgray;"><strong>Visualizing</strong></span><a class="headerlink" href="#span-style-color-dimgray-visualizing-span" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="span-style-color-dimgray-3-histogram-span">
+<h3><span style="color: dimgray;"><strong>3. Histogram</strong></span><a class="headerlink" href="#span-style-color-dimgray-3-histogram-span" title="Permalink to this heading">#</a></h3>
+<p>Construct a histogram to visualize the distribution of “Exposure.” The histogram provides a visual representation of the frequency of different exposure intervals, offering insights into the variable’s overall pattern.</p>
+<p><strong>Definition:</strong></p>
+<p><strong>Histogram</strong>
+A histogram is a <strong>graphical representation</strong> of the distribution of a quantitative variable. It uses bars to represent the frequencies of different values or intervals. The bars are typically drawn adjacent to each other, with the width of each bar corresponding to the width of the interval, and the height corresponding to the frequency of observations in that interval.</p>
+<div class="admonition-example-2-20-frequency-distribution-and-histogram-fremtpl2freq-dataset admonition">
+<p class="admonition-title"><strong>Example 2.20</strong> Frequency Distribution and Histogram: freMTPL2freq dataset</p>
+<p>How is the “Exposure” variable distributed in the freMTPL2freq dataset?</p>
+<p>To gain insights into the distribution of the “Exposure” variable, we can create a frequency distribution using appropriate bins.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">hist()</span></code> function in R is a useful tool for generating histograms, allowing us to visualize the frequency of different exposure levels.</p>
+<p>Additionally, we can use the <code class="docutils literal notranslate"><span class="pre">table()</span></code> function to create a frequency table displaying the ranges of data along with their respective counts.</p>
+<p>This tabular representation enhances our understanding of the concentration of values and potential outliers within the dataset.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load necessary libraries</span>
+<span class="nf">suppressMessages</span><span class="p">(</span><span class="nf">library</span><span class="p">(</span><span class="n">CASdatasets</span><span class="p">))</span>
+
+<span class="c1"># Load the freMTPL2freq dataset</span>
+<span class="nf">data</span><span class="p">(</span><span class="s">&quot;freMTPL2freq&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a histogram for the &quot;Exposure&quot; variable</span>
+<span class="n">hist_data</span> <span class="o">&lt;-</span> <span class="nf">hist</span><span class="p">(</span><span class="n">freMTPL2freq</span><span class="o">$</span><span class="n">Exposure</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Frequency Distribution of Exposure&quot;</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Exposure&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Frequency&quot;</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;skyblue&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a frequency table</span>
+<span class="n">frequency_table</span> <span class="o">&lt;-</span> <span class="nf">table</span><span class="p">(</span><span class="nf">cut</span><span class="p">(</span><span class="n">freMTPL2freq</span><span class="o">$</span><span class="n">Exposure</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="n">hist_data</span><span class="o">$</span><span class="n">breaks</span><span class="p">,</span> <span class="n">include.lowest</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span>
+
+<span class="c1"># Display the frequency table</span>
+<span class="n">frequency_table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [0,0.1] (0.1,0.2] (0.2,0.3] (0.3,0.4] (0.4,0.5] (0.5,0.6] (0.6,0.7] (0.7,0.8] 
+   127594     59973     62369     41184     62989     36998     32114     38023 
+(0.8,0.9]   (0.9,1]   (1,1.1] (1.1,1.2] (1.2,1.3] (1.3,1.4] (1.4,1.5] (1.5,1.6] 
+    24864    190659       819       202        80        41        40        13 
+(1.6,1.7] (1.7,1.8] (1.8,1.9]   (1.9,2]   (2,2.1] 
+       12         4         6         5         2 
+</pre></div>
+</div>
+<img alt="_images/c88d0e48849c2f7123a23d09e532d0f6dfc27ad8400039dde3cf61c4d4d85df0.png" src="_images/c88d0e48849c2f7123a23d09e532d0f6dfc27ad8400039dde3cf61c4d4d85df0.png" />
+</div>
+</div>
+<p>Frequency Distribution:</p>
+<p>Create a frequency distribution to understand the distribution of different exposure values. This can help identify common exposure levels and potential outliers.</p>
+<p>Visualizing:</p>
+<p>Histogram:</p>
+<p>Construct a histogram to visualize the distribution of “Exposure.” The histogram provides a visual representation of the frequency of different exposure intervals, offering insights into the variable’s overall pattern.</p>
+<p>Box Plot:</p>
+<p>Generate a box plot to visualize the summary statistics (minimum, first quartile, median, third quartile, and maximum) and identify any potential outliers in the “Exposure” variable.
+Density Plot:</p>
+<p>Create a density plot to show the probability density function of “Exposure.” This plot provides a smooth representation of the distribution, aiding in understanding the variable’s shape.
+By following these steps, you can gain a comprehensive understanding of the “Exposure” variable in the freMTPL2freq dataset, both in terms of summary statistics and visual representation. Adjust the visualization techniques based on the characteristics of the data and the insights you aim to derive.</p>
+</section>
+<section id="span-style-color-dimgray-4-density-plot-span">
+<h3><span style="color: dimgray;"><strong>4. Density Plot</strong></span><a class="headerlink" href="#span-style-color-dimgray-4-density-plot-span" title="Permalink to this heading">#</a></h3>
+<p>Create a density plot to visualize the distribution of “Exposure.” Unlike a histogram, a density plot provides a smooth, continuous representation of the data distribution. It is especially useful for identifying patterns in the data and understanding the shape of the distribution.</p>
+<p><strong>Definition:</strong></p>
+<p><strong>Density Plot</strong>
+A density plot is a <strong>smoothed representation</strong> of the distribution of a quantitative variable. It uses a continuous curve to depict the estimated probability density function. Density plots are advantageous for highlighting subtle features in the data distribution and are particularly useful when dealing with large datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a density plot for the &quot;Exposure&quot; variable</span>
+<span class="nf">plot</span><span class="p">(</span><span class="nf">density</span><span class="p">(</span><span class="n">freMTPL2freq</span><span class="o">$</span><span class="n">Exposure</span><span class="p">),</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Density Plot of Exposure&quot;</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Exposure&quot;</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;skyblue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d9144cd248e87ded0fc09616b57b6f5a0b099cd35182af3144ccb11470b429b4.png" src="_images/d9144cd248e87ded0fc09616b57b6f5a0b099cd35182af3144ccb11470b429b4.png" />
+</div>
+</div>
+</section>
+<section id="span-style-color-dimgray-5-box-plot-span">
+<h3><span style="color: dimgray;"><strong>5. Box Plot</strong></span><a class="headerlink" href="#span-style-color-dimgray-5-box-plot-span" title="Permalink to this heading">#</a></h3>
+<p>Generate a box plot to visualize the distribution of “Exposure.” A box plot provides a summary of the data distribution, displaying the median, quartiles, and potential outliers. It offers a concise visual representation of the central tendency and spread of the data.</p>
+<p><strong>Definition:</strong></p>
+<p><strong>Box Plot</strong>
+A box plot is a <strong>visual summary</strong> of the distribution of a quantitative variable. It displays the median, quartiles, and potential outliers using a box-and-whisker format. Box plots are effective for identifying the central tendency and spread of the data, making them useful for comparing distributions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a box plot for the &quot;Exposure&quot; variable</span>
+<span class="nf">boxplot</span><span class="p">(</span><span class="n">freMTPL2freq</span><span class="o">$</span><span class="n">Exposure</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Box Plot of Exposure&quot;</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;skyblue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/47d9942f88bfb71266727006a4eebc857b4fbe8cba42b174a1430a41b172f388.png" src="_images/47d9942f88bfb71266727006a4eebc857b4fbe8cba42b174a1430a41b172f388.png" />
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Outliers</p>
+<p>In a box plot, outliers are individual data points that significantly differ from the overall pattern of the distribution. These points fall beyond the “whiskers” of the box plot, which are lines extending from the box. Outliers can provide valuable information about unusual or extreme values in the dataset.</p>
+<p class="rubric"><strong>Importance of Identifying Outliers:</strong></p>
+<p>Identifying outliers is important for several reasons:</p>
+<ul class="simple">
+<li><p><strong>Data Quality Assessment:</strong> Outliers may indicate errors in data collection or measurement.</p></li>
+<li><p><strong>Influential Impact:</strong> Outliers can disproportionately influence statistical analyses and model outcomes.</p></li>
+<li><p><strong>Understanding Variability:</strong> Outliers offer insights into the variability and potential patterns in the data.</p></li>
+</ul>
+<p class="rubric"><strong>Display on Box Plot:</strong></p>
+<p>In a box plot, outliers are typically shown as individual points beyond the “whiskers.” The whiskers represent the range within which most of the data falls, while any points beyond the whiskers are considered potential outliers. The exact definition of outliers and how they are displayed can depend on the method used to calculate them, but commonly, points beyond a certain distance from the quartiles are considered outliers.</p>
+</div>
+<div class="admonition-example-2-21-descriptive-statistics-for-the-exposure-variable-fremtpl2freq-dataset admonition">
+<p class="admonition-title"><strong>Example 2.21</strong> Descriptive statistics for the “Exposure” variable: freMTPL2freq dataset</p>
+<p>Upon reviewing the descriptive summary statistics for the “Exposure” variable in the freMTPL2freq dataset using the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> function, what patterns, central tendencies, and notable characteristics emerge? Analyzing the mean, median, quartiles, and other descriptive measures, what information can be inferred about the distribution of exposure values and their significance within the dataset?</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title"><strong>Example 2.22</strong> Excel: Exploring  and Visualizing One Quantitative Variable</p>
+<p>In Excel, how can we effectively summarize and visualize the ‘Exposure’ variable based on the first 100 observations of the dataset?</p>
+<ol class="arabic simple">
+<li><p>Which specific exposure intervals or values are most common within the subset of the first 100 observations, and how do their frequencies differ from the entire dataset?</p></li>
+<li><p>How does the frequency distribution and visual representation of the ‘Exposure’ variable among the first 100 observations compare to the overall dataset?</p></li>
+</ol>
+<p>Consider using appropriate Excel tools and functions to generate descriptive statistics, frequency distributions, and visualizations to gain insights into the distribution and characteristics of the ‘Exposure’ variable within the selected subset.</p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Chapter2_1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Chapter2_1_Exercise.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercises for Chapter 2.1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-summarizing-and-visualizing-one-qualitative-variable-span"><span style="color: dimgray;"><strong>Summarizing and Visualizing One Qualitative Variable</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-1-frequency-distribution-span"><span style="color: dimgray;"><strong>1. Frequency Distribution</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-bar-charts-span"><span style="color: dimgray;"><strong>2. Bar Charts</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-3-pie-charts-span"><span style="color: dimgray;"><strong>3. Pie Charts</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-using-pivottables-in-excel-span"><span style="color: dimgray;"><strong>Using PivotTables in Excel</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-summarizing-and-visualizing-one-quantitative-variable-span"><span style="color: dimgray;"><strong>Summarizing and Visualizing One Quantitative Variable</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-summarizing-span"><span style="color: dimgray;"><strong>Summarizing</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-1-descriptive-statistics-span"><span style="color: dimgray;"><strong>1. Descriptive Statistics</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-measures-of-central-tendency-span"><span style="color: dimgray;"><strong>Measures of Central Tendency</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-mean-span"><span style="color: dimgray;"><strong>Mean</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-median-span"><span style="color: dimgray;"><strong>Median</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-mode-span"><span style="color: dimgray;"><strong>Mode</strong></span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-measures-of-variability-span"><span style="color: dimgray;"><strong>Measures of Variability</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-2-frequency-distribution-span"><span style="color: dimgray;"><strong>2. Frequency Distribution</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-visualizing-span"><span style="color: dimgray;"><strong>Visualizing</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-3-histogram-span"><span style="color: dimgray;"><strong>3. Histogram</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-4-density-plot-span"><span style="color: dimgray;"><strong>4. Density Plot</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-5-box-plot-span"><span style="color: dimgray;"><strong>5. Box Plot</strong></span></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pairote Satiracoo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
