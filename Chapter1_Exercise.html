@@ -185,6 +185,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercises for Chapter 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Chapter1_EndNote.html">End Note for Chapter 1</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical and Probabilistic Framework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter2.html"><span style="color: dimgray;"><strong>Chapter 2</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Part2.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics (Part 2)</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise.html">Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise_Solution.html">Solutions to Exercises for Chapter 2.1</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliography</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Chapter_Bibliography.html">Bibliography</a></li>
@@ -468,9 +476,30 @@ document.write(`
 <p>In Exercise 1.3, we use the expected values to figure out how much insurance should cost, what problems or challenges do you think might come up?</p>
 <p>Can you give an example to explain why relying only on expected values might not be enough?</p>
 </div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 1.4</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>When relying solely on expected values to determine insurance costs, several problems or challenges may arise. One significant limitation is that expected values provide only an average estimate and do not account for the <strong>variability</strong> and <strong>uncertainty</strong> inherent in insurance claims.</p>
+<p>For example, consider a car insurance company using the average expected cost of claims to set premiums. If the company only considers the average cost per claim without accounting for the <strong>possibility of rare but costly accidents</strong>, it may <strong>underestimate the potential financial risk</strong>. In reality, there might be instances of high-cost claims due to severe accidents or legal disputes, which could significantly impact the insurer’s financial stability if not adequately accounted for.</p>
+<p>Additionally, expected values may <strong>not reflect the full range of possible outcomes</strong>. Insurance claims can vary widely in frequency and severity, and relying solely on averages may overlook <strong>extreme events (tail events) with low probability but high impact</strong>. Ignoring these tail events can lead to underestimation of risk and inadequate pricing of insurance policies.</p>
+<p>In summary, while expected values provide a useful starting point for insurance pricing, they have limitations in capturing the full spectrum of risks and uncertainties. A more comprehensive approach, such as incorporating probability distributions, is necessary to account for variability, tail events, and the probabilistic nature of insurance claims.</p>
+</details>
+</div>
 <div class="tip admonition">
 <p class="admonition-title"><strong>Exercise 1.5</strong></p>
 <p>When determining car insurance premiums, accidents don’t happen the same way for everyone, and their costs can vary. How could using a probability distribution help us capture the range of possible scenarios and their likelihood? Can you explain how considering probabilities might be more informative than just using a single average value when setting premiums?</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 1.5</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>Using a probability distribution in determining car insurance premiums allows us to <strong>capture the range of possible scenarios and their likelihood more effectively</strong>. Unlike relying on a single average value, which provides only a central estimate, a probability distribution accounts for the variability and uncertainty inherent in insurance claims.</p>
+<p>For instance, consider a <strong>probability distribution representing the frequency and severity</strong> of car accidents. By examining the distribution, we can assess the likelihood of various outcomes, such as minor fender benders, moderate collisions, or severe accidents. Each outcome is associated with a probability, reflecting how often it is expected to occur.</p>
+<p>This information is invaluable for insurance companies when setting premiums. Instead of basing premiums solely on the average expected cost of claims, which may not accurately represent the full spectrum of risks, insurers can <strong>use the probability distribution to account for different scenarios</strong>. For example, they can adjust premiums to reflect the likelihood of more frequent but less costly accidents versus rare but more expensive ones.</p>
+<p>Considering probabilities provides a more informative and nuanced approach to setting premiums. It allows insurers to better assess the overall risk associated with insuring different drivers and vehicles. By incorporating probabilities, insurers can <strong>tailor premiums to specific risk profiles</strong>, ensuring that they adequately cover potential claims while remaining competitive in the market.</p>
+<p>In summary, using a probability distribution in determining car insurance premiums enables insurers to capture the variability and uncertainty of accidents more comprehensively. It provides a more informative framework for assessing risk and setting premiums compared to relying solely on a single average value.</p>
+</details>
 </div>
 </section>
 
