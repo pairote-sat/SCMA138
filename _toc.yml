@@ -16,6 +16,7 @@ parts:
     - file: Chapter2_1.ipynb
     - file: Chapter2_1_Part2.ipynb
     - file: Chapter2_1_Exercise.ipynb
+    - file: Chapter2_1_Exercise_Solution.ipynb
   - caption: Bibliography  
     chapters:
     - file: Chapter_Bibliography.ipynb
