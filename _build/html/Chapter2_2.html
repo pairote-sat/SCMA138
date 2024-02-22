@@ -561,7 +561,7 @@ When rolling two six-sided dice, each die has six possible outcomes: 1, 2, 3, 4,
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Outcomes of rolling two six-sided dice:
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die 1: 4 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die 1: 6 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die 2: 4 
@@ -613,10 +613,10 @@ When rolling two six-sided dice, each die has six possible outcomes: 1, 2, 3, 4,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of houses with fire damage: 40 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of houses with fire damage: 53 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Proportion of houses with fire damage: 0.04 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Proportion of houses with fire damage: 0.053 
 </pre></div>
 </div>
 </div>
@@ -750,51 +750,6 @@ When rolling two six-sided dice, each die has six possible outcomes: 1, 2, 3, 4,
 <p>If A and B are mutually exclusive, then</p>
 <div class="math notranslate nohighlight">
 \[P(A \cup B) = P(A) + P(B)\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate rolling two six-sided dice</span>
-<span class="n">die1</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">die2</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="c1"># Display the outcomes and possible outcomes</span>
-<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Outcomes of rolling two six-sided dice:&quot;</span><span class="p">)</span>
-<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Die 1:&quot;</span><span class="p">,</span> <span class="n">die1</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
-<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Die 2:&quot;</span><span class="p">,</span> <span class="n">die2</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
-
-<span class="c1"># Display the possible outcomes for rolling two six-sided dice</span>
-<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Possible outcomes for rolling two six-sided dice:\n&quot;</span><span class="p">)</span>
-<span class="n">outcomes</span> <span class="o">&lt;-</span> <span class="nf">expand.grid</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">,</span> <span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">)</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">outcomes</span><span class="p">))</span> <span class="p">{</span>
-  <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;(&quot;</span><span class="p">,</span> <span class="n">outcomes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="m">1</span><span class="p">],</span> <span class="s">&quot;, &quot;</span><span class="p">,</span> <span class="n">outcomes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="m">2</span><span class="p">],</span> <span class="s">&quot;)&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
-  <span class="nf">if </span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">outcomes</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;, &quot;</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Outcomes of rolling two six-sided dice:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die 1: 1 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die 2: 3 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Possible outcomes for rolling two six-sided dice:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (1, 2), (2, 2), (3, 2), (4, 2), (5, 2), (6, 2), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3), (6, 3), (1, 4), (2, 4), (3, 4), (4, 4), (5, 4), (6, 4), (1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (6, 5), (1, 6), (2, 6), (3, 6), (4, 6), (5, 6), (6, 6)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 </section>
