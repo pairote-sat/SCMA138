@@ -1,0 +1,688 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; SCMA138 Principles of Actuarial Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Quiz1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="SCMA138 Principles of Actuarial Science - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="SCMA138 Principles of Actuarial Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to SCMA 138 Principles of Actuarial Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Actuarial Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Introduction.html"><span style="color: dimgray;"><strong>Chapter 1</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Exercise.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_EndNote.html">End Note for Chapter 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical and Probabilistic Framework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter2.html"><span style="color: dimgray;"><strong>Chapter 2</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Part2.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics (Part 2)</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise.html">Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise_Solution.html">Solutions to Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_2.html"><span style="color: dimgray;"><strong>2.2 Probability Basics</strong></span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliography</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter_Bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FQuiz1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Quiz1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>Question:
+What is the primary role of an actuary, and what types of risks are typically associated with this role?</p>
+<p>Answer:
+The main role of an actuary is to assess and manage financial risks, primarily in the fields of insurance, pensions, and investments. Actuaries use mathematical models to analyze the financial consequences of risk, helping companies and organizations make informed decisions. The types of risks commonly associated with this role include mortality risk (in life insurance), morbidity risk (in health insurance), longevity risk (in pensions), and investment risk (in asset management). Actuaries also deal with various other risks such as catastrophic events, regulatory changes, and economic fluctuations.</p>
+<ul class="simple">
+<li><p><strong>The main role of an actuary is to assess and manage financial risks,</strong> primarily in the fields of insurance, pensions, and investments.</p>
+<ul>
+<li><p>Actuaries use mathematical models to analyze the financial consequences of risk, helping companies and organizations make informed decisions.</p></li>
+<li><p>Types of risks commonly associated with this role include:</p>
+<ul>
+<li><p>Mortality risk (in life insurance)</p></li>
+<li><p>Morbidity risk (in health insurance)</p></li>
+<li><p>Longevity risk (in pensions)</p></li>
+<li><p>Investment risk (in asset management)</p></li>
+</ul>
+</li>
+<li><p>Actuaries also deal with various other risks such as:</p>
+<ul>
+<li><p>Catastrophic events</p></li>
+<li><p>Regulatory changes</p></li>
+<li><p>Economic fluctuations</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Question:
+How does an aging population potentially impact an insurance company’s operations and financial performance?</p>
+<p>Answer:
+An aging population can impact an insurance company in various ways. As individuals age, they may require more healthcare services, leading to higher health insurance claims. Additionally, the increased prevalence of chronic illnesses and age-related conditions can drive up costs for insurers. While mortality risk does increase with age, life insurance premiums are usually adjusted accordingly to mitigate the impact on payouts. However, the demand for other insurance products, such as long-term care insurance, may increase as individuals require assistance with daily activities in their later years. Furthermore, an aging population can affect an insurance company’s investment strategies, as they may need to manage their portfolios more conservatively to ensure stability and liquidity. Overall, the aging population presents both challenges and opportunities for insurance companies, necessitating adjustments in product offerings, pricing, and investment approaches to effectively manage risks and meet the evolving needs of customers.</p>
+<ul class="simple">
+<li><p><strong>Aging population affects insurance companies in various ways:</strong></p>
+<ul>
+<li><p>Increased demand for healthcare services leads to higher health insurance claims.</p></li>
+<li><p>Rising prevalence of chronic illnesses and age-related conditions escalates costs for insurers.</p></li>
+<li><p>Although mortality risk rises with age, life insurance premiums are adjusted to offset potential impacts on payouts.</p></li>
+<li><p>Demand for long-term care insurance may surge as individuals require assistance with daily activities in later years.</p></li>
+<li><p>Aging population influences insurance companies’ investment strategies, prompting more conservative portfolio management for stability and liquidity.</p></li>
+</ul>
+</li>
+<li><p><strong>Overall, the aging population presents both challenges and opportunities for insurance companies:</strong></p>
+<ul>
+<li><p>Necessitates adjustments in product offerings, pricing, and investment approaches.</p></li>
+<li><p>Requires effective risk management to meet evolving customer needs while maintaining financial stability.</p></li>
+</ul>
+</li>
+</ul>
+<p>Question:
+For each of the following tasks in actuarial science, determine whether the analysis requires the application of probability or statistical inference:</p>
+<ol class="arabic simple">
+<li><p>Assessing the likelihood of a policyholder experiencing a certain type of claim within the next year.</p></li>
+<li><p>Evaluating the effectiveness of a new risk management strategy implemented by an insurance company.</p></li>
+<li><p>Estimating the average lifespan of a specific demographic group based on historical data.</p></li>
+<li><p>Calculating the chances of a policyholder renewing their insurance policy at the end of the coverage period.</p></li>
+<li><p>Testing whether there is a significant difference in claims frequency before and after the introduction of a new insurance product.</p></li>
+<li><p>Determining the risk of a catastrophic event, such as a natural disaster, occurring within a given geographic region in the next decade.</p></li>
+</ol>
+<p>Answer:</p>
+<ol class="arabic simple">
+<li><p><strong>Assessing the likelihood of a policyholder experiencing a certain type of claim within the next year.</strong></p>
+<ul class="simple">
+<li><p>Answer: Probability</p></li>
+<li><p>Explanation: This task involves calculating the likelihood of a specific event (a policyholder experiencing a claim) occurring within a defined time frame (the next year). Probability is used to quantify the likelihood of such events happening.</p></li>
+</ul>
+</li>
+<li><p><strong>Evaluating the effectiveness of a new risk management strategy implemented by an insurance company.</strong></p>
+<ul class="simple">
+<li><p>Answer: Statistical Inference</p></li>
+<li><p>Explanation: This task involves comparing data before and after implementing the new risk management strategy to determine if there is a significant difference in outcomes. Statistical inference, such as hypothesis testing, is used to draw conclusions about the effectiveness of the strategy based on sample data.</p></li>
+</ul>
+</li>
+<li><p><strong>Estimating the average lifespan of a specific demographic group based on historical data.</strong></p>
+<ul class="simple">
+<li><p>Answer: Statistical Inference</p></li>
+<li><p>Explanation: This task involves drawing conclusions about a population (the average lifespan of a demographic group) based on sample data (historical lifespan data). Statistical inference techniques, such as confidence interval estimation, are used to estimate population parameters and quantify uncertainty.</p></li>
+</ul>
+</li>
+<li><p><strong>Calculating the chances of a policyholder renewing their insurance policy at the end of the coverage period.</strong></p>
+<ul class="simple">
+<li><p>Answer: Probability</p></li>
+<li><p>Explanation: This task involves quantifying the likelihood of a specific event (policy renewal) occurring based on historical data or other relevant factors. Probability is used to assess the chances of policyholders renewing their policies.</p></li>
+</ul>
+</li>
+<li><p><strong>Testing whether there is a significant difference in claims frequency before and after the introduction of a new insurance product.</strong></p>
+<ul class="simple">
+<li><p>Answer: Statistical Inference</p></li>
+<li><p>Explanation: This task involves comparing data from two different time periods (before and after the introduction of a new insurance product) to determine if there is a significant difference in claims frequency. Statistical inference techniques, such as hypothesis testing, are used to assess whether any observed differences are statistically significant.</p></li>
+</ul>
+</li>
+<li><p><strong>Determining the risk of a catastrophic event, such as a natural disaster, occurring within a given geographic region in the next decade.</strong></p>
+<ul class="simple">
+<li><p>Answer: Probability</p></li>
+<li><p>Explanation: This task involves assessing the risk of a rare event (a catastrophic event) occurring within a specific time frame (the next decade) and geographic area. Probability is used to estimate the likelihood of such events happening based on historical data, geographic factors, and other relevant information.</p></li>
+</ul>
+</li>
+</ol>
+<p>Question:
+For each of the following tasks in actuarial science, match them with the appropriate type of non-probability sampling method, simple random sampling, stratified random sampling, or cluster sampling:</p>
+<ol class="arabic simple">
+<li><p>Assessing the mortality rates of policyholders aged 65 and above in a particular insurance portfolio, sampled randomly from each age group.</p></li>
+<li><p>Estimating the average claim amount for policyholders in different geographic regions, selecting policyholders randomly from each region.</p></li>
+<li><p>Analyzing the distribution of policy durations for a specific insurance product, sampling policyholders randomly from the entire customer base.</p></li>
+<li><p>Evaluating the effectiveness of a new underwriting guideline on a subset of policyholders with high-risk profiles, selecting policyholders based on specific risk assessment criteria.</p></li>
+<li><p>Estimating the proportion of policyholders who have multiple insurance policies with the company, selecting policyholders randomly from the entire customer base.</p></li>
+<li><p>Assessing the satisfaction levels of policyholders with different types of insurance products offered by the company, selecting policyholders randomly from each product category.</p></li>
+<li><p>Determining the risk of a catastrophic event, such as a natural disaster, occurring within a given geographic region in the next decade, selecting geographic regions as clusters and sampling from each cluster.</p></li>
+</ol>
+<p>Answer:</p>
+<ol class="arabic simple">
+<li><p><strong>Assessing the mortality rates of policyholders aged 65 and above in a particular insurance portfolio, sampled randomly from each age group.</strong></p>
+<ul class="simple">
+<li><p><strong>Stratified Random Sampling</strong></p></li>
+<li><p>Explanation: Stratified random sampling divides the population into homogeneous subgroups (age groups in this case) and samples randomly from each subgroup. This ensures representation from each age group, allowing for accurate estimation of mortality rates within each group.</p></li>
+</ul>
+</li>
+<li><p><strong>Estimating the average claim amount for policyholders in different geographic regions, selecting policyholders randomly from each region.</strong></p>
+<ul class="simple">
+<li><p><strong>Stratified Random Sampling</strong></p></li>
+<li><p>Explanation: Similar to the first scenario, stratified random sampling is used here because the population (policyholders) is divided into subgroups (geographic regions) and samples are taken randomly from each subgroup. This approach ensures representation from each region, allowing for accurate estimation of average claim amounts for different regions.</p></li>
+</ul>
+</li>
+<li><p><strong>Analyzing the distribution of policy durations for a specific insurance product, sampling policyholders randomly from the entire customer base.</strong></p>
+<ul class="simple">
+<li><p><strong>Simple Random Sampling</strong></p></li>
+<li><p>Explanation: Simple random sampling involves randomly selecting individuals from the entire population without any stratification. In this scenario, policyholders are sampled randomly from the entire customer base, allowing for an unbiased assessment of the distribution of policy durations for the specific insurance product.</p></li>
+</ul>
+</li>
+<li><p><strong>Evaluating the effectiveness of a new underwriting guideline on a subset of policyholders with high-risk profiles, selecting policyholders based on specific risk assessment criteria.</strong></p>
+<ul class="simple">
+<li><p><strong>Non-probability Sampling Methods</strong></p></li>
+<li><p>Explanation: Non-probability sampling methods involve selecting individuals based on subjective criteria rather than random selection. In this scenario, policyholders are selected purposively based on specific risk assessment criteria, rather than randomly. This approach may introduce bias into the sample, as it does not ensure representation from the entire population.</p></li>
+</ul>
+</li>
+<li><p><strong>Estimating the proportion of policyholders who have multiple insurance policies with the company, selecting policyholders randomly from the entire customer base.</strong></p>
+<ul class="simple">
+<li><p><strong>Simple Random Sampling</strong></p></li>
+<li><p>Explanation: Similar to scenario 3, simple random sampling is used here because policyholders are sampled randomly from the entire customer base without any stratification. This approach ensures an unbiased estimation of the proportion of policyholders with multiple insurance policies.</p></li>
+</ul>
+</li>
+<li><p><strong>Assessing the satisfaction levels of policyholders with different types of insurance products offered by the company, selecting policyholders randomly from each product category.</strong></p>
+<ul class="simple">
+<li><p><strong>Stratified Random Sampling</strong></p></li>
+<li><p>Explanation: Again, stratified random sampling is used because the population (policyholders) is divided into subgroups (product categories) and samples are taken randomly from each subgroup. This approach ensures representation from each product category, allowing for accurate assessment of satisfaction levels across different types of insurance products.</p></li>
+</ul>
+</li>
+<li><p><strong>Determining the risk of a catastrophic event, such as a natural disaster, occurring within a given geographic region in the next decade, selecting geographic regions as clusters and sampling from each cluster.</strong></p>
+<ul class="simple">
+<li><p><strong>Cluster Sampling</strong></p></li>
+<li><p>Explanation: Cluster sampling involves dividing the population into clusters (geographic regions in this case) and sampling from each cluster. This approach is suitable when the population is naturally grouped into clusters, such as geographic regions, and it is impractical or costly to sample individuals from each cluster.</p></li>
+</ul>
+</li>
+</ol>
+<p>Question:</p>
+<p>Given a figure that illustrates the survey by the UTCC’s Center for Economic and Business Forecasting, which surveyed  1,256 respondents across the country from April 2018-2022. Respondents had less than 15,000 baht in monthly income. The survey is conducted annually, except in 2020 when the lockdown prevented the survey from being carried out.</p>
+<ol class="arabic simple">
+<li><p>What is the population?</p></li>
+<li><p>Describe the sample used for this report.</p></li>
+<li><p>Identify the variables used to collect this information.</p></li>
+<li><p>What do you think the expansion of 29.6% in year 2021 means?</p></li>
+</ol>
+<p>Answer:</p>
+<ol class="arabic simple">
+<li><p><strong>What is the population?</strong></p>
+<ul class="simple">
+<li><p>The population refers to all individuals or entities that the survey aims to represent or draw conclusions about. In this case, the population consists of individuals across the country who have a monthly income of less than 15,000 baht.</p></li>
+</ul>
+</li>
+<li><p><strong>Describe the sample used for this report.</strong></p>
+<ul class="simple">
+<li><p>The sample refers to the subset of the population that was surveyed or included in the study. In this survey, the sample consists of 1,256 respondents across the country who met the criteria of having a monthly income of less than 15,000 baht. The survey was conducted annually from April 2018 to 2022, except in 2020 due to lockdown restrictions.</p></li>
+</ul>
+</li>
+<li><p><strong>Identify the variables used to collect this information.</strong></p>
+<ul class="simple">
+<li><p>The variables are the characteristics or factors that were measured or observed in the survey. In this survey, the variables include Total debt (in baht), Expansion (as a percentage), Ratio of formal debt, and Ratio of informal debt. These variables were collected annually from 2018 to 2022.</p></li>
+</ul>
+</li>
+<li><p><strong>What do you think the expansion of amount of debts compared to the previous years means?</strong></p>
+<ul class="simple">
+<li><p>The expansion of the amount of debts, indicated by a 29.6% increase in 2021 compared to 2019, suggests a significant rise in the level of debt compared to previous years. This increase could indicate various economic trends, such as higher borrowing, increased consumption, or changes in lending practices. Further analysis would be necessary to understand the reasons behind this expansion and its potential implications for the surveyed population.</p></li>
+</ul>
+</li>
+</ol>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pairote Satiracoo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
