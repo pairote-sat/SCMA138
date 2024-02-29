@@ -195,6 +195,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><span style="color: dimgray;"><strong>2.2 Probability Basics</strong></span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Chapter2_2_Exercise.html">Exercises for Chapter 2.2</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quiz Zone</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Quiz1.html">Solutions to Quiz 1</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliography</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Chapter_Bibliography.html">Bibliography</a></li>
@@ -413,6 +417,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-illustrative-examples-demonstrating-the-connection-between-empirical-and-theoretical-probabilities-span"><span style="color: dimgray;"><strong>Illustrative Examples Demonstrating the Connection between Empirical and Theoretical Probabilities</strong></span></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-exploring-the-relationship-between-empirical-and-theoretical-probabilities-span"><span style="color: dimgray;"><strong>Exploring the Relationship between Empirical and Theoretical Probabilities</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-convergence-of-empirical-probabilities-with-increasing-trials-span"><span style="color: dimgray;"><strong>Convergence of Empirical Probabilities with Increasing Trials</strong></span></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-probability-properties-span"><span style="color: dimgray;"><strong>Probability Properties</strong></span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><span style="color: dimgray;"><strong>Probability of an Event</strong></span></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-range-of-probability-for-any-event-a-span"><span style="color: dimgray;"><strong>Range of Probability for Any Event <span class="math notranslate nohighlight">\(A\)</span></strong></span></a></li>
@@ -494,7 +502,13 @@ document.write(`
 <p>In auto insurance, one common event of interest is the occurrence of claims, where policyholders request compensation for damages to their vehicles. Let’s relate this example to the key concepts related to events:</p>
 <ol class="arabic simple">
 <li><p><strong>Simple Event</strong>: The occurrence of a single auto insurance claim is a simple event. It represents an individual claim made by a policyholder for damages to their vehicle.</p></li>
+</ol>
+<p>Another example of a simple event could be “Exactly 3 auto insurance claims in a month.”</p>
+<ol class="arabic simple" start="2">
 <li><p><strong>Compound Event</strong>: A compound event could be the occurrence of multiple auto insurance claims within a specific time period, such as a month or a year. This event consists of two or more individual claims.</p></li>
+</ol>
+<p>Another example of a multiple event could be “The occurrence of 2 or more auto insurance claims in a month.”</p>
+<ol class="arabic simple" start="3">
 <li><p><strong>Sample Space</strong>: The sample space consists of all possible outcomes regarding the number of auto insurance claims within the defined time period. For example, if we’re considering the number of claims in a month, the sample space could range from 0 claims to a certain maximum number of claims based on historical data and statistical analysis.</p></li>
 <li><p><strong>Event</strong>: An event could be defined as the occurrence of a specific number of auto insurance claims within the defined time period. For instance, the event ( A ) could represent the occurrence of exactly three claims in a month.</p></li>
 <li><p><strong>Impossible Event</strong>: An impossible event could be the event that no auto insurance claims occur within the defined time period. While unlikely, this event has a probability greater than zero but very close to zero.</p></li>
@@ -561,10 +575,10 @@ When rolling two six-sided dice, each die has six possible outcomes: 1, 2, 3, 4,
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Outcomes of rolling two six-sided dice:
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die 1: 6 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die 1: 5 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die 2: 4 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die 2: 5 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Possible outcomes for rolling two six-sided dice:
@@ -613,10 +627,10 @@ When rolling two six-sided dice, each die has six possible outcomes: 1, 2, 3, 4,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of houses with fire damage: 53 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of houses with fire damage: 47 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Proportion of houses with fire damage: 0.053 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Proportion of houses with fire damage: 0.047 
 </pre></div>
 </div>
 </div>
@@ -633,6 +647,18 @@ When rolling two six-sided dice, each die has six possible outcomes: 1, 2, 3, 4,
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">rbinom()</span></code> function generates random binomial variates, where we set <code class="docutils literal notranslate"><span class="pre">size</span></code> to 1 because each policy is treated as an independent observation, and we’re interested in a single trial (observation) for each policy. The resulting vector of random numbers <code class="docutils literal notranslate"><span class="pre">fire_damage</span></code> consists of 1s, representing fire damage, and 0s, indicating no damage, based on the specified probability <code class="docutils literal notranslate"><span class="pre">fire_prob</span></code>. We repeat this process <code class="docutils literal notranslate"><span class="pre">num_policies</span></code> times to simulate the event for each policy.</p>
 <p>You can adjust the parameters <code class="docutils literal notranslate"><span class="pre">num_policies</span></code> and <code class="docutils literal notranslate"><span class="pre">fire_prob</span></code> to reflect different scenarios and run the simulation multiple times to observe variations in outcomes.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>The Binomial and Bernoulli distributions</strong></p>
+<p>The Binomial distribution and the Bernoulli distribution are closely related concepts in probability theory, often used to model the number of successes in a fixed number of independent Bernoulli trials.</p>
+<p><strong>Bernoulli Distribution</strong>: This distribution represents the outcome of a single Bernoulli trial, which is a random experiment with only two possible outcomes: success (usually denoted as 1) and failure (usually denoted as 0). The Bernoulli distribution is characterized by a single parameter, usually denoted as p, which represents the probability of success. The probability mass function (PMF) of the Bernoulli distribution is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P(X = x) = \begin{cases} p &amp; \text{if } x = 1 \\ 1-p &amp; \text{if } x = 0 \end{cases}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(X\)</span> is the random variable representing the outcome of the Bernoulli trial.</p>
+<p><strong>Binomial Distribution</strong>: The Binomial distribution extends the concept of the Bernoulli distribution to describe the number of successes (or failures) in a fixed number of independent Bernoulli trials. It is characterized by two parameters: <span class="math notranslate nohighlight">\(n\)</span>, the number of trials, and <span class="math notranslate nohighlight">\(p\)</span>, the probability of success in each trial. The probability mass function (PMF) of the Binomial distribution is given by:</p>
+<div class="math notranslate nohighlight">
+\[P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}\]</div>
+<p>where <span class="math notranslate nohighlight">\(X\)</span> is the random variable representing the number of successes, <span class="math notranslate nohighlight">\(k\)</span> is the number of successes (which can range from 0 to <span class="math notranslate nohighlight">\(n\)</span>), <span class="math notranslate nohighlight">\(n\)</span> is the total number of trials, and <span class="math notranslate nohighlight">\(p\)</span> is the probability of success in each trial.</p>
+</div>
 </section>
 <section id="span-style-color-dimgray-probability-of-an-event-span">
 <h2><span style="color: dimgray;"><strong>Probability of an event</strong></span><a class="headerlink" href="#span-style-color-dimgray-probability-of-an-event-span" title="Permalink to this heading">#</a></h2>
@@ -654,7 +680,7 @@ When rolling two six-sided dice, each die has six possible outcomes: 1, 2, 3, 4,
 </section>
 <section id="span-style-color-dimgray-introduction-to-empirical-probability-span">
 <h2><span style="color: dimgray;"><strong>Introduction to Empirical Probability</strong></span><a class="headerlink" href="#span-style-color-dimgray-introduction-to-empirical-probability-span" title="Permalink to this heading">#</a></h2>
-<p><strong>Empirical probability</strong>, also known as <strong>experimental probability</strong>, is a method of determining the likelihood of an event based on observations or experiments. Unlike theoretical probability, which relies on mathematical calculations and assumptions about the underlying probabilities of events, empirical probability is derived from actual data obtained through observation or experimentation.</p>
+<p><strong>Empirical probability</strong>, also known as <strong>experimental probability</strong>, is a method of determining the likelihood of an event based on observations or experiments. Unlike theoretical probability, which relies on mathematical calculations and assumptions about the underlying probabilities of events, <strong>empirical probability is derived from actual data obtained through observation or experimentation</strong>.</p>
 <figure class="align-default" id="figure-theoretical-and-experimental-probability">
 <img alt="_images/Theoretical_and_experimental_probability.png" src="_images/Theoretical_and_experimental_probability.png" />
 <figcaption>
@@ -713,6 +739,98 @@ When rolling two six-sided dice, each die has six possible outcomes: 1, 2, 3, 4,
 <p class="admonition-title"><strong>Law of Large Numbers</strong></p>
 <p>The Law of Large Numbers states that as the number of repetitions in an experiment increases, the ratio of successful outcomes to the total number of trials tends to converge towards the theoretical probability of a single trial’s outcome.</p>
 </div>
+</section>
+</section>
+<section id="span-style-color-dimgray-exploring-the-relationship-between-empirical-and-theoretical-probabilities-span">
+<h2><span style="color: dimgray;"><strong>Exploring the Relationship between Empirical and Theoretical Probabilities</strong></span><a class="headerlink" href="#span-style-color-dimgray-exploring-the-relationship-between-empirical-and-theoretical-probabilities-span" title="Permalink to this heading">#</a></h2>
+<p>In this example, we will demonstrate how the empirical probabilities of rolling a fair six-sided die converge to the theoretical probabilities as the number of trials increases.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the number of trials</span>
+<span class="n">num_trials</span> <span class="o">&lt;-</span> <span class="m">1000</span>
+
+<span class="c1"># Roll a fair six-sided die &#39;num_trials&#39; times</span>
+<span class="n">die_rolls</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">,</span> <span class="n">num_trials</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1"># Calculate empirical probabilities</span>
+<span class="n">empirical_prob</span> <span class="o">&lt;-</span> <span class="nf">table</span><span class="p">(</span><span class="n">die_rolls</span><span class="p">)</span> <span class="o">/</span> <span class="n">num_trials</span>
+
+<span class="c1"># Theoretical probabilities for a fair six-sided die</span>
+<span class="n">theoretical_prob</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="m">6</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span>
+
+<span class="c1"># Output empirical and theoretical probabilities</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;Empirical Probabilities:&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">empirical_prob</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;Theoretical Probabilities:&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">theoretical_prob</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Empirical Probabilities:&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>die_rolls
+    1     2     3     4     5     6 
+0.146 0.185 0.181 0.172 0.170 0.146 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Theoretical Probabilities:&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Result Explanation</strong></p>
+<p>When you run the provided R code, it simulates rolling a fair six-sided die a specified number of times (<code class="docutils literal notranslate"><span class="pre">num_trials</span></code>). The empirical probabilities are calculated by dividing the frequency of each outcome by the total number of trials. The theoretical probabilities for a fair six-sided die are simply 1/6 for each outcome.</p>
+<p>As you increase the number of trials (<code class="docutils literal notranslate"><span class="pre">num_trials</span></code>), you will notice that the empirical probabilities start to converge towards the theoretical probabilities. This convergence demonstrates the <strong>Law of Large Numbers</strong>, which states that as the number of trials increases, the empirical probabilities approach the theoretical probabilities. Thus, this example illustrates the connection between empirical and theoretical probabilities through the experiment of rolling a fair six-sided die multiple times.</p>
+<section id="span-style-color-dimgray-convergence-of-empirical-probabilities-with-increasing-trials-span">
+<h3><span style="color: dimgray;"><strong>Convergence of Empirical Probabilities with Increasing Trials</strong></span><a class="headerlink" href="#span-style-color-dimgray-convergence-of-empirical-probabilities-with-increasing-trials-span" title="Permalink to this heading">#</a></h3>
+<p>In this subsection, we will investigate how the empirical probabilities of rolling a fair six-sided die converge to the theoretical probabilities as the number of trials increases. We will vary the number of trials from 100 to 1000 in increments of 100 and observe the behavior of the empirical probabilities.</p>
+<div class="admonition-example-2-30 admonition">
+<p class="admonition-title"><strong>Example 2.30</strong></p>
+<p>Can you use R to explore how the empirical probabilities of rolling a fair six-sided die approach the theoretical probabilities as you increase the number of trials from 100 to 1000 in increments of 100? Plot the number of trials against the empirical probabilities for each outcome and observe how they converge towards the theoretical probabilities.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize vector to store empirical probabilities</span>
+<span class="n">empirical_probs</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">6</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+
+<span class="c1"># Vary the number of trials from 100 to 1000 in increments of 100</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">num_trials</span> <span class="o">&lt;-</span> <span class="n">i</span> <span class="o">*</span> <span class="m">100</span>
+  
+  <span class="c1"># Roll a fair six-sided die &#39;num_trials&#39; times</span>
+  <span class="n">die_rolls</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">,</span> <span class="n">num_trials</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+  
+  <span class="c1"># Calculate empirical probabilities</span>
+  <span class="n">empirical_prob</span> <span class="o">&lt;-</span> <span class="nf">table</span><span class="p">(</span><span class="n">die_rolls</span><span class="p">)</span> <span class="o">/</span> <span class="n">num_trials</span>
+  
+  <span class="c1"># Store empirical probabilities</span>
+  <span class="n">empirical_probs</span><span class="p">[,</span> <span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">empirical_prob</span>
+<span class="p">}</span>
+
+<span class="c1"># Plot num_trials vs empirical probabilities for each outcome</span>
+<span class="nf">plot</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">1000</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">100</span><span class="p">),</span> <span class="n">empirical_probs</span><span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="p">],</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> 
+     <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Number of Trials&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Empirical Probability&quot;</span><span class="p">,</span> 
+     <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Convergence of Empirical Probabilities (Outcome: 1)&quot;</span><span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">2</span><span class="o">:</span><span class="m">6</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">points</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">1000</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">100</span><span class="p">),</span> <span class="n">empirical_probs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">],</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">i</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">legend</span><span class="p">(</span><span class="s">&quot;topright&quot;</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Outcome 1&quot;</span><span class="p">,</span> <span class="s">&quot;Outcome 2&quot;</span><span class="p">,</span> <span class="s">&quot;Outcome 3&quot;</span><span class="p">,</span> <span class="s">&quot;Outcome 4&quot;</span><span class="p">,</span> <span class="s">&quot;Outcome 5&quot;</span><span class="p">,</span> <span class="s">&quot;Outcome 6&quot;</span><span class="p">),</span> 
+       <span class="n">col</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">,</span> <span class="n">pch</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">bty</span> <span class="o">=</span> <span class="s">&quot;n&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/546d1503af2c74190f96a10de956d40b80d0d0ed6d3627480b3bfebb6182d97d.png" src="_images/546d1503af2c74190f96a10de956d40b80d0d0ed6d3627480b3bfebb6182d97d.png" />
+</div>
+</div>
+<p><strong>Result Explanation</strong></p>
+<p>The provided R code calculates empirical probabilities for rolling a fair six-sided die with varying numbers of trials from 100 to 1000 in increments of 100. It then plots the number of trials against the empirical probabilities for each outcome.</p>
+<p>As you observe the plot, you’ll notice that as the number of trials increases, the empirical probabilities for each outcome converge towards the theoretical probability of 1/6. This convergence is indicative of the Law of Large Numbers, demonstrating that with more trials, the empirical probabilities tend to approach the theoretical probabilities. Each line represents the convergence of empirical probabilities for a specific outcome as the number of trials increases.</p>
 </section>
 </section>
 <section id="span-style-color-dimgray-probability-properties-span">
@@ -837,6 +955,10 @@ When rolling two six-sided dice, each die has six possible outcomes: 1, 2, 3, 4,
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-law-of-large-numbers-span"><span style="color: dimgray;"><strong>Law of large numbers</strong></span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-illustrative-examples-demonstrating-the-connection-between-empirical-and-theoretical-probabilities-span"><span style="color: dimgray;"><strong>Illustrative Examples Demonstrating the Connection between Empirical and Theoretical Probabilities</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-exploring-the-relationship-between-empirical-and-theoretical-probabilities-span"><span style="color: dimgray;"><strong>Exploring the Relationship between Empirical and Theoretical Probabilities</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-convergence-of-empirical-probabilities-with-increasing-trials-span"><span style="color: dimgray;"><strong>Convergence of Empirical Probabilities with Increasing Trials</strong></span></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-probability-properties-span"><span style="color: dimgray;"><strong>Probability Properties</strong></span></a><ul class="nav section-nav flex-column">
