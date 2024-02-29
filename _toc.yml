@@ -18,7 +18,10 @@ parts:
     - file: Chapter2_1_Exercise.ipynb
     - file: Chapter2_1_Exercise_Solution.ipynb
     - file: Chapter2_2.ipynb   
-    - file: Chapter2_2_Exercise.ipynb    
+    - file: Chapter2_2_Exercise.ipynb  
+  - caption: Quiz Zone
+    chapters:
+    - file: Quiz1.ipynb
   - caption: Bibliography  
     chapters:
     - file: Chapter_Bibliography.ipynb
