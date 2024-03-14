@@ -1,0 +1,4 @@
+/* More specific selector */
+body .section-number {
+    color: dimgray !important;
+}
