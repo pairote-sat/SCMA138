@@ -1,0 +1,1051 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>2.3 Probability Distributions &#8212; SCMA138 Principles of Actuarial Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter2_3';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exercises for Chapter 2.3" href="Chapter2_3_Exercise.html" />
+    <link rel="prev" title="Exercises for Chapter 2.2" href="Chapter2_2_Exercise.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="SCMA138 Principles of Actuarial Science - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="SCMA138 Principles of Actuarial Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to SCMA 138 Principles of Actuarial Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Actuarial Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Introduction.html"><span style="color: dimgray;"><strong>Chapter 1</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Exercise.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_EndNote.html">End Note for Chapter 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical and Probabilistic Framework</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter2.html"><span style="color: dimgray;"><strong>Chapter 2</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Part2.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics (Part 2)</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise.html">Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise_Solution.html">Solutions to Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_2.html"><span style="color: dimgray;"><strong>2.2 Probability Basics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_2_Exercise.html">Exercises for Chapter 2.2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><span style="color: dimgray;"><strong>2.3 Probability Distributions</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_3_Exercise.html">Exercises for Chapter 2.3</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quiz Zone</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Quiz1.html">Solutions to Quiz 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliography</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter_Bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html/issues/new?title=Issue%20on%20page%20%2FChapter2_3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Chapter2_3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><span style="color: dimgray;">2.3 Probability Distributions</span></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-random-variables-span"><span style="color: dimgray;"><strong>Random variables</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-types-of-random-variables-span"><span style="color: dimgray;"><strong>Types of Random Variables</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-probability-functions-span"><span style="color: dimgray;"><strong>Probability functions</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-discrete-random-variables-span"><span style="color: dimgray;"><strong>Discrete Random Variables</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-continuous-random-variables-span"><span style="color: dimgray;"><strong>Continuous Random Variables</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-discrete-probability-distributions-span"><span style="color: dimgray;"><strong>Discrete Probability Distributions</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-discrete-uniform-distribution-span"><span style="color: dimgray;"><strong>Discrete uniform distribution</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-poisson-distribution-span"><span style="color: dimgray;"><strong>Poisson distribution</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-binomial-distribution-span"><span style="color: dimgray;"><strong>Binomial distribution</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-expected-value-and-variance-of-a-discrete-random-variable-span"><span style="color: dimgray;"><strong>Expected Value and Variance of a Discrete Random Variable</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-expected-value-and-variance-of-a-continuous-random-variable-span"><span style="color: dimgray;"><strong>Expected Value and Variance of a Continuous Random Variable</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-r-functions-for-probability-distributions-span"><span style="color: dimgray;"><strong>R Functions for Probability Distributions:</strong></span></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="span-style-color-dimgray-2-3-probability-distributions-span">
+<h1><span style="color: dimgray;"><strong>2.3 Probability Distributions</strong></span><a class="headerlink" href="#span-style-color-dimgray-2-3-probability-distributions-span" title="Permalink to this heading">#</a></h1>
+<section id="span-style-color-dimgray-random-variables-span">
+<h2><span style="color: dimgray;"><strong>Random variables</strong></span><a class="headerlink" href="#span-style-color-dimgray-random-variables-span" title="Permalink to this heading">#</a></h2>
+<p><strong>Random variables</strong> are fundamental in probability theory and statistics, representing numerical outcomes of random phenomena.</p>
+<p>In actuarial science, a common example of a random variable is the number of insurance claims received by an insurance company within a certain period, such as a month, denoted as <span class="math notranslate nohighlight">\(X\)</span>.
+This variable can take on different values depending on various factors such as the number of accidents, the severity of accidents, driving conditions, and so on. For example, in a particular month,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X\)</span> could be 0 if there are no accidents reported by policyholders.</p></li>
+<li><p>It could be 1 if only one policyholder files a claim for a minor accident.</p></li>
+<li><p>It could be 2 if there are two separate accidents reported, and so forth.</p></li>
+</ul>
+<p>By defining the variable <span class="math notranslate nohighlight">\(X\)</span> as the number of car insurance claims in a month, we have created a <strong>random variable that captures the variability and uncertainty inherent in the number of claims</strong> an insurance company might receive within a specific period.</p>
+<p>This random variable is essential for actuarial calculations, such as estimating claim frequencies, setting premiums, and determining reserve requirements.</p>
+<div class="tip admonition">
+<p class="admonition-title">Definition</p>
+<p>A random variable is a function that assigns a real number to each outcome in the sample space of a random experiment.</p>
+</div>
+<p>A random variable is like a translator between the real world and numbers. It takes things that can happen, like flipping a coin, and turns them into numbers we can work with.</p>
+<p>For example, if we flip a coin, we could have a random variable called “X” that says “0” if it lands on tails and “1” if it lands on heads. So, instead of dealing with the actual outcomes, we use numbers to represent them, making it easier to do calculations and understand probabilities.</p>
+<div class="admonition-example-2-31-bernoulli-random-variable admonition">
+<p class="admonition-title"><strong>Example 2.31: Bernoulli random variable</strong></p>
+<p>In actuarial science, a common example of a Bernoulli random variable is whether an insurance policyholder makes a claim within a specified period, such as a month. Let us denote this Bernoulli random variable as <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<p>For instance, consider a scenario where a policyholder either makes a claim (<span class="math notranslate nohighlight">\(X = 1\)</span>) or does not make a claim (<span class="math notranslate nohighlight">\(X = 0\)</span>) during a month. Here, <span class="math notranslate nohighlight">\(X\)</span> represents the outcome of a single trial with two possible outcomes: success (making a claim) or failure (not making a claim). This setup fits the definition of a Bernoulli random variable, where the parameter <span class="math notranslate nohighlight">\(p\)</span> represents the probability of success, i.e., the likelihood of a policyholder making a claim within the given period.</p>
+<p>Here, <span class="math notranslate nohighlight">\(X\)</span> is a <strong>discrete random variable</strong> that takes on the values 0 and 1.</p>
+<p>By analyzing the distribution of <span class="math notranslate nohighlight">\(X\)</span>, actuaries can estimate the probability of claim occurrence, crucial for pricing insurance policies, setting reserves, and assessing risk.</p>
+</div>
+<div class="admonition-example-2-32-an-example-of-a-continuous-random-variable admonition">
+<p class="admonition-title"><strong>Example 2.32: An example of a continuous random variable</strong></p>
+<p>An example of a random variable representing waiting time for the next insurance claim in actuarial science can be denoted as <span class="math notranslate nohighlight">\(X\)</span>. In this scenario, <span class="math notranslate nohighlight">\(X\)</span> represents the time interval between consecutive insurance claims, measured in months, days, or any other appropriate unit.</p>
+<p>For instance, suppose a policyholder submits a claim today, and we are interested in the time it takes until the next claim is received. Let us say <span class="math notranslate nohighlight">\(X = 0.5\)</span> if a claim is made after half a month, <span class="math notranslate nohighlight">\(X = 1\)</span> if it takes a month, <span class="math notranslate nohighlight">\(X = 2\)</span> if it takes two months, and so forth.</p>
+<p>Here, <span class="math notranslate nohighlight">\(X\)</span> is a <strong>continuous random variable</strong> defined for all <span class="math notranslate nohighlight">\(X \geq 0\)</span>, as waiting time cannot be negative. Actuaries analyze the distribution of <span class="math notranslate nohighlight">\(X\)</span> to understand the frequency and patterns of claim occurrences over time, aiding in pricing insurance products, estimating reserve amounts, and managing risk.</p>
+</div>
+<section id="span-style-color-dimgray-types-of-random-variables-span">
+<h3><span style="color: dimgray;"><strong>Types of Random Variables</strong></span><a class="headerlink" href="#span-style-color-dimgray-types-of-random-variables-span" title="Permalink to this heading">#</a></h3>
+<p>There are mainly two types of random variables:</p>
+<ol class="arabic simple">
+<li><p><strong>Discrete Random Variables</strong></p>
+<ul class="simple">
+<li><p>Discrete random variables take on a countable number of distinct values.</p></li>
+<li><p>Examples include the number of customers in a queue, the number of defective items in a batch, or the outcome of rolling a die.</p></li>
+</ul>
+</li>
+<li><p><strong>Continuous Random Variables</strong></p>
+<ul class="simple">
+<li><p>Continuous random variables can take on any value within a given range or interval.</p></li>
+<li><p>They are associated with measurements and are often represented by real numbers.</p></li>
+<li><p>Examples include the height of a person, the time taken to complete a task, or the temperature of a room.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="span-style-color-dimgray-probability-functions-span">
+<h2><span style="color: dimgray;"><strong>Probability functions</strong></span><a class="headerlink" href="#span-style-color-dimgray-probability-functions-span" title="Permalink to this heading">#</a></h2>
+<p>Random variables are intimately connected with probability functions, which quantify the likelihood of different outcomes associated with those variables.</p>
+<section id="span-style-color-dimgray-discrete-random-variables-span">
+<h3><span style="color: dimgray;"><strong>Discrete Random Variables</strong></span><a class="headerlink" href="#span-style-color-dimgray-discrete-random-variables-span" title="Permalink to this heading">#</a></h3>
+<p>Discrete random variables, representing outcomes with distinct values, are characterized by probability mass functions (PMFs), providing a systematic way to assign probabilities to each possible outcome.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Probability Mass Function (PMF)</strong></p>
+<p>The probability mass function (PMF), denoted as <span class="math notranslate nohighlight">\(f(x) = P(X = x)\)</span>, provides the probability that a discrete random variable <span class="math notranslate nohighlight">\(X\)</span> takes on a specific value <span class="math notranslate nohighlight">\(x\)</span>. It assigns probabilities to each possible outcome of the random variable.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Cumulative Distribution Function (CDF)</strong></p>
+<p>The cumulative distribution function (CDF), denoted as <span class="math notranslate nohighlight">\(F(x)\)</span>, calculates the probability that a discrete random variable <span class="math notranslate nohighlight">\(X\)</span> is less than or equal to a given value <span class="math notranslate nohighlight">\(x\)</span>. It sums up the probabilities from the PMF up to and including <span class="math notranslate nohighlight">\(x\)</span>, providing a cumulative measure of the distribution. Hence,</p>
+<div class="math notranslate nohighlight">
+\[F(x) = P(X \le x).\]</div>
+</div>
+</section>
+<section id="span-style-color-dimgray-continuous-random-variables-span">
+<h3><span style="color: dimgray;"><strong>Continuous Random Variables</strong></span><a class="headerlink" href="#span-style-color-dimgray-continuous-random-variables-span" title="Permalink to this heading">#</a></h3>
+<p>Continuous random variables, on the other hand, are associated with probability density functions (PDFs), which describe the relative likelihood of the variable taking on different values within a continuous range.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Probability Density Function (PDF)</strong></p>
+<p>The probability density function (PDF), denoted as <span class="math notranslate nohighlight">\(f(x)\)</span>, represents the density of probability for a continuous random variable <span class="math notranslate nohighlight">\(X\)</span> over a range of values. Unlike the PMF, which provides probabilities for individual outcomes, the PDF describes the relative likelihood of the variable falling within specific intervals.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Cumulative Distribution Function (CDF)</strong></p>
+<p>The cumulative distribution function (CDF), denoted as <span class="math notranslate nohighlight">\(F(x)\)</span>, calculates the probability that a continuous random variable <span class="math notranslate nohighlight">\(X\)</span> is less than or equal to a given value <span class="math notranslate nohighlight">\(x\)</span>. It integrates the PDF from negative infinity up to <span class="math notranslate nohighlight">\(x\)</span>, providing a cumulative measure of the distribution.</p>
+<div class="math notranslate nohighlight">
+\[F(x) = \int_{-\infty}^{x} f(t) \, dt\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(F(x)\)</span> represents the probability that the random variable <span class="math notranslate nohighlight">\(X\)</span> is less than or equal to a given value <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(f(x)\)</span> is the PDF of <span class="math notranslate nohighlight">\(X\)</span>. The integral is taken over all values from negative infinity up to <span class="math notranslate nohighlight">\(x\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="span-style-color-dimgray-discrete-probability-distributions-span">
+<h2><span style="color: dimgray;"><strong>Discrete Probability Distributions</strong></span><a class="headerlink" href="#span-style-color-dimgray-discrete-probability-distributions-span" title="Permalink to this heading">#</a></h2>
+<section id="span-style-color-dimgray-discrete-uniform-distribution-span">
+<h3><span style="color: dimgray;"><strong>Discrete uniform distribution</strong></span><a class="headerlink" href="#span-style-color-dimgray-discrete-uniform-distribution-span" title="Permalink to this heading">#</a></h3>
+<div class="admonition-example-2-33-discrete-uniform-distribution admonition">
+<p class="admonition-title"><strong>Example 2.33: Discrete uniform distribution</strong></p>
+<p>Consider the scenario of rolling a fair six-sided die. The outcome of this experiment follows a <strong>discrete uniform distribution</strong>, where each outcome has an equal probability of occurrence.</p>
+<p><strong>Table of Possible Values and Probabilities:</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Outcome (<span class="math notranslate nohighlight">\(x\)</span>)</p></th>
+<th class="head"><p>Probability (<span class="math notranslate nohighlight">\(P(X=x)\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1/6</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>1/6</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>1/6</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>1/6</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>1/6</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>1/6</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Visualization:</strong>
+The probability mass function (PMF) represents the probabilities associated with each possible outcome. In this case, it would be a <strong>histogram</strong> or <strong>bar plot</strong> where the height of each bar corresponds to the probability of the corresponding outcome.</p>
+<p>The cumulative distribution function (CDF) shows the cumulative probability up to each possible outcome. It starts at zero and increases step by step as we move through the possible outcomes.</p>
+<p><strong>R Code:</strong></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the outcomes and their corresponding probabilities</span>
+<span class="n">outcomes</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">6</span>
+<span class="n">probabilities</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="m">6</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span>
+
+<span class="c1"># Visualize PMF</span>
+<span class="nf">barplot</span><span class="p">(</span><span class="n">probabilities</span><span class="p">,</span> <span class="n">names.arg</span> <span class="o">=</span> <span class="n">outcomes</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Outcome&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Probability&quot;</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Probability Mass Function&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate CDF</span>
+<span class="n">cdf</span> <span class="o">&lt;-</span> <span class="nf">cumsum</span><span class="p">(</span><span class="n">probabilities</span><span class="p">)</span>
+
+<span class="c1"># Visualize CDF</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">outcomes</span><span class="p">,</span> <span class="n">cdf</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;s&quot;</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Outcome&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Cumulative Probability&quot;</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Cumulative Distribution Function&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/45a2c0c5c0503ba6f6828e769d08def0392bbbcec796d801c7125d2bd37ee7fd.png" src="_images/45a2c0c5c0503ba6f6828e769d08def0392bbbcec796d801c7125d2bd37ee7fd.png" />
+<img alt="_images/ce2a06c7264f31bb9738414bbfaf9d71f193ffac21ddb5874005c63d308948ac.png" src="_images/ce2a06c7264f31bb9738414bbfaf9d71f193ffac21ddb5874005c63d308948ac.png" />
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In R’s <code class="docutils literal notranslate"><span class="pre">plot()</span></code> function, the <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter specifies the type of plot to be drawn. Here are some common options:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;p&quot;</span></code>: Points (scatter plot)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;l&quot;</span></code>: Lines</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code>: Both points and lines</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;o&quot;</span></code>: Overplotted points and lines</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;h&quot;</span></code>: Histogram-like vertical lines</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;s&quot;</span></code>: Stairs (step function)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;n&quot;</span></code>: No plotting</p></li>
+</ul>
+<p>For example, using <code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">=</span> <span class="pre">&quot;s&quot;</span></code> will create a step function plot.</p>
+</div>
+<p>The provided R code generates a plot representing the cumulative distribution function (CDF) for a discrete random variable. The plot consists of a step function where each step is represented by a horizontal line segment, extending from the left endpoint to the right endpoint of each step. Additionally, dots are placed at the left endpoints of the steps, and circles with holes are placed at the right endpoints. Furthermore, the plot extends the horizontal line segment from (6,1) to (7,1), representing the fact that the cumulative probability remains at 1 beyond the sixth outcome.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the outcomes and their corresponding probabilities</span>
+<span class="n">outcomes</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">6</span>
+<span class="n">probabilities</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="m">6</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span>
+
+<span class="c1"># Calculate CDF</span>
+<span class="n">cdf</span> <span class="o">&lt;-</span> <span class="nf">cumsum</span><span class="p">(</span><span class="n">probabilities</span><span class="p">)</span>
+
+<span class="c1"># Create an empty plot with specified x-axis and y-axis limits</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">outcomes</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;n&quot;</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Outcome&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Cumulative Probability&quot;</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Cumulative Distribution Function&quot;</span><span class="p">,</span> <span class="n">xlim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">7</span><span class="p">),</span> <span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
+
+<span class="c1"># Add the step function with segments of horizontal lines</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">outcomes</span><span class="p">)</span><span class="m">-1</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nf">segments</span><span class="p">(</span><span class="n">outcomes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">cdf</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">outcomes</span><span class="p">[</span><span class="n">i</span><span class="m">+1</span><span class="p">],</span> <span class="n">cdf</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lwd</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="c1"># Horizontal lines</span>
+<span class="p">}</span>
+
+<span class="c1"># Add dots at the left ends of each step</span>
+<span class="nf">points</span><span class="p">(</span><span class="n">outcomes</span><span class="p">,</span> <span class="n">cdf</span><span class="p">,</span> <span class="n">pch</span> <span class="o">=</span> <span class="m">19</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">1.5</span><span class="p">)</span> <span class="c1"># Dot (pch = 19)</span>
+
+<span class="c1"># Add circles at the right ends of each step</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">outcomes</span><span class="p">)</span><span class="m">-1</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nf">points</span><span class="p">(</span><span class="n">outcomes</span><span class="p">[</span><span class="n">i</span><span class="m">+1</span><span class="p">],</span> <span class="n">cdf</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pch</span> <span class="o">=</span> <span class="m">21</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">1.5</span><span class="p">)</span> <span class="c1"># Circle with hole (pch = 21)</span>
+<span class="p">}</span>
+
+<span class="c1"># Draw a horizontal line extended from (6,1)</span>
+<span class="nf">segments</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6918ce6d854d424c96c9c754df57103b5eeacf76860a6e740be4b6fec183fd84.png" src="_images/6918ce6d854d424c96c9c754df57103b5eeacf76860a6e740be4b6fec183fd84.png" />
+</div>
+</div>
+</section>
+<section id="span-style-color-dimgray-poisson-distribution-span">
+<h3><span style="color: dimgray;"><strong>Poisson distribution</strong></span><a class="headerlink" href="#span-style-color-dimgray-poisson-distribution-span" title="Permalink to this heading">#</a></h3>
+<div class="admonition-example-2-34-discrete-uniform-distribution-poisson-distribution-for-number-of-claims admonition">
+<p class="admonition-title"><strong>Example 2.34: Discrete uniform distribution: Poisson Distribution for Number of Claims</strong></p>
+<p>In insurance, the number of claims that arise up to a given time period can often be modeled using the Poisson distribution. This distribution is commonly used when dealing with count data, such as the number of accidents, claims, or arrivals in a fixed interval of time or space.</p>
+<p><strong>Probability Mass Function (PMF) and Cumulative Distribution Function (CDF)</strong></p>
+<p>The probability mass function (PMF) of the Poisson distribution is given by:</p>
+<div class="math notranslate nohighlight">
+\[P(X = k) = \frac{e^{-\lambda} \lambda^k}{k!}\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X\)</span> is the random variable representing the number of claims,</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> is a non-negative integer representing the number of claims,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> is the average rate of claims occurring per unit time.</p></li>
+</ul>
+<p>The cumulative distribution function (CDF) of the Poisson distribution can be calculated as:</p>
+<div class="math notranslate nohighlight">
+\[F(X \leq k) = \sum_{i=0}^{k} \frac{e^{-\lambda} \lambda^i}{i!}\]</div>
+<p><strong>Example Table of Possible Values and Probabilities</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number of Claims (<span class="math notranslate nohighlight">\(k\)</span>)</p></th>
+<th class="head"><p>Probability (<span class="math notranslate nohighlight">\(P(X = k)\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(e^{-\lambda}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{e^{-\lambda} \lambda}{1!}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{e^{-\lambda} \lambda^2}{2!}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Visualizing PMF and CDF</strong></p>
+<p>You can visualize the PMF by plotting the probabilities of different numbers of claims on a bar chart. For the CDF, you can plot the cumulative probabilities against the number of claims.</p>
+<p><strong>R Code Example</strong></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to calculate PMF for Poisson distribution</span>
+<span class="n">pmf_poisson</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">lambda</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">return</span><span class="p">(</span><span class="nf">exp</span><span class="p">(</span><span class="o">-</span><span class="n">lambda</span><span class="p">)</span> <span class="o">*</span> <span class="n">lambda</span><span class="o">^</span><span class="n">k</span> <span class="o">/</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="c1"># Function to calculate CDF for Poisson distribution</span>
+<span class="n">cdf_poisson</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">lambda</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">cdf</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="nf">length</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+  <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">k</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">cdf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="nf">pmf_poisson</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lambda</span><span class="p">))</span>
+  <span class="p">}</span>
+  <span class="nf">return</span><span class="p">(</span><span class="n">cdf</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1"># Define parameters</span>
+<span class="n">lambda</span> <span class="o">&lt;-</span> <span class="m">3</span>
+<span class="n">k</span> <span class="o">&lt;-</span> <span class="m">0</span><span class="o">:</span><span class="m">5</span>
+
+<span class="c1"># Calculate PMF</span>
+<span class="n">pmf_values</span> <span class="o">&lt;-</span> <span class="nf">pmf_poisson</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">lambda</span><span class="p">)</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;PMF Values:&quot;</span><span class="p">,</span> <span class="n">pmf_values</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate CDF</span>
+<span class="n">cdf_values</span> <span class="o">&lt;-</span> <span class="nf">cdf_poisson</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">lambda</span><span class="p">)</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;CDF Values:&quot;</span><span class="p">,</span> <span class="n">cdf_values</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot PMF</span>
+<span class="nf">barplot</span><span class="p">(</span><span class="n">pmf_values</span><span class="p">,</span> <span class="n">names.arg</span> <span class="o">=</span> <span class="n">k</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Number of Claims (k)&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Probability&quot;</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;PMF of Poisson Distribution&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot CDF</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">cdf_values</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;s&quot;</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Number of Claims (k)&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Cumulative Probability&quot;</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;CDF of Poisson Distribution&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PMF Values: 0.04978707 0.1493612 0.2240418 0.2240418 0.1680314 0.1008188 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CDF Values: 0.04978707 0.1991483 0.4231901 0.6472319 0.8152632 0.9160821 
+</pre></div>
+</div>
+<img alt="_images/616b861bda468831a34f36c0f02db09834d6b1cc58a4ff2afd449de2da9e8c4c.png" src="_images/616b861bda468831a34f36c0f02db09834d6b1cc58a4ff2afd449de2da9e8c4c.png" />
+<img alt="_images/aa1b20e92ad834e69f5393d8cc07a80702f2c9ef2bf63af6b5315f971433c905.png" src="_images/aa1b20e92ad834e69f5393d8cc07a80702f2c9ef2bf63af6b5315f971433c905.png" />
+</div>
+</div>
+</section>
+<section id="span-style-color-dimgray-binomial-distribution-span">
+<h3><span style="color: dimgray;"><strong>Binomial distribution</strong></span><a class="headerlink" href="#span-style-color-dimgray-binomial-distribution-span" title="Permalink to this heading">#</a></h3>
+<p><strong>Discrete Probability Distribution Example: Binomial Distribution in Actuarial Science</strong></p>
+<p>In actuarial science, the Binomial distribution is often used to model the number of successful outcomes in a fixed number of independent Bernoulli trials. It’s applicable in scenarios such as the number of travel insurance policies that result in at most one claim.</p>
+<p><strong>Probability Mass Function (PMF) and Cumulative Distribution Function (CDF)</strong></p>
+<p>The probability mass function (PMF) of the Binomial distribution is given by:</p>
+<div class="math notranslate nohighlight">
+\[ P(X = k) = {n \choose k} p^k (1 - p)^{n - k} \]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X\)</span> is the random variable representing the number of policies resulting in at most one claim,</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> is a non-negative integer representing the number of policies resulting in at most one claim,</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> is the total number of travel insurance policies,</p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> is the probability that a policy results in at most one claim.</p></li>
+</ul>
+<p>The cumulative distribution function (CDF) of the Binomial distribution can be calculated using the formula:</p>
+<div class="math notranslate nohighlight">
+\[ F(X \leq k) = \sum_{i=0}^{k} {n \choose i} p^i (1 - p)^{n - i} \]</div>
+<p><strong>Example Table of Possible Values and Probabilities</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Policies Resulting in at most One Claim (<span class="math notranslate nohighlight">\(k\)</span>)</p></th>
+<th class="head"><p>Probability (<span class="math notranslate nohighlight">\(P(X = k)\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\((1 - p)^n\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\({n \choose 1} p (1 - p)^{n - 1}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\({n \choose 2} p^2 (1 - p)^{n - 2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Visualizing PMF and CDF</strong></p>
+<p>You can visualize the PMF by plotting the probabilities of different numbers of policies resulting in at most one claim on a bar chart. For the CDF, you can plot the cumulative probabilities against the number of policies resulting in at most one claim.</p>
+<p><strong>R Code Example</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example R code for Binomial distribution</span>
+<span class="n">n</span> <span class="o">&lt;-</span> <span class="m">10</span>  <span class="c1"># Number of trials</span>
+<span class="n">p</span> <span class="o">&lt;-</span> <span class="m">0.3</span>  <span class="c1"># Probability of success in each trial</span>
+<span class="n">k_values</span> <span class="o">&lt;-</span> <span class="m">0</span><span class="o">:</span><span class="n">n</span>  <span class="c1"># Number of successes</span>
+<span class="n">pmf</span> <span class="o">&lt;-</span> <span class="nf">dbinom</span><span class="p">(</span><span class="n">k_values</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">p</span><span class="p">)</span>  <span class="c1"># Probability Mass Function</span>
+<span class="n">cdf</span> <span class="o">&lt;-</span> <span class="nf">pbinom</span><span class="p">(</span><span class="n">k_values</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">p</span><span class="p">)</span>  <span class="c1"># Cumulative Distribution Function</span>
+
+<span class="c1"># Plotting PMF</span>
+<span class="nf">barplot</span><span class="p">(</span><span class="n">pmf</span><span class="p">,</span> <span class="n">names.arg</span> <span class="o">=</span> <span class="n">k_values</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Number of Successes&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Probability&quot;</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Binomial PMF&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plotting CDF</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">k_values</span><span class="p">,</span> <span class="n">cdf</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;s&quot;</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Number of Successes&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Cumulative Probability&quot;</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Binomial CDF&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6c3b87fd09b057f5057f01bdd639e881ce541cbaa9792b834f90541fc8217df7.png" src="_images/6c3b87fd09b057f5057f01bdd639e881ce541cbaa9792b834f90541fc8217df7.png" />
+<img alt="_images/3bf36a2771b7e7ab294edba208af8586df6eef94915f66c52959c9912623d4be.png" src="_images/3bf36a2771b7e7ab294edba208af8586df6eef94915f66c52959c9912623d4be.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="span-style-color-dimgray-expected-value-and-variance-of-a-discrete-random-variable-span">
+<h2><span style="color: dimgray;"><strong>Expected Value and Variance of a Discrete Random Variable</strong></span><a class="headerlink" href="#span-style-color-dimgray-expected-value-and-variance-of-a-discrete-random-variable-span" title="Permalink to this heading">#</a></h2>
+<p>When dealing with random variables, understanding their <strong>expected value</strong> and <strong>variance</strong> is crucial for making predictions and analyzing outcomes. The expected value, denoted by <span class="math notranslate nohighlight">\( \mu \)</span> or <span class="math notranslate nohighlight">\( E(X) \)</span>, represents the average value we anticipate from a random variable. Similarly, variance, denoted by <span class="math notranslate nohighlight">\( \sigma^2 \)</span> or <span class="math notranslate nohighlight">\( Var(X) \)</span>, measures how much the values of the random variable tend to deviate from the expected value.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Expected value</strong></p>
+<p>The expected value <span class="math notranslate nohighlight">\( \mu \)</span> or <span class="math notranslate nohighlight">\( E(X) \)</span> of a discrete random variable <span class="math notranslate nohighlight">\( X \)</span> with probability mass function <span class="math notranslate nohighlight">\( P(X) \)</span> is calculated as:</p>
+<div class="math notranslate nohighlight">
+\[ \mu = E(X) = \sum_{x} x \cdot P(X = x) \]</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Variance</strong></p>
+<p>The variance <span class="math notranslate nohighlight">\( \sigma^2 \)</span> or <span class="math notranslate nohighlight">\( Var(X) \)</span> of the same random variable is given by:</p>
+<div class="math notranslate nohighlight">
+\[ \sigma^2 = Var(X) = \sum_{x} (x - \mu)^2 \cdot P(X = x) \]</div>
+</div>
+<div class="admonition-example-2-35-calculation-of-expected-value-and-variance admonition">
+<p class="admonition-title"><strong>Example 2.35: Calculation of expected value and variance</strong></p>
+<p>Consider the scenario of rolling a fair six-sided die. Let <span class="math notranslate nohighlight">\( X \)</span> be the random variable representing the outcome of the roll.</p>
+<p>The probability mass function for a fair six-sided die is <span class="math notranslate nohighlight">\( P(X = x) = \frac{1}{6} \)</span> for <span class="math notranslate nohighlight">\( x = 1, 2, 3, 4, 5, \)</span> and <span class="math notranslate nohighlight">\( 6 \)</span>.</p>
+<p><strong>Expected Value:</strong></p>
+<div class="math notranslate nohighlight">
+\[ \mu = E(X) = \sum_{x=1}^{6} x \cdot \frac{1}{6} = \frac{1}{6} (1 + 2 + 3 + 4 + 5 + 6) = \frac{21}{6} = 3.5 \]</div>
+<p>So, the expected value of rolling a fair six-sided die is <span class="math notranslate nohighlight">\( 3.5 \)</span>.</p>
+<p><strong>Variance:</strong></p>
+<div class="math notranslate nohighlight">
+\[ \sigma^2 = Var(X) = \sum_{x=1}^{6} (x - 3.5)^2 \cdot \frac{1}{6} \]</div>
+<div class="math notranslate nohighlight">
+\[ = \frac{1}{6} \left( (1-3.5)^2 + (2-3.5)^2 + (3-3.5)^2 + (4-3.5)^2 + (5-3.5)^2 + (6-3.5)^2 \right) \]</div>
+<div class="math notranslate nohighlight">
+\[ = \frac{1}{6} \left(6.25 +  2.25 +  0.25 + 0.25 + 2.25 + 6.25 \right) \]</div>
+<div class="math notranslate nohighlight">
+\[ = \frac{17.5}{6} = 2.916667\]</div>
+<p>So, the variance of rolling a fair six-sided die is <span class="math notranslate nohighlight">\( 2.916667 \)</span>.</p>
+</div>
+</section>
+<section id="span-style-color-dimgray-expected-value-and-variance-of-a-continuous-random-variable-span">
+<h2><span style="color: dimgray;"><strong>Expected Value and Variance of a Continuous Random Variable</strong></span><a class="headerlink" href="#span-style-color-dimgray-expected-value-and-variance-of-a-continuous-random-variable-span" title="Permalink to this heading">#</a></h2>
+<p>Understanding the expected value and variance of continuous random variables is essential for analyzing processes where outcomes vary continuously, with the expected value representing the average outcome we anticipate, denoted by
+<span class="math notranslate nohighlight">\( \mu \)</span> or <span class="math notranslate nohighlight">\( E(X) \)</span>, and variance indicating the degree of deviation from this expected value, denoted by <span class="math notranslate nohighlight">\( \sigma^2 \)</span> or <span class="math notranslate nohighlight">\( Var(X) \)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Formulas</strong></p>
+<p>The expected value <span class="math notranslate nohighlight">\( \mu \)</span> or <span class="math notranslate nohighlight">\( E(X) \)</span> of a continuous random variable <span class="math notranslate nohighlight">\( X \)</span> with probability density function <span class="math notranslate nohighlight">\( f(x) \)</span> is calculated as:</p>
+<div class="math notranslate nohighlight">
+\[ \mu = E(X) = \int_{-\infty}^{\infty} x \cdot f(x) \, dx \]</div>
+<p>And the variance <span class="math notranslate nohighlight">\( \sigma^2 \)</span> or <span class="math notranslate nohighlight">\( Var(X) \)</span> of the same continuous random variable is given by:</p>
+<div class="math notranslate nohighlight">
+\[ \sigma^2 = Var(X) = \int_{-\infty}^{\infty} (x - \mu)^2 \cdot f(x) \, dx \]</div>
+</div>
+<div class="admonition-example-2-36-calculation-of-expected-value-and-variance admonition">
+<p class="admonition-title"><strong>Example 2.36: Calculation of expected value and variance</strong></p>
+<p>Consider the scenario where we model the time between insurance claims using the Exponential distribution. The Exponential distribution is commonly used to represent the waiting time until the occurrence of a continuous event. Let <span class="math notranslate nohighlight">\( X \)</span> be the continuous random variable representing the time between claims.</p>
+<p>For the Exponential distribution, the probability density function is given by:</p>
+<div class="math notranslate nohighlight">
+\[ f(x; \lambda) = \lambda e^{-\lambda x} \]</div>
+<p>where <span class="math notranslate nohighlight">\( \lambda &gt; 0 \)</span> is the rate parameter.</p>
+<p>Suppose we have an insurance company with an average of 2 claims per day. We can model the time between claims with an Exponential distribution with <span class="math notranslate nohighlight">\( \lambda = 2 \)</span>.</p>
+<p><strong>Expected Value:</strong></p>
+<div class="math notranslate nohighlight">
+\[ \mu = E(X) = \int_{0}^{\infty} x \cdot \lambda e^{-\lambda x} \, dx \]</div>
+<div class="math notranslate nohighlight">
+\[ = \int_{0}^{\infty} x \cdot 2 e^{-2x} \, dx \]</div>
+<div class="math notranslate nohighlight">
+\[ = \left[ -x e^{-2x} \right]_{0}^{\infty} + \int_{0}^{\infty}  e^{-2x} \, dx \]</div>
+<div class="math notranslate nohighlight">
+\[ = \left[ -x e^{-2x} - \frac{1}{2} e^{-2x} \right]_{0}^{\infty} \]</div>
+<div class="math notranslate nohighlight">
+\[ = 0 - \left( 0 - \frac{1}{2} \right) = \frac{1}{2} \]</div>
+<p>So, the expected value of the time between claims is <span class="math notranslate nohighlight">\( \frac{1}{2} \)</span> days.</p>
+<p><strong>Variance:</strong></p>
+<div class="math notranslate nohighlight">
+\[ \sigma^2 = Var(X) = \int_{0}^{\infty} (x - \frac{1}{2})^2 \cdot 2 e^{-2x} \, dx \]</div>
+<div class="math notranslate nohighlight">
+\[ = \left[ -\frac{1}{4}(4x^2 + 1) e^{-2x} \right]_{0}^{\infty} \]</div>
+<div class="math notranslate nohighlight">
+\[ = \frac{1}{4}. \]</div>
+<p>So, the variance of the time between claims is <span class="math notranslate nohighlight">\( \frac{1}{4} \)</span> days squared.</p>
+</div>
+</section>
+<section id="span-style-color-dimgray-r-functions-for-probability-distributions-span">
+<h2><span style="color: dimgray;"><strong>R Functions for Probability Distributions:</strong></span><a class="headerlink" href="#span-style-color-dimgray-r-functions-for-probability-distributions-span" title="Permalink to this heading">#</a></h2>
+<p>In R, various functions are available for working with probability distributions.</p>
+<p>For the Poisson distribution with parameter <span class="math notranslate nohighlight">\(\lambda\)</span>, the density function <span class="math notranslate nohighlight">\(P(X = x)\)</span>, distribution function <span class="math notranslate nohighlight">\(P(X \leq x)\)</span>, quantile function (inverse cumulative distribution function), and random generation are provided as follows:</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Poisson Distribution:</strong></p>
+<ul class="simple">
+<li><p><strong>Poisson Distribution:</strong></p>
+<ul>
+<li><p>Density function: <code class="docutils literal notranslate"><span class="pre">dpois(x,</span> <span class="pre">lambda,</span> <span class="pre">log</span> <span class="pre">=</span> <span class="pre">FALSE)</span></code>: Computes the probability density function for the Poisson distribution at the specified values of <span class="math notranslate nohighlight">\(x\)</span> with parameter <span class="math notranslate nohighlight">\(\lambda\)</span>.</p></li>
+<li><p>Distribution function: <code class="docutils literal notranslate"><span class="pre">ppois(q,</span> <span class="pre">lambda,</span> <span class="pre">lower.tail</span> <span class="pre">=</span> <span class="pre">TRUE,</span> <span class="pre">log.p</span> <span class="pre">=</span> <span class="pre">FALSE)</span></code>: Computes the cumulative distribution function for the Poisson distribution at the specified quantiles <span class="math notranslate nohighlight">\(q\)</span> with parameter <span class="math notranslate nohighlight">\(\lambda\)</span>.</p></li>
+<li><p>Quantile function (inverse c.d.f.): <code class="docutils literal notranslate"><span class="pre">qpois(p,</span> <span class="pre">lambda,</span> <span class="pre">lower.tail</span> <span class="pre">=</span> <span class="pre">TRUE,</span> <span class="pre">log.p</span> <span class="pre">=</span> <span class="pre">FALSE)</span></code>: Computes the quantile function (inverse cumulative distribution function) for the Poisson distribution at the specified probabilities <span class="math notranslate nohighlight">\(p\)</span> with parameter <span class="math notranslate nohighlight">\(\lambda\)</span>.</p></li>
+<li><p>Random generation: <code class="docutils literal notranslate"><span class="pre">rpois(n,</span> <span class="pre">lambda)</span></code>: Generates random deviates from the Poisson distribution with parameter <span class="math notranslate nohighlight">\(\lambda\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>For the Binomial distribution with parameters <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span>, similar functions are available:</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Binomial Distribution:</strong></p>
+<ul class="simple">
+<li><p><strong>Binomial Distribution:</strong></p>
+<ul>
+<li><p>Density function: <code class="docutils literal notranslate"><span class="pre">dbinom(x,</span> <span class="pre">size,</span> <span class="pre">prob,</span> <span class="pre">log</span> <span class="pre">=</span> <span class="pre">FALSE)</span></code>: Computes the probability mass function for the Binomial distribution at the specified values of <span class="math notranslate nohighlight">\(x\)</span> with parameters <span class="math notranslate nohighlight">\(n\)</span> (size) and <span class="math notranslate nohighlight">\(p\)</span> (probability of success).</p></li>
+<li><p>Distribution function: <code class="docutils literal notranslate"><span class="pre">pbinom(q,</span> <span class="pre">size,</span> <span class="pre">prob,</span> <span class="pre">lower.tail</span> <span class="pre">=</span> <span class="pre">TRUE,</span> <span class="pre">log.p</span> <span class="pre">=</span> <span class="pre">FALSE)</span></code>: Computes the cumulative distribution function for the Binomial distribution at the specified quantiles <span class="math notranslate nohighlight">\(q\)</span> with parameters <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span>.</p></li>
+<li><p>Quantile function (inverse c.d.f.): <code class="docutils literal notranslate"><span class="pre">qbinom(p,</span> <span class="pre">size,</span> <span class="pre">prob,</span> <span class="pre">lower.tail</span> <span class="pre">=</span> <span class="pre">TRUE,</span> <span class="pre">log.p</span> <span class="pre">=</span> <span class="pre">FALSE)</span></code>: Computes the quantile function (inverse cumulative distribution function) for the Binomial distribution at the specified probabilities <span class="math notranslate nohighlight">\(p\)</span> with parameters <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span>.</p></li>
+<li><p>Random generation: <code class="docutils literal notranslate"><span class="pre">rbinom(n,</span> <span class="pre">size,</span> <span class="pre">prob)</span></code>: Generates random deviates from the Binomial distribution with parameters <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Similarly, for the Normal distribution:</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Normal Distribution:</strong></p>
+<ul class="simple">
+<li><p><strong>Normal Distribution:</strong></p>
+<ul>
+<li><p>Density function: <code class="docutils literal notranslate"><span class="pre">dnorm(x,</span> <span class="pre">mean</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">sd</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">log</span> <span class="pre">=</span> <span class="pre">FALSE)</span></code>: Computes the probability density function for the Normal distribution at the specified values of <span class="math notranslate nohighlight">\(x\)</span> with parameters <span class="math notranslate nohighlight">\(\mu\)</span> (mean) and <span class="math notranslate nohighlight">\(\sigma\)</span> (standard deviation).</p></li>
+<li><p>Distribution function: <code class="docutils literal notranslate"><span class="pre">pnorm(q,</span> <span class="pre">mean</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">sd</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">lower.tail</span> <span class="pre">=</span> <span class="pre">TRUE,</span> <span class="pre">log.p</span> <span class="pre">=</span> <span class="pre">FALSE)</span></code>: Computes the cumulative distribution function for the Normal distribution at the specified quantiles <span class="math notranslate nohighlight">\(q\)</span> with parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>.</p></li>
+<li><p>Quantile function (inverse c.d.f.): <code class="docutils literal notranslate"><span class="pre">qnorm(p,</span> <span class="pre">mean</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">sd</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">lower.tail</span> <span class="pre">=</span> <span class="pre">TRUE,</span> <span class="pre">log.p</span> <span class="pre">=</span> <span class="pre">FALSE)</span></code>: Computes the quantile function (inverse cumulative distribution function) for the Normal distribution at the specified probabilities <span class="math notranslate nohighlight">\(p\)</span> with parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>.</p></li>
+<li><p>Random generation: <code class="docutils literal notranslate"><span class="pre">rnorm(n,</span> <span class="pre">mean</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">sd</span> <span class="pre">=</span> <span class="pre">1)</span></code>: Generates random deviates from the Normal distribution with parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Chapter2_2_Exercise.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercises for Chapter 2.2</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Chapter2_3_Exercise.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercises for Chapter 2.3</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-random-variables-span"><span style="color: dimgray;"><strong>Random variables</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-types-of-random-variables-span"><span style="color: dimgray;"><strong>Types of Random Variables</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-probability-functions-span"><span style="color: dimgray;"><strong>Probability functions</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-discrete-random-variables-span"><span style="color: dimgray;"><strong>Discrete Random Variables</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-continuous-random-variables-span"><span style="color: dimgray;"><strong>Continuous Random Variables</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-discrete-probability-distributions-span"><span style="color: dimgray;"><strong>Discrete Probability Distributions</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-discrete-uniform-distribution-span"><span style="color: dimgray;"><strong>Discrete uniform distribution</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-poisson-distribution-span"><span style="color: dimgray;"><strong>Poisson distribution</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-binomial-distribution-span"><span style="color: dimgray;"><strong>Binomial distribution</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-expected-value-and-variance-of-a-discrete-random-variable-span"><span style="color: dimgray;"><strong>Expected Value and Variance of a Discrete Random Variable</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-expected-value-and-variance-of-a-continuous-random-variable-span"><span style="color: dimgray;"><strong>Expected Value and Variance of a Continuous Random Variable</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-r-functions-for-probability-distributions-span"><span style="color: dimgray;"><strong>R Functions for Probability Distributions:</strong></span></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pairote Satiracoo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

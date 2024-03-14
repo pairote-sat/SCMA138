@@ -30,7 +30,7 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
+  url: https://pairote-sat.github.io/SCMA138/intro.html  # Online location of your book
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
@@ -39,6 +39,10 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+extra_css:
+  - _static/custom.css
+
 
 sphinx:
     extra_extensions:
