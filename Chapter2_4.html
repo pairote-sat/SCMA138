@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; SCMA138 Principles of Actuarial Science</title>
+    <title>2.4 Exploring Probability Applications in General Insurance &#8212; SCMA138 Principles of Actuarial Science</title>
   
   
   
@@ -64,9 +64,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Untitled';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter2_4';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Solutions to Quiz 1" href="Quiz1.html" />
+    <link rel="prev" title="Exercises for Chapter 2.3" href="Chapter2_3_Exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,7 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Chapter1_EndNote.html">End Note for Chapter 1</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical and Probabilistic Framework</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Chapter2.html"><span style="color: dimgray;"><strong>Chapter 2</strong></span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Chapter2_1.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Part2.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics (Part 2)</strong></span></a></li>
@@ -193,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Chapter2_2_Exercise.html">Exercises for Chapter 2.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Chapter2_3.html"><span style="color: dimgray;"><strong>2.3 Probability Distributions</strong></span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Chapter2_3_Exercise.html">Exercises for Chapter 2.3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Chapter2_4.html"><span style="color: dimgray;"><strong>2.4 Exploring Probability Applications in General Insurance</strong></span></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><span style="color: dimgray;"><strong>2.4 Exploring Probability Applications in General Insurance</strong></span></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quiz Zone</span></p>
 <ul class="nav bd-sidenav">
@@ -273,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html/issues/new?title=Issue%20on%20page%20%2FUntitled.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html/issues/new?title=Issue%20on%20page%20%2FChapter2_4.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -303,7 +305,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/Untitled.ipynb" target="_blank"
+      <li><a href="_sources/Chapter2_4.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -387,7 +389,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1><span style="color: dimgray;">2.4 Exploring Probability Applications in General Insurance</span></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -396,9 +398,15 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-introduction-span"><span style="color: dimgray;"><strong>Introduction</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-general-insurance-a-brief-overview-span"><span style="color: dimgray;"><strong>General Insurance: A Brief Overview</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-examples-of-general-insurance-span"><span style="color: dimgray;"><strong>Examples of General Insurance</strong></span></a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-understanding-risk-in-insurance-span"><span style="color: dimgray;"><strong>Understanding Risk in Insurance</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-modeling-claim-frequency-span"><span style="color: dimgray;"><strong>Modeling Claim Frequency</strong></span></a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -409,7 +417,62 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  
+  <section id="span-style-color-dimgray-2-4-exploring-probability-applications-in-general-insurance-span">
+<h1><span style="color: dimgray;"><strong>2.4 Exploring Probability Applications in General Insurance</strong></span><a class="headerlink" href="#span-style-color-dimgray-2-4-exploring-probability-applications-in-general-insurance-span" title="Permalink to this heading">#</a></h1>
+<section id="span-style-color-dimgray-introduction-span">
+<h2><span style="color: dimgray;"><strong>Introduction</strong></span><a class="headerlink" href="#span-style-color-dimgray-introduction-span" title="Permalink to this heading">#</a></h2>
+<p>In <strong>general insurance</strong>, probability theory plays a crucial role in analyzing risks and making informed decisions. Probability theory, a fundamental mathematical concept, is highly relevant in assessing different aspects of general insurance, especially in understanding how often claims occur and how severe they are. This helps in setting insurance premiums and reserves accurately.</p>
+</section>
+<section id="span-style-color-dimgray-general-insurance-a-brief-overview-span">
+<h2><span style="color: dimgray;"><strong>General Insurance: A Brief Overview</strong></span><a class="headerlink" href="#span-style-color-dimgray-general-insurance-a-brief-overview-span" title="Permalink to this heading">#</a></h2>
+<p>General insurance, also known as non-life insurance, provides financial protection against a wide range of risks and liabilities, excluding life insurance. It covers assets, properties, and liabilities that may be exposed to risks such as accidents, natural disasters, theft, and liability lawsuits.</p>
+<section id="span-style-color-dimgray-examples-of-general-insurance-span">
+<h3><span style="color: dimgray;"><strong>Examples of General Insurance</strong></span><a class="headerlink" href="#span-style-color-dimgray-examples-of-general-insurance-span" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Property Insurance</strong>: Protects against damage or loss to physical properties such as homes, vehicles, and businesses due to perils like fire, theft, or vandalism.</p></li>
+<li><p><strong>Liability Insurance</strong>: Covers legal liabilities arising from third-party claims, including bodily injury, property damage, or legal expenses resulting from accidents or negligence.</p></li>
+<li><p><strong>Health Insurance</strong>: Offers coverage for medical expenses incurred due to illnesses, injuries, hospitalization, and other healthcare services.</p></li>
+<li><p><strong>Motor Insurance</strong>: Provides protection for vehicles against damages caused by accidents, theft, or natural disasters, and also covers third-party liabilities arising from vehicle accidents.</p></li>
+<li><p><strong>Travel Insurance</strong>: Offers coverage for various travel-related risks such as trip cancellations, medical emergencies, lost baggage, and travel delays.</p></li>
+</ol>
+<p>These examples represent just a few categories of general insurance, demonstrating its diverse applications in safeguarding individuals, businesses, and assets against unforeseen events and financial losses.</p>
+</section>
+</section>
+<section id="span-style-color-dimgray-understanding-risk-in-insurance-span">
+<h2><span style="color: dimgray;"><strong>Understanding Risk in Insurance</strong></span><a class="headerlink" href="#span-style-color-dimgray-understanding-risk-in-insurance-span" title="Permalink to this heading">#</a></h2>
+<p>In case of an occurrence of an insured event, two important components of financial losses which are of importance for management of an insurance company are the frequency and severity of claims.</p>
+<ul class="simple">
+<li><p><strong>Number of Claims</strong> Probability analysis in general insurance enables the estimation of the likelihood of policyholders filing claims within a specified period. By leveraging historical data and statistical methodologies, insurers can anticipate the frequency of claims occurrences, thereby optimizing resource allocation and risk management strategies.</p></li>
+<li><p><strong>Claim Severity</strong> Probability theory also aids in evaluating the potential magnitude of individual claims, commonly referred to as claim severity. By modeling the distribution of claim sizes and employing probabilistic techniques, insurers can assess the financial impact of various claim scenarios, fostering prudent financial planning and mitigation of adverse outcomes.</p></li>
+</ul>
+<p>Mathematical and statistical techniques used to model these sources of uncertainty will be discussed. This will enable insurance companies to calculate premium rates to charge policyholders and decide how much reserve should be set aside for the future payment of incurred claims.</p>
+<ul class="simple">
+<li><p><strong>Premium Calculation</strong> The findings obtained from probability analysis are fundamental for determining insurance premiums. Insurers use actuarial models to include assessed risk probabilities, allowing them to customize premiums based on the anticipated frequency and severity of claims. This approach ensures a balance between affordability for policyholders and the financial sustainability of the insurance provider.</p></li>
+<li><p><strong>Reserve Determination</strong> Moreover, probability theory guides the creation of reserves, serving as financial safeguards to meet future claim payments. Insurers assess the uncertainty linked with forthcoming claim liabilities, allowing them to prudently allocate reserves. This practice ensures financial stability, meeting contractual obligations to policyholders over time.</p></li>
+</ul>
+</section>
+<section id="span-style-color-dimgray-modeling-claim-frequency-span">
+<h2><span style="color: dimgray;"><strong>Modeling Claim Frequency</strong></span><a class="headerlink" href="#span-style-color-dimgray-modeling-claim-frequency-span" title="Permalink to this heading">#</a></h2>
+<p>We demonstrate the process using a dataset comprising claim numbers over one year, sampled from a general insurance portfolio. The range of claims spans from 0 to 5.</p>
+<div class="admonition-example-2-37-modeling-claim-numbers-a-practical-exercise admonition">
+<p class="admonition-title"><strong>Example 2.37: Modeling Claim Numbers: A Practical Exercise</strong></p>
+<p>In this exercise, we will explore into the process of modeling claim numbers in the context of general insurance. Through a series of tasks, you will download a dataset, perform exploratory data analysis (EDA), fit models using the method of moments, compare the results with observations, and finally, provide commentary on the findings. Let’s begin!</p>
+<ol class="arabic simple">
+<li><p><strong>Data Download</strong>
+Please download the dataset from <a class="reference external" href="https://github.com/pairote-sat/SCMA248/blob/main/Data/claims.RData">this link</a>.</p></li>
+<li><p><strong>Exploratory Data Analysis (EDA)</strong>
+Using R, conduct exploratory data analysis to summarize and visualize the dataset. Describe how you would summarize the data and which visualizations you would create to gain insights into the claim numbers.</p></li>
+<li><p><strong>Model Fitting</strong>
+Apply the method of moments in R to fit models to the claim numbers. Choose distributions suitable for modeling claim frequency and explain your approach to model fitting.</p></li>
+<li><p><strong>Comparison of Results</strong>
+Use R to compare the results obtained from the model fitting with the observed data. Discuss how well the fitted models align with the observed claim numbers.</p></li>
+<li><p><strong>Comments on Results</strong>
+Provide commentary on the findings, particularly in terms of goodness of fit. Assess how effectively the fitted models capture the observed claim numbers and offer observations on the appropriateness of the chosen distributions for modeling claim frequency.</p></li>
+</ol>
+</div>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -419,16 +482,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "r"
         },
         kernelOptions: {
-            name: "python3",
+            name: "ir",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ir'</script>
 
                 </article>
               
@@ -440,6 +503,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Chapter2_3_Exercise.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercises for Chapter 2.3</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Quiz1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Solutions to Quiz 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -455,9 +536,15 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-introduction-span"><span style="color: dimgray;"><strong>Introduction</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-general-insurance-a-brief-overview-span"><span style="color: dimgray;"><strong>General Insurance: A Brief Overview</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-examples-of-general-insurance-span"><span style="color: dimgray;"><strong>Examples of General Insurance</strong></span></a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-understanding-risk-in-insurance-span"><span style="color: dimgray;"><strong>Understanding Risk in Insurance</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-modeling-claim-frequency-span"><span style="color: dimgray;"><strong>Modeling Claim Frequency</strong></span></a></li>
+</ul>
   </nav></div>
 
 </div></div>
