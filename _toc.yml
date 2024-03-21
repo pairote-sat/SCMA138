@@ -21,6 +21,7 @@ parts:
     - file: Chapter2_2_Exercise.ipynb  
     - file: Chapter2_3.ipynb   
     - file: Chapter2_3_Exercise.ipynb
+    - file: Chapter2_4.ipynb      
   - caption: Quiz Zone
     chapters:
     - file: Quiz1.ipynb
