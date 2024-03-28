@@ -64,10 +64,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter2_4';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Solutions to Quiz 1" href="Quiz1.html" />
+    <link rel="next" title="Chapter 3" href="Chapter3.html" />
     <link rel="prev" title="Exercises for Chapter 2.3" href="Chapter2_3_Exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -196,6 +198,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Chapter2_3.html"><span style="color: dimgray;"><strong>2.3 Probability Distributions</strong></span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Chapter2_3_Exercise.html">Exercises for Chapter 2.3</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><span style="color: dimgray;"><strong>2.4 Exploring Probability Applications in General Insurance</strong></span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Principles Underlying Risk Management and Actuarial Modeling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter3.html"><span style="color: dimgray;"><strong>Chapter 3</strong></span></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quiz Zone</span></p>
 <ul class="nav bd-sidenav">
@@ -406,6 +412,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-understanding-risk-in-insurance-span"><span style="color: dimgray;"><strong>Understanding Risk in Insurance</strong></span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-modeling-claim-frequency-span"><span style="color: dimgray;"><strong>Modeling Claim Frequency</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-understanding-the-method-of-moments-span"><span style="color: dimgray;"><strong>Understanding the Method of Moments</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-applying-the-method-of-moments-to-model-claim-numbers-span"><span style="color: dimgray;"><strong>Applying the Method of Moments to Model Claim Numbers</strong></span></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -463,13 +473,34 @@ Please download the dataset from <a class="reference external" href="https://git
 <li><p><strong>Exploratory Data Analysis (EDA)</strong>
 Using R, conduct exploratory data analysis to summarize and visualize the dataset. Describe how you would summarize the data and which visualizations you would create to gain insights into the claim numbers.</p></li>
 <li><p><strong>Model Fitting</strong>
-Apply the method of moments in R to fit models to the claim numbers. Choose distributions suitable for modeling claim frequency and explain your approach to model fitting.</p></li>
+Apply the method of moments (details below) in R to fit models to the claim numbers. Choose distributions suitable for modeling claim frequency and explain your approach to model fitting.</p></li>
 <li><p><strong>Comparison of Results</strong>
 Use R to compare the results obtained from the model fitting with the observed data. Discuss how well the fitted models align with the observed claim numbers.</p></li>
 <li><p><strong>Comments on Results</strong>
 Provide commentary on the findings, particularly in terms of goodness of fit. Assess how effectively the fitted models capture the observed claim numbers and offer observations on the appropriateness of the chosen distributions for modeling claim frequency.</p></li>
 </ol>
 </div>
+</section>
+<section id="span-style-color-dimgray-understanding-the-method-of-moments-span">
+<h2><span style="color: dimgray;"><strong>Understanding the Method of Moments</strong></span><a class="headerlink" href="#span-style-color-dimgray-understanding-the-method-of-moments-span" title="Permalink to this heading">#</a></h2>
+<p>The method of moments is a statistical technique used to estimate the parameters of a probability distribution by equating theoretical moments to sample moments. In simpler terms, it involves matching the moments (e.g., mean, variance) of a theoretical distribution with the corresponding sample moments calculated from observed data.</p>
+<section id="span-style-color-dimgray-applying-the-method-of-moments-to-model-claim-numbers-span">
+<h3><span style="color: dimgray;"><strong>Applying the Method of Moments to Model Claim Numbers</strong></span><a class="headerlink" href="#span-style-color-dimgray-applying-the-method-of-moments-to-model-claim-numbers-span" title="Permalink to this heading">#</a></h3>
+<p>Suppose we have a random variable <span class="math notranslate nohighlight">\(X\)</span>representing the number of claims in a given period. When fitting a Poisson distribution to model claim numbers, we utilize the method of moments by matching the sample mean (<span class="math notranslate nohighlight">\(\bar{X}\)</span>) to the theoretical mean (<span class="math notranslate nohighlight">\(\mu\)</span>) of the distribution.</p>
+<ol class="arabic simple">
+<li><p><strong>Identify the Moments:</strong>
+The first step is to identify the moments of the chosen distribution. For the Poisson distribution, we focus on its mean (<span class="math notranslate nohighlight">\(\mu\)</span>).</p></li>
+<li><p><strong>Calculate Sample Moments:</strong>
+Next, we calculate the sample mean (<span class="math notranslate nohighlight">\(\bar{X}\)</span>) from the observed data.</p></li>
+<li><p><strong>Equating Theoretical and Sample Moments:</strong>
+We equate the theoretical mean of the Poisson distribution (<span class="math notranslate nohighlight">\(\mu\)</span>) to the sample mean (<span class="math notranslate nohighlight">\(\bar{X}\)</span>).</p></li>
+<li><p><strong>Solving for Parameter:</strong>
+By matching <span class="math notranslate nohighlight">\(\mu\)</span> to <span class="math notranslate nohighlight">\(\bar{X}\)</span>, we solve for the parameter of the Poisson distribution, which represents the average rate of claim occurrences.</p></li>
+<li><p><strong>Model Fitting:</strong>
+Finally, we use the estimated parameter to fit the Poisson distribution to the observed data.</p></li>
+</ol>
+<p>Using this approach, we can effectively estimate the parameter of the Poisson distribution and use it to model real-world phenomena, such as claim numbers in insurance.</p>
+</section>
 </section>
 </section>
 
@@ -513,11 +544,11 @@ Provide commentary on the findings, particularly in terms of goodness of fit. As
       </div>
     </a>
     <a class="right-next"
-       href="Quiz1.html"
+       href="Chapter3.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Solutions to Quiz 1</p>
+        <p class="prev-next-title"><span style="color: dimgray;"><strong>Chapter 3</strong></span></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -544,6 +575,10 @@ Provide commentary on the findings, particularly in terms of goodness of fit. As
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-understanding-risk-in-insurance-span"><span style="color: dimgray;"><strong>Understanding Risk in Insurance</strong></span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-modeling-claim-frequency-span"><span style="color: dimgray;"><strong>Modeling Claim Frequency</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-understanding-the-method-of-moments-span"><span style="color: dimgray;"><strong>Understanding the Method of Moments</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-applying-the-method-of-moments-to-model-claim-numbers-span"><span style="color: dimgray;"><strong>Applying the Method of Moments to Model Claim Numbers</strong></span></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

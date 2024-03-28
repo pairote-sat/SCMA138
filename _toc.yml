@@ -21,13 +21,17 @@ parts:
     - file: Chapter2_2_Exercise.ipynb  
     - file: Chapter2_3.ipynb   
     - file: Chapter2_3_Exercise.ipynb
-    - file: Chapter2_4.ipynb      
+    - file: Chapter2_4.ipynb   
+  - caption: Principles Underlying Risk Management and Actuarial Modeling
+    chapters:
+    - file: Chapter3.ipynb    
   - caption: Quiz Zone
     chapters:
     - file: Quiz1.ipynb
   - caption: Bibliography  
     chapters:
     - file: Chapter_Bibliography.ipynb
+
 
 #chapters:
 #- file: Chapter1_Introduction.ipynb
