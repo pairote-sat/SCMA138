@@ -24,7 +24,11 @@ parts:
     - file: Chapter2_4.ipynb   
   - caption: Principles Underlying Risk Management and Actuarial Modeling
     chapters:
-    - file: Chapter3.ipynb    
+    - file: Chapter3.ipynb 
+    - file: Chapter3_1.ipynb
+    - file: Chapter3_2.ipynb 
+    - file: Chapter3_3.ipynb  
+    - file: Chapter3_4.ipynb         
   - caption: Quiz Zone
     chapters:
     - file: Quiz1.ipynb

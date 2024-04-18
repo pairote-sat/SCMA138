@@ -1,0 +1,835 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>3.4 Cashflows and Annuities &#8212; SCMA138 Principles of Actuarial Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter3_4';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Solutions to Quiz 1" href="Quiz1.html" />
+    <link rel="prev" title="3.3 Fundamentals of Finance: Cashflow Models, Time Value of Money, and Interest Rates" href="Chapter3_3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="SCMA138 Principles of Actuarial Science - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="SCMA138 Principles of Actuarial Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to SCMA 138 Principles of Actuarial Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Actuarial Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Introduction.html"><span style="color: dimgray;"><strong>Chapter 1</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Exercise.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_EndNote.html">End Note for Chapter 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical and Probabilistic Framework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter2.html"><span style="color: dimgray;"><strong>Chapter 2</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Part2.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics (Part 2)</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise.html">Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise_Solution.html">Solutions to Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_2.html"><span style="color: dimgray;"><strong>2.2 Probability Basics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_2_Exercise.html">Exercises for Chapter 2.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_3.html"><span style="color: dimgray;"><strong>2.3 Probability Distributions</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_3_Exercise.html">Exercises for Chapter 2.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_4.html"><span style="color: dimgray;"><strong>2.4 Exploring Probability Applications in General Insurance</strong></span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Principles Underlying Risk Management and Actuarial Modeling</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter3.html"><span style="color: dimgray;"><strong>Chapter 3</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_1.html"><span style="color: dimgray;"><strong>3.1 Understanding Risk in Actuarial Science</strong></span></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_2.html"><span style="color: dimgray;"><strong>3.2 Understanding Actuarial Models</strong></span></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_3.html"><span style="color: dimgray;"><strong>3.3 Fundamentals of Finance: Cashflow Models, Time Value of Money, and Interest Rates</strong></span></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><span style="color: dimgray;"><strong>3.4 Cashflows and Annuities</strong></span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quiz Zone</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Quiz1.html">Solutions to Quiz 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliography</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter_Bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html/issues/new?title=Issue%20on%20page%20%2FChapter3_4.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Chapter3_4.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><span style="color: dimgray;">3.4 Cashflows and Annuities</span></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-present-value-and-future-value-of-cash-flows-and-annuities-span"><span style="color: dimgray;"><strong>Present Value and Future Value of Cash Flows and Annuities</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-actuarial-notation-for-annuities-span"><span style="color: dimgray;"><strong>Actuarial Notation for Annuities</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-present-value-of-annuities-pva-span"><span style="color: dimgray;"><strong>Present Value of Annuities (PVA)</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-future-value-of-annuities-fva-span"><span style="color: dimgray;"><strong>Future Value of Annuities (FVA)</strong></span></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="span-style-color-dimgray-3-4-cashflows-and-annuities-span">
+<h1><span style="color: dimgray;"><strong>3.4 Cashflows and Annuities</strong></span><a class="headerlink" href="#span-style-color-dimgray-3-4-cashflows-and-annuities-span" title="Permalink to this heading">#</a></h1>
+<p>In this section, we will explore the basics of cashflows, how money moves over time, and what factors affect it. We will also break down annuities, which are financial tools designed to provide a steady income for a specific period.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Definitions</strong></p>
+<p>(1) <strong>Cashflows</strong> refer to the movement of money into or out of a business, investment, or financial instrument over a specific period. They can be either positive (inflows) when money is received, or negative (outflows) when money is paid out.</p>
+<p>Understanding cashflows is crucial in financial analysis as they reflect the liquidity and financial health of an entity.</p>
+<p>(2) <strong>Annuities</strong> are financial products typically offered by insurance companies, structured to provide a <strong>series of payments at regular intervals</strong>, usually monthly, quarterly, or annually, in exchange for a lump sum payment or a series of payments made over time.</p>
+<p>They are commonly used as retirement income vehicles but can also serve other purposes such as structured settlements or funding for education.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Classification of Annuities</strong></p>
+<p><strong>Based on Payment Structure</strong></p>
+<ul class="simple">
+<li><p><strong>Immediate Annuities</strong>: Immediate annuities begin providing payments to the annuitant shortly after the initial investment, usually within a year. They are often purchased with a lump sum and offer immediate income for a specified period or for life.</p></li>
+<li><p><strong>Deferred Annuities</strong>: Deferred annuities delay payments until a future date chosen by the annuitant, allowing the initial investment to grow tax-deferred until withdrawals begin. They can be fixed, variable, or indexed, offering flexibility in investment choices and payout options.</p></li>
+</ul>
+</div>
+<figure class="align-default" id="figure-annuity">
+<img alt="_images/Annuity.jpeg" src="_images/Annuity.jpeg" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Image from <a class="reference external" href="https://napkinfinance.com/napkin/annuities/">https://napkinfinance.com/napkin/annuities/</a></span><a class="headerlink" href="#figure-annuity" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Classification of Annuities</strong></p>
+<p><strong>Based on Timing of Payments</strong></p>
+<ul class="simple">
+<li><p><strong>Ordinary Annuity (or Annuity in Arrears)</strong></p>
+<ul>
+<li><p>Payments are made at the end of each period, after the period has elapsed.</p></li>
+<li><p>Commonly seen in loans, mortgages, and some retirement plans.</p></li>
+</ul>
+</li>
+<li><p><strong>Annuity Due</strong></p>
+<ul>
+<li><p>Start making payments immediately after the initial investment.</p></li>
+<li><p>Payments are made at the beginning of each period.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Based on Payment Structure</strong></p>
+<ul class="simple">
+<li><p><strong>Level Annuities (or Fixed Annuities)</strong></p>
+<ul>
+<li><p>Offer a constant stream of payments throughout the annuity period.</p></li>
+<li><p>Payments remain the same over time, providing predictability to the annuitant.</p></li>
+</ul>
+</li>
+<li><p><strong>Increasing Annuities (or Escalating Annuities)</strong></p>
+<ul>
+<li><p>Provide payments that gradually increase over time, typically to account for inflation or changing needs of the annuitant.</p></li>
+</ul>
+</li>
+<li><p><strong>Decreasing Annuities</strong></p>
+<ul>
+<li><p>Offer payments that decrease over time, often chosen when the annuitant expects their expenses to decrease, such as in retirement.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="span-style-color-dimgray-present-value-and-future-value-of-cash-flows-and-annuities-span">
+<h2><span style="color: dimgray;"><strong>Present Value and Future Value of Cash Flows and Annuities</strong></span><a class="headerlink" href="#span-style-color-dimgray-present-value-and-future-value-of-cash-flows-and-annuities-span" title="Permalink to this heading">#</a></h2>
+<p><strong>Present Value of Annuities (PVA)</strong> Present value of annuities is the current worth of a series of future cash flows received or paid at regular intervals, discounted at the effective rate of interest.</p>
+<p><strong>Future Value of Annuities (FVA)</strong> Future value of annuities is the value of a series of equal payments or cash flows received or paid at regular intervals, compounded at the effective rate of interest to a specified future date.</p>
+<div class="admonition-example-3-21-present-value-of-annuities-pva-example admonition">
+<p class="admonition-title"><strong>Example 3.21: Present Value of Annuities (PVA) Example</strong></p>
+<p>Suppose you have an annuity that pays $200 at the end of each year for 5 years, and the effective annual interest rate is 6%. You want to calculate the present value of this annuity.</p>
+<p>Using the present value of annuities formula:</p>
+<div class="math notranslate nohighlight">
+\[PVA = PMT \times \left( \frac{1 - (1 + r)^{-n}}{r} \right)\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(PVA\)</span> = Present Value of Annuities</p></li>
+<li><p><span class="math notranslate nohighlight">\(PMT\)</span> = Payment per period ($200 in this case)</p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> = Effective rate of interest per period (6% in this case)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> = Number of periods (5 years in this case)</p></li>
+</ul>
+<p>Substituting the values:</p>
+<div class="math notranslate nohighlight">
+\[PVA = 200 \times \left( \frac{1 - (1 + 0.06)^{-5}}{0.06} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[PVA ≈ 200 \times \left( \frac{1 - (1.06)^{-5}}{0.06} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[PVA ≈ 200 \times \left( \frac{1 - 0.747258}{0.06} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[PVA ≈ 200 \times \left( \frac{0.252742}{0.06} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[PVA ≈ 200 \times 4.212367\]</div>
+<div class="math notranslate nohighlight" id="equation-rounded-to-two-decimal-places">
+<span class="eqno">(3)<a class="headerlink" href="#equation-rounded-to-two-decimal-places" title="Permalink to this equation">#</a></span>\[PVA ≈ 842.47\]</div>
+<p><strong>Interpretation</strong>:
+The present value of receiving $200 at the end of each year for 5 years, with an effective annual interest rate of 6%, is approximately $842.47.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># Parameters</span>
+<span class="n">payment</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">years</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">interest_rate</span> <span class="o">=</span> <span class="mf">0.06</span>
+
+<span class="c1"># Compute present value</span>
+<span class="n">present_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">payment</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)])</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">payment</span><span class="p">]</span><span class="o">*</span><span class="n">years</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">payment</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">payment</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Years&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cash Flow ($)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Timeline of Annuity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;$PV = </span><span class="si">{</span><span class="n">present_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/984bb8f6d90da26281d78400ac1a414c58fa26040b34fde88ac9184226a42002.png" src="_images/984bb8f6d90da26281d78400ac1a414c58fa26040b34fde88ac9184226a42002.png" />
+</div>
+</div>
+<div class="admonition-example-3-22-future-value-of-annuities-fva-example admonition">
+<p class="admonition-title"><strong>Example 3.22: Future Value of Annuities (FVA) Example</strong></p>
+<p>Suppose you invest $500 at the end of each year for 3 years in an account with an effective annual interest rate of 8%. You want to calculate the future value of this annuity.</p>
+<p>Using the future value of annuities formula:</p>
+<div class="math notranslate nohighlight">
+\[FVA = PMT \times \left( \frac{(1 + r)^n - 1}{r} \right)\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(FVA\)</span> = Future Value of Annuities</p></li>
+<li><p><span class="math notranslate nohighlight">\(PMT\)</span> = Payment per period ($500 in this case)</p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> = Effective rate of interest per period (8% in this case)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> = Number of periods (3 years in this case)</p></li>
+</ul>
+<p>Substituting the values:</p>
+<div class="math notranslate nohighlight">
+\[FVA = 500 \times \left( \frac{(1 + 0.08)^3 - 1}{0.08} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[FVA ≈ 500 \times \left( \frac{(1.08)^3 - 1}{0.08} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[FVA ≈ 500 \times \left( \frac{1.259712 - 1}{0.08} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[FVA ≈ 500 \times \left( \frac{0.259712}{0.08} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[FVA ≈ 500 \times 3.2464\]</div>
+<div class="math notranslate nohighlight" id="equation-rounded-to-two-decimal-places">
+<span class="eqno">(3)<a class="headerlink" href="#equation-rounded-to-two-decimal-places" title="Permalink to this equation">#</a></span>\[FVA ≈ 1,623.20\]</div>
+<p><strong>Interpretation</strong>:
+The future value of investing $500 at the end of each year for 3 years, with an effective annual interest rate of 8%, will be approximately $1,623.20.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># Parameters</span>
+<span class="n">investment</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">years</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">interest_rate</span> <span class="o">=</span> <span class="mf">0.08</span>
+
+<span class="c1"># Compute future value</span>
+<span class="n">future_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">investment</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">years</span><span class="p">)])</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">investment</span><span class="p">]</span><span class="o">*</span><span class="n">years</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">investment</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">investment</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Years&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cash Flow ($)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Timeline of Future Value Annuity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">years</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">investment</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;$FV = </span><span class="si">{</span><span class="n">future_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/c453da447ca3ee024cf310347d9cbf5b9ccfb36358337caf5c737580c598794e.png" src="_images/c453da447ca3ee024cf310347d9cbf5b9ccfb36358337caf5c737580c598794e.png" />
+</div>
+</div>
+<div class="admonition-example-3-23-present-and-future-values-of-annuities admonition">
+<p class="admonition-title"><strong>Example 3.23: Present and Future Values of Annuities</strong></p>
+<p>Given the effective rate of interest of <span class="math notranslate nohighlight">\(8\%\)</span> p.a., calculate</p>
+<ol class="arabic simple">
+<li><p>the accumulation at 12 years of ฿500 payable yearly in arrears for
+the next 12 years.</p></li>
+<li><p>the present value now of ฿2,000 payable yearly in arrears for the
+next 6 years.</p></li>
+<li><p>the present value now of ฿1,000 payable half-yearly in arrears for
+the next 12.5 years.</p></li>
+</ol>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Example 3.23</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<ol class="arabic simple">
+<li><p>The accumulation of the payments is</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[500 \cdot s_{\overline{12}|}  = 500 \cdot \frac{1.08^{12} - 1 }{0.08 } = 9488.563230.\]</div>
+<ol class="arabic simple" start="2">
+<li><p>The present value of the payments is</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[2000\cdot a_{\overline{6}|}  = 2000 \cdot \frac{1 - 1.08^{-6} }{0.08 } = 9245.759328.\]</div>
+<ol class="arabic simple" start="3">
+<li><p>An interest rate of 8% p.a. is equivalent to an effective half-yearly interest rate, denoted by <span class="math notranslate nohighlight">\(j\)</span>, of</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[j = 1.08^{1/2} -1 = 0.039230.\]</div>
+<p>There are 25 payments of 1000 each, starting in six months’ time.</p>
+<p>Working in terms of half year, the present value of the payment is</p>
+<div class="math notranslate nohighlight">
+\[1000 \cdot a^j_{\overline{25}|} = 1000 \cdot \frac{1 - 1.039230^{-25} }{0.039230 } = 15750.003911.\]</div>
+</details>
+</div>
+</section>
+<section id="span-style-color-dimgray-actuarial-notation-for-annuities-span">
+<h2><span style="color: dimgray;"><strong>Actuarial Notation for Annuities</strong></span><a class="headerlink" href="#span-style-color-dimgray-actuarial-notation-for-annuities-span" title="Permalink to this heading">#</a></h2>
+<p>In actuarial science, the present value and future value of annuities are often represented using specific notation. This notation helps actuaries and financial professionals to succinctly express these calculations.</p>
+<section id="span-style-color-dimgray-present-value-of-annuities-pva-span">
+<h3><span style="color: dimgray;"><strong>Present Value of Annuities (PVA)</strong></span><a class="headerlink" href="#span-style-color-dimgray-present-value-of-annuities-pva-span" title="Permalink to this heading">#</a></h3>
+<p>The present value of annuities is denoted using the actuarial symbol <span class="math notranslate nohighlight">\(PV A\)</span>. It represents the current worth of a series of future cash flows received or paid at regular intervals, discounted at a specified interest rate.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Formula for the present value of annuities</strong></p>
+<p>The formula for the present value of annuities is expressed as:</p>
+<div class="math notranslate nohighlight">
+\[PV A_{\overline{n}|}^{(i)} = PMT \times \left( \frac{1 - (1 + i)^{-n}}{i} \right)\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(PV A_{\overline{n}|}^{(i)}\)</span> = Present Value of Annuities with <span class="math notranslate nohighlight">\(n\)</span> payments at an interest rate of <span class="math notranslate nohighlight">\(i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(PMT\)</span> = Payment per period</p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> = Interest rate per period</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> = Number of periods</p></li>
+</ul>
+</div>
+</section>
+<section id="span-style-color-dimgray-future-value-of-annuities-fva-span">
+<h3><span style="color: dimgray;"><strong>Future Value of Annuities (FVA)</strong></span><a class="headerlink" href="#span-style-color-dimgray-future-value-of-annuities-fva-span" title="Permalink to this heading">#</a></h3>
+<p>The future value of annuities is denoted using the actuarial symbol <span class="math notranslate nohighlight">\(FV A\)</span>. It represents the value of a series of equal payments or cash flows received or paid at regular intervals, compounded at a specified interest rate to a future date.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Formula for the future value of annuities</strong></p>
+<p>The formula for the future value of annuities is expressed as:</p>
+<div class="math notranslate nohighlight">
+\[FV A_{\overline{n}|}^{(i)} = PMT \times \left( \frac{(1 + i)^n - 1}{i} \right)\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(FV A_{\overline{n}|}^{(i)}\)</span> = Future Value of Annuities with <span class="math notranslate nohighlight">\(n\)</span> payments at an interest rate of <span class="math notranslate nohighlight">\(i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(PMT\)</span> = Payment per period</p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> = Interest rate per period</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> = Number of periods</p></li>
+</ul>
+</div>
+<p>These notations are commonly used in actuarial calculations and financial analysis to represent the present and future values of annuities.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Chapter3_3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span style="color: dimgray;"><strong>3.3 Fundamentals of Finance: Cashflow Models, Time Value of Money, and Interest Rates</strong></span></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Quiz1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Solutions to Quiz 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-present-value-and-future-value-of-cash-flows-and-annuities-span"><span style="color: dimgray;"><strong>Present Value and Future Value of Cash Flows and Annuities</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-actuarial-notation-for-annuities-span"><span style="color: dimgray;"><strong>Actuarial Notation for Annuities</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-present-value-of-annuities-pva-span"><span style="color: dimgray;"><strong>Present Value of Annuities (PVA)</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-future-value-of-annuities-fva-span"><span style="color: dimgray;"><strong>Future Value of Annuities (FVA)</strong></span></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pairote Satiracoo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

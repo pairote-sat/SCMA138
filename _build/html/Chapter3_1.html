@@ -1,0 +1,635 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>3.1 Understanding Risk in Actuarial Science &#8212; SCMA138 Principles of Actuarial Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter3_1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3.2 Understanding Actuarial Models" href="Chapter3_2.html" />
+    <link rel="prev" title="Chapter 3" href="Chapter3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="SCMA138 Principles of Actuarial Science - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="SCMA138 Principles of Actuarial Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to SCMA 138 Principles of Actuarial Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Actuarial Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Introduction.html"><span style="color: dimgray;"><strong>Chapter 1</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Exercise.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_EndNote.html">End Note for Chapter 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical and Probabilistic Framework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter2.html"><span style="color: dimgray;"><strong>Chapter 2</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Part2.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics (Part 2)</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise.html">Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise_Solution.html">Solutions to Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_2.html"><span style="color: dimgray;"><strong>2.2 Probability Basics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_2_Exercise.html">Exercises for Chapter 2.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_3.html"><span style="color: dimgray;"><strong>2.3 Probability Distributions</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_3_Exercise.html">Exercises for Chapter 2.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_4.html"><span style="color: dimgray;"><strong>2.4 Exploring Probability Applications in General Insurance</strong></span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Principles Underlying Risk Management and Actuarial Modeling</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter3.html"><span style="color: dimgray;"><strong>Chapter 3</strong></span></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><span style="color: dimgray;"><strong>3.1 Understanding Risk in Actuarial Science</strong></span></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_2.html"><span style="color: dimgray;"><strong>3.2 Understanding Actuarial Models</strong></span></a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quiz Zone</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Quiz1.html">Solutions to Quiz 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliography</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter_Bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html/issues/new?title=Issue%20on%20page%20%2FChapter3_1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Chapter3_1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><span style="color: dimgray;">3.1 Understanding Risk in Actuarial Science</span></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><span style="color: dimgray;"><strong>3.1 Understanding Risk in Actuarial Science</strong></span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-risk-in-actuarial-science-span"><span style="color: dimgray;"><strong>Risk in Actuarial Science</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-understanding-risk-management-in-economic-systems-span"><span style="color: dimgray;"><strong>Understanding Risk Management in Economic Systems</strong></span></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="span-style-color-dimgray-3-1-understanding-risk-in-actuarial-science-span">
+<h1><span style="color: dimgray;"><strong>3.1 Understanding Risk in Actuarial Science</strong></span><a class="headerlink" href="#span-style-color-dimgray-3-1-understanding-risk-in-actuarial-science-span" title="Permalink to this heading">#</a></h1>
+<p>In finance and insurance, the concept of <strong>risk</strong> is central to decision-making. This chapter serves as a foundational exploration of the principles that govern how we understand and manage risk.</p>
+<p>We will start by defining what we mean by <strong>risk</strong> and how it relates to specific events or situations. Then, we’ll explore actuarial phenomena—events with uncertain outcomes that have <strong>economic consequences</strong> and the key variables that characterize them:</p>
+<ul class="simple">
+<li><p>frequency,</p></li>
+<li><p>timing, and</p></li>
+<li><p>severity.</p></li>
+</ul>
+<p>By examining these concepts, we aim to provide a solid academic footing for understanding how risk is quantified, managed, and navigated within economic systems.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Definition of an economic system</strong></p>
+<p>An <strong>economic system</strong> comprises:</p>
+<ol class="arabic simple">
+<li><p>participants, a collective of individuals; 2. economic goods, items owned by participants at any given time; and</p></li>
+<li><p>a market mechanism enabling participants to trade their current economic goods for others.</p></li>
+</ol>
+</div>
+<section id="span-style-color-dimgray-risk-in-actuarial-science-span">
+<h2><span style="color: dimgray;"><strong>Risk in Actuarial Science</strong></span><a class="headerlink" href="#span-style-color-dimgray-risk-in-actuarial-science-span" title="Permalink to this heading">#</a></h2>
+<p><strong>Risk management and actuarial modeling</strong> are essential in actuarial science, involving the identification, quantification, and management of risks.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Definition of Risk</strong></p>
+<p><strong>Risk</strong> can be defined as the potential occurrence of an event, coupled with its association with a specific entity, whether it be an individual, object, or group. This encompasses both the observable event itself and its connection to the entity, highlighting the intertwined nature of uncertainty and the entities affected by it.</p>
+</div>
+<p>The term <strong>risk</strong> refers to both an event that can be observed and a particular entity, such as a person, object, or group of individuals, with which the event is associated.</p>
+<div class="admonition-example-3-1 admonition">
+<p class="admonition-title"><strong>Example 3.1</strong> </p>
+<p>Consider the risk of a car accident. In this scenario, “risk” refers to both the possibility of a car accident occurring (the event that can be observed) and the specific entity involved, such as the driver, passengers, or the vehicle itself (the particular entity with which the event is associated).</p>
+</div>
+<p>An <strong>actuarial risk relevant to a participant</strong> encompasses an actuarial phenomenon and one or more random variables, known as economic consequences. These variables assign a positive or negative numerical value to outcomes that the participant deems favorable or unfavorable, respectively, while assigning a value of zero to other outcomes.</p>
+<div class="tip admonition">
+<p class="admonition-title">Definition</p>
+<p><strong>An actuarial phenomenon</strong> is a <strong>stochastic phenomenon</strong> consisting of a random number of stochastic events, with outcomes occurring within specified time periods and being considered desirable or undesirable by participants in an economic system.</p>
+<p><strong>Actuarial risk variables</strong> include frequency (the number of component stochastic events), timing (when outcomes occur), and severity (the undesirability of outcomes).</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A <strong>stochastic phenomenon</strong> is a phenomenon for which an associated experiment has more than one possible outcome. An event associated with a stochastic phenomenon is said to be <strong>contingent</strong>.</p>
+<p>Imagine you are an actuary working for an insurance company, and you are trying to predict how many claims will be made in a month for car insurance policies. Now, let us say there is a rainy season approaching. The number of claims you will get during this time can vary because rainy weather can lead to more accidents.</p>
+<p>So, in this case, the <strong>stochastic phenomenon</strong> is the number of claims made each month, and it is called “stochastic” because it is unpredictable. There are many possible outcomes: some months might have a lot of claims, while others might have very few. This unpredictability is what makes it <strong>stochastic</strong>.</p>
+<p>Actuarial phenomena occur within economic systems and have various possible outcomes, often <strong>measured in monetary units</strong>.</p>
+</div>
+<div class="admonition-example-3-2-car-insurance admonition">
+<p class="admonition-title"><strong>Example 3.2: Car Insurance</strong> </p>
+<p>In the context of car insurance, the phenomenon encompasses all incidents involving a particular insured vehicle within a specified period. Each incident may involve various stochastic events and outcomes, such as accidents, thefts, or damage due to natural disasters.</p>
+<p>The frequency of these incidents represents the number of occurrences within the insurance coverage period. Each incident involves multiple outcomes, including the event itself (accident or theft), the extent of damage to the vehicle, injuries to passengers or other parties, insurance payouts, and any legal proceedings resulting from the incident.</p>
+<p>Timing variables include the time of the incident, notification to the insurer, assessment of damage, processing of insurance claims, and resolution of legal matters.</p>
+<p>Severity variables measure the extent of damage to the vehicle, the severity of injuries, the amount of insurance coverage required, and any legal liabilities.</p>
+<ul class="simple">
+<li><p><strong>Phenomenon:</strong> Car insurance covers all incidents involving a specific insured vehicle over a designated time frame.</p></li>
+<li><p><strong>Frequency:</strong> The frequency of incidents represents the number of occurrences within the insurance coverage period.</p></li>
+<li><p><strong>Stochastic Events:</strong> Each incident, such as accidents or thefts, constitutes a stochastic event.</p></li>
+<li><p><strong>Outcomes:</strong> Various outcomes include the incident itself, damage to the vehicle, injuries, insurance payouts, and legal proceedings.</p></li>
+<li><p><strong>Timing:</strong> Timing variables encompass the occurrence of the incident, notification to the insurer, assessment of damage, claims processing, and legal resolution.</p></li>
+<li><p><strong>Severity:</strong> Severity variables measure the extent of damage, severity of injuries, required insurance coverage, and legal liabilities.</p></li>
+</ul>
+</div>
+<div class="admonition-example-3-3-life-insurance admonition">
+<p class="admonition-title"><strong>Example 3.3: Life Insurance</strong> </p>
+<p>In life insurance, the phenomenon encompasses all events related to the insured individual’s life and its consequences within a specified period. These events include death, disability, or critical illness. The frequency of such events represents the number of occurrences within the insurance coverage period, with each event constituting a stochastic phenomenon.</p>
+<ul class="simple">
+<li><p><strong>Phenomenon:</strong> Life insurance covers events related to the insured individual’s life, such as death, disability, or critical illness, within a specified period.</p></li>
+<li><p><strong>Frequency:</strong> The frequency of events represents the number of occurrences within the insurance coverage period.</p></li>
+<li><p><strong>Stochastic Events:</strong> Each event, such as death or disability, constitutes a stochastic phenomenon.</p></li>
+<li><p><strong>Outcomes:</strong> Various outcomes include the occurrence of the event itself (death, disability, critical illness), financial support for the insured or their beneficiaries, and any legal or administrative proceedings.</p></li>
+<li><p><strong>Timing:</strong> Timing variables encompass the occurrence of the event, notification to the insurer, processing of insurance claims, and distribution of benefits to beneficiaries.</p></li>
+<li><p><strong>Severity:</strong> Severity variables measure the financial impact of the event on the insured or their beneficiaries, the amount of insurance coverage provided, and any legal or administrative complexities involved.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="span-style-color-dimgray-understanding-risk-management-in-economic-systems-span">
+<h1><span style="color: dimgray;"><strong>Understanding Risk Management in Economic Systems</strong></span><a class="headerlink" href="#span-style-color-dimgray-understanding-risk-management-in-economic-systems-span" title="Permalink to this heading">#</a></h1>
+<p>This section provides a comprehensive overview of the processes involved in managing risks within economic environments. It explores the fundamental concepts of risk identification, assessment, and management, along with the strategies used to mitigate potential negative impacts and capitalize on positive outcomes. Additionally, it discusses the role of risk transfer and the structure of risk-management systems, highlighting their significance in navigating uncertain financial landscapes.</p>
+<p><strong>Risk identification</strong> involves determining which risks might affect someone in an economic system. This process aims to pinpoint specific risks relevant to a participant.</p>
+<p><strong>Risk assessment</strong> evaluates the economic consequences of identified risks for a given participant. It’s about understanding how these risks could impact someone financially.</p>
+<p><strong>Risk management</strong> is the process of taking action to reduce the negative effects or enhance the positive effects of identified risks for a participant. It involves finding ways to mitigate undesirable outcomes or capitalize on desirable ones.</p>
+<p><strong>Risk transfer</strong> is a form of risk management where another participant assumes certain rights or obligations related to the economic consequences of a risk. It involves shifting some responsibility for dealing with the risk to someone else.</p>
+<p>Imagine you have a risk, like the chance of something going wrong and costing you money. With risk transfer, you can get someone else to take on some of that risk for you. They agree to deal with the problems or costs if things go wrong, so you do not have to worry about it as much. It is like sharing the responsibility with someone else.</p>
+<p>A <strong>risk-management system</strong> is an organized arrangement that integrates risk identification, assessment, and management processes. It is designed to address a set of risks concerning a participant or group. Success of such a system is measured by whether it achieves its intended purposes, and failure occurs when it does not meet its success criteria.</p>
+<p>Many risk-management systems primarily <strong>deal with uncertain risks related to finances or timing</strong>. They often employ strategies to combine risks, <strong>aiming to reduce the overall uncertainty of the resulting economic consequences</strong>. However, it is important to note that combining risks does not always guarantee a reduction in uncertainty.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Chapter3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span style="color: dimgray;"><strong>Chapter 3</strong></span></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Chapter3_2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span style="color: dimgray;"><strong>3.2 Understanding Actuarial Models</strong></span></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><span style="color: dimgray;"><strong>3.1 Understanding Risk in Actuarial Science</strong></span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-risk-in-actuarial-science-span"><span style="color: dimgray;"><strong>Risk in Actuarial Science</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-understanding-risk-management-in-economic-systems-span"><span style="color: dimgray;"><strong>Understanding Risk Management in Economic Systems</strong></span></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pairote Satiracoo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

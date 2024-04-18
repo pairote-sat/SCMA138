@@ -1,0 +1,682 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>3.2 Understanding Actuarial Models &#8212; SCMA138 Principles of Actuarial Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter3_2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3.3 Fundamentals of Finance: Cashflow Models, Time Value of Money, and Interest Rates" href="Chapter3_3.html" />
+    <link rel="prev" title="3.1 Understanding Risk in Actuarial Science" href="Chapter3_1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="SCMA138 Principles of Actuarial Science - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="SCMA138 Principles of Actuarial Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to SCMA 138 Principles of Actuarial Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Actuarial Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Introduction.html"><span style="color: dimgray;"><strong>Chapter 1</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Exercise.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_EndNote.html">End Note for Chapter 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical and Probabilistic Framework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter2.html"><span style="color: dimgray;"><strong>Chapter 2</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Part2.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics (Part 2)</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise.html">Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise_Solution.html">Solutions to Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_2.html"><span style="color: dimgray;"><strong>2.2 Probability Basics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_2_Exercise.html">Exercises for Chapter 2.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_3.html"><span style="color: dimgray;"><strong>2.3 Probability Distributions</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_3_Exercise.html">Exercises for Chapter 2.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_4.html"><span style="color: dimgray;"><strong>2.4 Exploring Probability Applications in General Insurance</strong></span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Principles Underlying Risk Management and Actuarial Modeling</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter3.html"><span style="color: dimgray;"><strong>Chapter 3</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_1.html"><span style="color: dimgray;"><strong>3.1 Understanding Risk in Actuarial Science</strong></span></a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><span style="color: dimgray;"><strong>3.2 Understanding Actuarial Models</strong></span></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_3.html"><span style="color: dimgray;"><strong>3.3 Fundamentals of Finance: Cashflow Models, Time Value of Money, and Interest Rates</strong></span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quiz Zone</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Quiz1.html">Solutions to Quiz 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliography</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter_Bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html/issues/new?title=Issue%20on%20page%20%2FChapter3_2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Chapter3_2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><span style="color: dimgray;">3.2 Understanding Actuarial Models</span></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><span style="color: dimgray;"><strong>3.2 Understanding Actuarial Models</strong></span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-financial-dynamics-in-actuarial-modeling-span"><span style="color: dimgray;"><strong>Financial Dynamics in Actuarial Modeling</strong></span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-cashflows-interest-and-the-time-value-of-money-span"><span style="color: dimgray;"><strong>Cashflows, Interest and the Time Value of Money</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-cashflows-span"><span style="color: dimgray;"><strong>Cashflows</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-types-of-cashflows-based-on-contingency-span"><span style="color: dimgray;"><strong>Types of Cashflows Based on Contingency</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-valuing-cash-flows-in-actuarial-science-span"><span style="color: dimgray;"><strong>Valuing Cash Flows in Actuarial Science</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-non-contingent-cash-flows-span"><span style="color: dimgray;"><strong>Non-Contingent Cash Flows</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-contingent-cash-flows-span"><span style="color: dimgray;"><strong>Contingent Cash Flows</strong></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="span-style-color-dimgray-3-2-understanding-actuarial-models-span">
+<h1><span style="color: dimgray;"><strong>3.2 Understanding Actuarial Models</strong></span><a class="headerlink" href="#span-style-color-dimgray-3-2-understanding-actuarial-models-span" title="Permalink to this heading">#</a></h1>
+<p><strong>Actuarial models</strong> play a crucial role in the world of risk management and insurance. Let us break down what they are and how they work.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>What is an Actuarial Model?</strong></p>
+<ul class="simple">
+<li><p>An actuarial model is essentially a mathematical representation of one or more risks that actuaries use to understand and manage those risks.</p></li>
+<li><p>Actuarial values are numerical values assigned to specific sets of risks, determined using these models.</p></li>
+<li><p>Participants in the process assign a degree of confidence to these values, believing that higher confidence reflects values closer to the truth.</p></li>
+</ul>
+</div>
+<p><strong>Stochastic vs. Deterministic Models</strong></p>
+<p>Actuarial phenomena are inherently uncertain, but actuarial models can represent risks in two ways: stochastically or deterministically.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Stochastic vs. Deterministic Models</strong></p>
+<ul class="simple">
+<li><p>Stochastic models incorporate probability distributions to represent risk variables, essential for determining failure probabilities.</p></li>
+<li><p>Deterministic models use sets of fixed values, often representing the means of underlying distributions.</p></li>
+</ul>
+</div>
+</section>
+<section id="span-style-color-dimgray-financial-dynamics-in-actuarial-modeling-span">
+<h1><span style="color: dimgray;"><strong>Financial Dynamics in Actuarial Modeling</strong></span><a class="headerlink" href="#span-style-color-dimgray-financial-dynamics-in-actuarial-modeling-span" title="Permalink to this heading">#</a></h1>
+<p>In actuarial modeling, an understanding of <strong>financial dynamics</strong> is essential.</p>
+<p>We will begin our exploration by leveraging financial modeling techniques to analyze how cashflows and interest rates impact risk assessment and insurance product design.</p>
+<p>This section explores the fundamental principles governing cashflows, interest rates, and the time value of money within actuarial contexts. By exploring these concepts, we gain insight into how financial factors influence risk valuation and insurance product design.</p>
+<section id="span-style-color-dimgray-cashflows-interest-and-the-time-value-of-money-span">
+<h2><span style="color: dimgray;"><strong>Cashflows, Interest and the Time Value of Money</strong></span><a class="headerlink" href="#span-style-color-dimgray-cashflows-interest-and-the-time-value-of-money-span" title="Permalink to this heading">#</a></h2>
+<p>In financial modeling, understanding <strong>cashflows</strong> is crucial because they represent the money a business receives or spends over time. By forecasting future cashflows, analysts can predict how well a company will perform, make investment decisions, and determine the value of assets or projects. Cashflows also help in budgeting, risk management, and assessing the financial health of a business. Essentially, cashflows provide valuable insights into the financial viability of investments, helping businesses plan for the future and make informed decisions about allocating resources.</p>
+<section id="span-style-color-dimgray-cashflows-span">
+<h3><span style="color: dimgray;"><strong>Cashflows</strong></span><a class="headerlink" href="#span-style-color-dimgray-cashflows-span" title="Permalink to this heading">#</a></h3>
+<p>Cashflows are amounts of money which are received (or income, positive
+cashflows) or paid (or outgo, negative cashflows) at particular times.
+Those payments arise from a financial transaction, e.g</p>
+<ul class="simple">
+<li><p>a bank account,</p></li>
+<li><p>a loan,</p></li>
+<li><p>an equity,</p></li>
+<li><p>a zero-coupon bond: A bond is a fixed income instrument that
+represents a loan from an investor to a debtor either a government
+or a corporation. A zero-coupon bond is a bond that pays no interest
+during its life.</p></li>
+<li><p>a fixed interest security: A fixed-income security is a debt
+instrument such as a bond or debenture that investors use to lend
+money to a company in exchange for interest payments.</p></li>
+<li><p>an index-linked security: An index-linked bonds pay interest that is
+tied to an underlying index, such as the consumer price index (CPI).
+Index-linked bonds are issued by governments to mitigate the effects
+of inflation by paying a real return plus accrued inflation.</p></li>
+<li><p>an annuity: An annuity is a series of payments made at regular
+intervals, such as equal monthly payments on a mortgage.</p></li>
+<li><p>a capital project etc.</p></li>
+</ul>
+<p>Cash received represents inflows, income or also called <strong>positive
+cashflows</strong>, while money spent represents outflows, outgo or <strong>negative
+cashflows</strong>. The net cashflow at a given point in time is the difference
+between expenses and income.</p>
+</section>
+<section id="span-style-color-dimgray-types-of-cashflows-based-on-contingency-span">
+<h3><span style="color: dimgray;"><strong>Types of Cashflows Based on Contingency</strong></span><a class="headerlink" href="#span-style-color-dimgray-types-of-cashflows-based-on-contingency-span" title="Permalink to this heading">#</a></h3>
+<p>Cashflows can be categorized based on their contingent nature, which refers to the conditions or events that trigger them. There are two main types of contingent cashflows:</p>
+<ol class="arabic simple">
+<li><p><strong>Certain Cashflows:</strong> These are cashflows that are expected to occur with certainty, meaning there is no uncertainty or risk associated with their timing or amount. For example, regular interest payments on a fixed-rate bond or scheduled dividend payments from a stable company are certain cashflows because they are contractually obligated and predictable.</p></li>
+<li><p><strong>Uncertain Cashflows:</strong> These cashflows are contingent upon certain events or conditions, making their occurrence uncertain. Examples of uncertain cashflows include insurance claim payments, legal settlements, or sales revenues from a new product launch. These cashflows depend on external factors such as market conditions, customer demand, or regulatory changes, making them inherently unpredictable and subject to risk.</p></li>
+</ol>
+<div class="admonition-example-3-4 admonition">
+<p class="admonition-title"><strong>Example 3.4</strong></p>
+<p>Identify whether the following financial instruments generate certain or uncertain cashflows: a bank account, a loan, an equity, a zero-coupon bond, a fixed interest security, an index-linked security, an annuity, and a capital project.</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Example 3.4</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>Let’s identify the type of cashflow associated with each financial instrument:</p>
+<ol class="arabic simple">
+<li><p><strong>Bank Account:</strong> Certain Cashflow - Deposits into a bank account typically represent certain cashflows, as they are predictable and occur regularly.</p></li>
+<li><p><strong>Loan:</strong> Certain Cashflow - Loan repayments from borrowers represent certain cashflows, as they are contractually obligated and predictable.</p></li>
+<li><p><strong>Equity:</strong> Uncertain Cashflow - Dividend payments from equity investments are uncertain cashflows, as they depend on the company’s performance and profitability.</p></li>
+<li><p><strong>Zero-Coupon Bond:</strong> Certain Cashflow - The final repayment of the principal amount at maturity represents a certain cashflow, as it is contractually obligated and predictable. However, zero-coupon bonds do not pay periodic interest, so they do not generate regular cashflows.</p></li>
+<li><p><strong>Fixed Interest Security:</strong> Certain Cashflow - Interest payments from fixed-interest securities represent certain cashflows, as they are contractually obligated and predictable.</p></li>
+<li><p><strong>Index-Linked Security:</strong> Uncertain Cashflow - Interest payments from index-linked securities are uncertain cashflows, as they depend on changes in the underlying index, such as the consumer price index (CPI).</p></li>
+<li><p><strong>Annuity:</strong> Certain Cashflow - Annuity payments represent certain cashflows, as they are predetermined and occur at regular intervals.</p></li>
+<li><p><strong>Capital Project:</strong> Uncertain Cashflow - Cashflows associated with a capital project, such as revenues from sales or cost savings, are uncertain cashflows, as they depend on various factors such as market conditions and project success.</p></li>
+</ol>
+<p>These examples illustrate how different financial instruments generate certain or uncertain cashflows based on their characteristics and contractual agreements.</p>
+</details>
+</div>
+</section>
+</section>
+<section id="span-style-color-dimgray-valuing-cash-flows-in-actuarial-science-span">
+<h2><span style="color: dimgray;"><strong>Valuing Cash Flows in Actuarial Science</strong></span><a class="headerlink" href="#span-style-color-dimgray-valuing-cash-flows-in-actuarial-science-span" title="Permalink to this heading">#</a></h2>
+<p>Actuarial science involves assessing financial risks, particularly in insurance and pension industries, where future cash flows are central to decision-making. Valuing cash flows entails determining their <strong>present worth</strong>, considering factors like <strong>time value of money and uncertainty</strong>.</p>
+<section id="span-style-color-dimgray-non-contingent-cash-flows-span">
+<h3><span style="color: dimgray;"><strong>Non-Contingent Cash Flows</strong></span><a class="headerlink" href="#span-style-color-dimgray-non-contingent-cash-flows-span" title="Permalink to this heading">#</a></h3>
+<p><strong>Non-contingent cash flows</strong> are predictable and assured, such as fixed annuities or bond payments. The technique commonly employed to value them is <strong>discounted cash flow (DCF) analysis</strong>. This involves discounting future cash flows back to their present value using an appropriate discount rate, often derived from market interest rates or specific risk factors. By discounting at the appropriate rate, the present value of these cash flows is obtained, <strong>providing a basis for decision-making</strong>.</p>
+</section>
+<section id="span-style-color-dimgray-contingent-cash-flows-span">
+<h3><span style="color: dimgray;"><strong>Contingent Cash Flows</strong></span><a class="headerlink" href="#span-style-color-dimgray-contingent-cash-flows-span" title="Permalink to this heading">#</a></h3>
+<p><strong>Contingent cash flows</strong> are uncertain and dependent on specific events or conditions, like insurance claims or options embedded in financial contracts. Valuing contingent cash flows requires <strong>probabilistic models</strong> that account for various scenarios and their associated probabilities.</p>
+<p>Actuaries employ techniques such as</p>
+<ul class="simple">
+<li><p><strong>stochastic modeling</strong>,</p></li>
+<li><p><strong>option pricing models</strong>, or</p></li>
+<li><p><strong>simulation methods like Monte Carlo simulation</strong></p></li>
+</ul>
+<p>to estimate the present value of contingent cash flows. These methods consider the range of possible outcomes and their likelihoods, providing a more nuanced understanding of the value of contingent cash flows.</p>
+<p>In what follows, we will delve deeper into understanding how to value fixed and known cash flows that are not contingent, considering crucial concepts such as <strong>the time value of money</strong> and <strong>interest rates</strong>.</p>
+<p>By exploring techniques such as <strong>discounted cash flow analysis</strong> and the selection of appropriate discount rates, we will gain insight into the precise valuation of these predictable financial streams. This understanding will serve as a foundational tool for actuarial professionals in their analysis of non-contingent cash flows, enabling informed decision-making and risk management strategies.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Chapter3_1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span style="color: dimgray;"><strong>3.1 Understanding Risk in Actuarial Science</strong></span></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Chapter3_3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span style="color: dimgray;"><strong>3.3 Fundamentals of Finance: Cashflow Models, Time Value of Money, and Interest Rates</strong></span></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><span style="color: dimgray;"><strong>3.2 Understanding Actuarial Models</strong></span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-financial-dynamics-in-actuarial-modeling-span"><span style="color: dimgray;"><strong>Financial Dynamics in Actuarial Modeling</strong></span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-cashflows-interest-and-the-time-value-of-money-span"><span style="color: dimgray;"><strong>Cashflows, Interest and the Time Value of Money</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-cashflows-span"><span style="color: dimgray;"><strong>Cashflows</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-types-of-cashflows-based-on-contingency-span"><span style="color: dimgray;"><strong>Types of Cashflows Based on Contingency</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-valuing-cash-flows-in-actuarial-science-span"><span style="color: dimgray;"><strong>Valuing Cash Flows in Actuarial Science</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-non-contingent-cash-flows-span"><span style="color: dimgray;"><strong>Non-Contingent Cash Flows</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-contingent-cash-flows-span"><span style="color: dimgray;"><strong>Contingent Cash Flows</strong></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pairote Satiracoo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1069 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>3.3 Fundamentals of Finance: Cashflow Models, Time Value of Money, and Interest Rates &#8212; SCMA138 Principles of Actuarial Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter3_3';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Solutions to Quiz 1" href="Quiz1.html" />
+    <link rel="prev" title="3.2 Understanding Actuarial Models" href="Chapter3_2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="SCMA138 Principles of Actuarial Science - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="SCMA138 Principles of Actuarial Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to SCMA 138 Principles of Actuarial Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Actuarial Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Introduction.html"><span style="color: dimgray;"><strong>Chapter 1</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Exercise.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_EndNote.html">End Note for Chapter 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical and Probabilistic Framework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter2.html"><span style="color: dimgray;"><strong>Chapter 2</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Part2.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics (Part 2)</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise.html">Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise_Solution.html">Solutions to Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_2.html"><span style="color: dimgray;"><strong>2.2 Probability Basics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_2_Exercise.html">Exercises for Chapter 2.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_3.html"><span style="color: dimgray;"><strong>2.3 Probability Distributions</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_3_Exercise.html">Exercises for Chapter 2.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_4.html"><span style="color: dimgray;"><strong>2.4 Exploring Probability Applications in General Insurance</strong></span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Principles Underlying Risk Management and Actuarial Modeling</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter3.html"><span style="color: dimgray;"><strong>Chapter 3</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_1.html"><span style="color: dimgray;"><strong>3.1 Understanding Risk in Actuarial Science</strong></span></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_2.html"><span style="color: dimgray;"><strong>3.2 Understanding Actuarial Models</strong></span></a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><span style="color: dimgray;"><strong>3.3 Fundamentals of Finance: Cashflow Models, Time Value of Money, and Interest Rates</strong></span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quiz Zone</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Quiz1.html">Solutions to Quiz 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliography</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter_Bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html/issues/new?title=Issue%20on%20page%20%2FChapter3_3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Chapter3_3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><span style="color: dimgray;">3.3 Fundamentals of Finance: Cashflow Models, Time Value of Money, and Interest Rates</span></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-interest-and-the-time-value-of-money-span"><span style="color: dimgray;"><strong>Interest and the Time Value of Money</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-simple-interest-span"><span style="color: dimgray;"><strong>Simple interest</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-compound-interest-span"><span style="color: dimgray;"><strong>Compound interest</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-frequency-of-compounding-span"><span style="color: dimgray;"><strong>Frequency of Compounding</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-relationship-between-the-nominal-rate-and-the-effective-rate-span"><span style="color: dimgray;"><strong>Relationship between the nominal rate and the effective rate</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-compounding-over-any-number-of-time-units-span"><span style="color: dimgray;"><strong>Compounding over any number of time units</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-changing-the-time-period-of-the-effective-rates-of-interest-span"><span style="color: dimgray;"><strong>Changing the time period of the effective rates of interest</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-non-constant-interest-rates-span"><span style="color: dimgray;"><strong>Non-constant interest rates</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-present-value-and-future-value-span"><span style="color: dimgray;"><strong>Present Value and Future Value</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-why-calculate-present-value-pv-span"><span style="color: dimgray;"><strong>Why calculate Present Value (PV)?</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-why-calculate-future-value-fv-span"><span style="color: dimgray;"><strong>Why calculate Future Value (FV)?</strong></span></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="span-style-color-dimgray-3-3-fundamentals-of-finance-cashflow-models-time-value-of-money-and-interest-rates-span">
+<h1><span style="color: dimgray;"><strong>3.3 Fundamentals of Finance: Cashflow Models, Time Value of Money, and Interest Rates</strong></span><a class="headerlink" href="#span-style-color-dimgray-3-3-fundamentals-of-finance-cashflow-models-time-value-of-money-and-interest-rates-span" title="Permalink to this heading">#</a></h1>
+<p>Understanding <strong>cashflow models, the time value of money, and interest rates</strong> is essential in finance and investment.</p>
+<p><strong>Cashflow models</strong> provide a framework for analyzing the inflows and outflows of cash over time, enabling informed decision-making in resource allocation, project evaluation, and financial planning. However, cashflows are not equal across time due to the <strong>time value of money principle</strong>, which asserts that a dollar today is worth more than a dollar in the future due to its potential earning capacity if invested. This principle underscores the importance of considering the timing of cashflows and the associated opportunity cost in financial decision-making.</p>
+<p><strong>Interest rates</strong> play a pivotal role in determining the time value of money, representing the cost of borrowing or the return on investment. They significantly influence the present and future value of cashflows, whether it’s the interest earned on savings accounts, the cost of borrowing for a mortgage, or the discount rate used in cashflow models.</p>
+<p>Understanding interest rates is crucial for assessing investment opportunities, managing debt, and evaluating the attractiveness of financial instruments.</p>
+<p>In essence, cashflow models, the time value of money, and interest rates are interconnected concepts that form the foundation of financial analysis and decision-making.</p>
+<div class="admonition-example-3-5-illustrating-cashflows-and-timeline admonition">
+<p class="admonition-title"><strong>Example 3.5: Illustrating Cashflows and Timeline</strong></p>
+<p>Explore how cashflows can be visually represented and understood through a timeline. Consider the following cashflow:</p>
+<p>A series of payments into and out of a bank account is given as follows:</p>
+<ul class="simple">
+<li><p>payments into the account : ฿1000 on 1 January 2014 and ฿100 on 1
+January 2016</p></li>
+<li><p>payments out of the account : ฿200 on 1 July 2015, ฿300 on 1 July
+2016, and ฿400 on 1 January 2018</p></li>
+</ul>
+<p>In practice, cashflows can be represented by a timeline as can be
+illustrated in this example.</p>
+</div>
+<figure class="align-default" id="figure-tikz-ex1-1-png">
+<img alt="_images/tikz-ex1-1.png" src="_images/tikz-ex1-1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">an example of a timeline</span><a class="headerlink" href="#figure-tikz-ex1-1-png" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="span-style-color-dimgray-interest-and-the-time-value-of-money-span">
+<h2><span style="color: dimgray;"><strong>Interest and the Time Value of Money</strong></span><a class="headerlink" href="#span-style-color-dimgray-interest-and-the-time-value-of-money-span" title="Permalink to this heading">#</a></h2>
+<p>This section introduces the time value of money using the concepts of
+compound interest and discounting. The effect of interest rates on the
+present value of future cash flows is discussed. The value of distant
+cash flows in the present and current cash flows in the future are then
+considered.</p>
+<p>We illustrate the time value of money by considering the following
+examples.</p>
+<div class="admonition-example-3-6 admonition">
+<p class="admonition-title"><strong>Example 3.6</strong></p>
+<p>An investor want to make a payment of ฿10000 in 2 years. Suppose that a
+bank pays compound interest at 4% per annum effective. How much should
+the initial investment?</p>
+</div>
+<p><strong>Note</strong> The amount we need to invest now (i.e. the initial investment
+in this example) is called the <em>present value (PV)</em> or <em>discounted
+value</em> of the payments.</p>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Example 3.6</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>By the end of 2 years an initial payment of \textbaht X will have accumulated to:
+$<span class="math notranslate nohighlight">\(  X  \cdot  1.04^2 = 10000. \)</span><span class="math notranslate nohighlight">\(
+Hence, \)</span>X = 9245.56 $.</p>
+</details>
+</div>
+<div class="admonition-example-3-7-time-value-of-money admonition">
+<p class="admonition-title"><strong>Example 3.7: Time Value of Money</strong></p>
+<p>Consider the following arguments</p>
+<ul class="simple">
+<li><p>It is obvious that you would prefer to have ฿1100 now than ฿1000
+now.</p></li>
+<li><p>If we receive and hold ฿1 now, then it is worth more than receiving
+and holding ฿1 at some time in the future? Why is this?</p></li>
+<li><p>Is it obvious that your would be better off with ฿1100 in 2 years
+than ฿1000 now?</p></li>
+</ul>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Example 3.7</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>For the second argument, this one baht will grow to <span class="math notranslate nohighlight">\(1 + r\)</span> in the first
+year, <span class="math notranslate nohighlight">\((1 + r)^2\)</span> in two years, and so on. These amounts are clearly
+worth more than receiving and holding ฿1 at the same time in the future.</p>
+<p>For the last argument, we need to compare the values of the amounts received at different times. To do this, we can look at the today’s
+values of ฿1100 received in 2 years assuming that we can invest at an
+annual interest rate of <span class="math notranslate nohighlight">\(r\)</span> percent.</p>
+<p>The present value of this amount <span class="math notranslate nohighlight">\(X\)</span> in year 2 is</p>
+<div class="math notranslate nohighlight">
+\[1100/(1 + r)^2.\]</div>
+<p>Assuming <span class="math notranslate nohighlight">\(r = 5\%\)</span>, the present value of <span class="math notranslate nohighlight">\(X\)</span> is <span class="math notranslate nohighlight">\(997.73\)</span>.</p>
+<p>Comparing the values in today’s baths, it is better to
+have ฿1000 now than to have ฿1100 in 2 years.</p>
+</details>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>From the above example,</p>
+<ol class="arabic simple">
+<li><p>One can deposit or invest ฿1 now and will receive ฿1 back and a
+reward called <strong>interest</strong> at some point in the future. Because of its
+potential earning power, money in the present is worth more than an
+equal amount in the future. This is a fundamental financial
+principle known as <strong>the time value of money</strong>.</p></li>
+<li><p>At a given point of time, cash has a monetary value, but also has a
+<strong>time value</strong>.</p></li>
+<li><p>The amount deposited or invested is called <strong>capital</strong> or <em>principal</em>.</p></li>
+</ol>
+</div>
+</section>
+<section id="span-style-color-dimgray-simple-interest-span">
+<h2><span style="color: dimgray;"><strong>Simple interest</strong></span><a class="headerlink" href="#span-style-color-dimgray-simple-interest-span" title="Permalink to this heading">#</a></h2>
+<p><strong>Simple interest</strong> is a calculation of interest that does not take into
+account the effect of compounding. Under simple interest, the amount of interest that accrues over time is proportional to the length of the period.</p>
+<p>Suppose an amount <span class="math notranslate nohighlight">\(C\)</span> is deposited in
+an account that pays simple interest at the rate of <span class="math notranslate nohighlight">\(i\)</span>% per annum. Then
+after <span class="math notranslate nohighlight">\(n\)</span> years the deposit will have accumulated to</p>
+<div class="math notranslate nohighlight">
+\[C( 1 + i \cdot n).\]</div>
+<p>Hence, the interest accrued over <span class="math notranslate nohighlight">\(n\)</span> years is</p>
+<div class="math notranslate nohighlight">
+\[\text{Simple Interest}  = C \cdot i \cdot n.\]</div>
+<p><strong>Note</strong> Auto loans and short-term personal loans are usually simple
+interest loans.</p>
+<div class="admonition-example-3-8-simple-interest admonition">
+<p class="admonition-title"><strong>Example 3.8: Simple Interest</strong></p>
+<p>An investor deposits ฿10000 in a bank account that pays simple interest
+at a rate of 5% per annum. Calculate</p>
+<ol class="arabic simple">
+<li><p>interest he will earn after the first two years.</p></li>
+<li><p>interest he will earn after the first three months.</p></li>
+</ol>
+</div>
+<p><strong>Note</strong> When <span class="math notranslate nohighlight">\(n\)</span> is not an integer, interest is paid on a pro-rate
+basis (in proportion).</p>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Example 3.8</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<ol class="arabic">
+<li><p>At the end of 2 years the interest earned is</p>
+<div class="math notranslate nohighlight">
+\[10000 \cdot 0.05 \cdot 2 = 1000.\]</div>
+</li>
+<li><p>At the end of 3 months the interest earned is</p>
+<div class="math notranslate nohighlight">
+\[10000 \cdot 0.05 \cdot \frac{3}{12} = 125.\]</div>
+<p>Alternatively, the
+interest per month is 5%/12 = 0.4167% and hence the interest earned
+can be calculated as</p>
+<div class="math notranslate nohighlight">
+\[10000 \cdot 0.004167 \cdot 3 = 125.\]</div>
+</li>
+</ol>
+</div>
+</section>
+<section id="span-style-color-dimgray-compound-interest-span">
+<h2><span style="color: dimgray;"><strong>Compound interest</strong></span><a class="headerlink" href="#span-style-color-dimgray-compound-interest-span" title="Permalink to this heading">#</a></h2>
+<p><strong>Compound interest</strong> refers to the interest that’s calculated on the initial principal, as well as on the accumulated interest from previous periods. In other words, it’s interest on interest. When interest is compounded, the interest earned in each period is added to the principal amount, and subsequent interest is calculated based on the new principal. Compound interest can lead to exponential growth of an investment or debt over time.</p>
+<p>In compound interest, the accumulated amount over a period of time is the capital of the following period. Therefore, a capital of 1 unit at the end of the year increases to <span class="math notranslate nohighlight">\(1 + i\)</span> units, which becomes the capital for the following year.</p>
+<p>For year 2, the principal is <span class="math notranslate nohighlight">\(1 + i\)</span> and the interest for the year is
+<span class="math notranslate nohighlight">\(( 1 + i ) \cdot i\)</span>. By the end of 2 years, an initial payment of 1 will have accumuulated to</p>
+<div class="math notranslate nohighlight">
+\[ (1+i) + ( 1 + i ) \cdot i = (1+i)^2.\]</div>
+<p>As this progression continues, the accumulated amount of <span class="math notranslate nohighlight">\(X\)</span> units at the end of year <span class="math notranslate nohighlight">\(n\)</span> becomes</p>
+<div class="math notranslate nohighlight">
+\[ X\cdot(1 + i)^n. \]</div>
+<p><strong>Note</strong> In this case, we can take money out and reinvest it as new capital illustrated in the timeline.</p>
+<figure class="align-default" id="figure-tikz-ex2-1-png">
+<img alt="_images/tikz-ex2-1.png" src="_images/tikz-ex2-1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">a timeline of compounding interest</span><a class="headerlink" href="#figure-tikz-ex2-1-png" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-example-3-9 admonition">
+<p class="admonition-title"><strong>Example 3.9</strong></p>
+<p>(Excel)  Use Excel to create a table showing the accumulated amounts at the end of each year for 15 years for a principal of ฿100 under the simple interest approach and the compound interest approach with <span class="math notranslate nohighlight">\(r = 6\%\)</span> for both cases.
+Discuss the results obtained (How long does it take to double the investment? How much will the principal grow over a 15-year period?)</p>
+</div>
+</section>
+<section id="span-style-color-dimgray-frequency-of-compounding-span">
+<h2><span style="color: dimgray;"><strong>Frequency of Compounding</strong></span><a class="headerlink" href="#span-style-color-dimgray-frequency-of-compounding-span" title="Permalink to this heading">#</a></h2>
+<p>Even though the interest rate is typically expressed in annual terms, an investment’s interest is frequently paid more frequently than once per year. For example, a savings account may offer an interest rate of 4% per year, credited quarterly. This interest rate is usually referred to as <strong>nominal rate of interest</strong>, i.e., 4% due four times per year.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Definition of Nominal Rate of Interest</strong></p>
+<p>The nominal rate of interest, also known as the stated rate or <strong>annual percentage rate (APR)</strong>, is the interest rate stated in a loan agreement or investment contract. It represents the rate at which interest is applied to the principal amount annually, <strong>without considering the effect of compounding or other factors</strong>. The nominal rate of interest is typically expressed as a percentage per annum.</p>
+</div>
+<p>We will see that the frequency of interest payments, also known as the <strong>frequency of compounding</strong>, has a significant impact on the total amount accrued and the interest collected. Consequently, it is crucial to precisely specify the rate of interest.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Notation of Nominal Rate of Interest</strong></p>
+<p>We use <span class="math notranslate nohighlight">\(i^{(m)}\)</span> to represent the nominal rate of interest payable <span class="math notranslate nohighlight">\(m\)</span> times a year in order to underline the significance of the frequency of compounding. Therefore, <span class="math notranslate nohighlight">\(m\)</span> is the
+frequency of compounding per year and <span class="math notranslate nohighlight">\(1/m\)</span> year is the <strong>compounding period</strong> or <strong>conversion period</strong>.</p>
+</div>
+<p><strong>Note</strong> The nominal rate of interest payable <span class="math notranslate nohighlight">\(m\)</span> times per period is also known as the rate of interest convertible <span class="math notranslate nohighlight">\(m\)</span>thly or compounded <span class="math notranslate nohighlight">\(m\)</span>thly.</p>
+<div class="admonition-example-3-10 admonition">
+<p class="admonition-title"><strong>Example 3.10</strong></p>
+<p>Calculate the accumulated value in 1 year of a deposit of ฿100 in a saving account that earns interest at 10% payable quarterly.</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Example 3.10</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>In this example, the nominal rate of interest of <span class="math notranslate nohighlight">\(i^{(4)} = 10\%\)</span> p.a. convertible
+quarterly means an interest rate of 10%/4 = 2.5% per quarter. In this case, the interest rate of 2.5% is <strong>effective interest</strong>. The effective interest rate of <span class="math notranslate nohighlight">\(i\)</span> per unit of time (which may be month, quarter, etc.) is the amount of interest received at the end of a unit of time per ฿1 invested at the beginning of that unit.</p>
+<p>Therefore, the nominal interest rate <span class="math notranslate nohighlight">\(i^{(4)} = 10\%\)</span> is equivalent to an
+<em>effective interest rate</em> of <span class="math notranslate nohighlight">\(2.5\%\)</span> per quarter.
+The accumulated value in
+1 year is <span class="math notranslate nohighlight">\(100 (1 + \frac{10\%}{4})^4 = 100 (1 + 2.5\%)^4 = 110.3813\)</span>.</p>
+<p>Note that after compound interest is
+taken into account, the interest income of an investor at the quarterly
+convertible nominal interest rate of 10% p.a. is 10.3813 (or 10.3813%.p.a. effective)</p>
+</details>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Definition of Effective Rate of Interest</strong></p>
+<p>The <strong>effective rate of interest</strong>, also known as the <strong>annual equivalent rate (AER)</strong> or <strong>annual percentage yield (APY)</strong>, takes into account the effect of compounding on the nominal rate of interest. It represents the actual rate of return or cost of borrowing over a <strong>specific period, considering the compounding frequency</strong>.</p>
+<p>The effective rate of interest provides a more accurate measure of the true cost or return on an investment or loan compared to the nominal rate, especially when interest is compounded more frequently than annually.</p>
+</div>
+<div class="admonition-example-3-11 admonition">
+<p class="admonition-title"><strong>Example 3.11</strong></p>
+<p>At a rate of 12% p.a. effective, draw a timeline to show cashflows if
+฿100 is invested at the start of the year.</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Example 3.11</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>The accumulated value of ฿100 at the end of the year is
+<span class="math notranslate nohighlight">\(100 (1 + 12\%) = 112\)</span>.</p>
+</details>
+</div>
+<div class="admonition-example-3-12 admonition">
+<p class="admonition-title"><strong>Example 3.12</strong></p>
+<p>At a rate of 12% p.a. compounding quarterly, draw a time line to show
+cashflows if ฿100 is invested at the start of the year.</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Example 3.12</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>The nominal interest rate <span class="math notranslate nohighlight">\(i^{(4)} = 12\%\)</span> is equivalent
+to an effective interest rate of <span class="math notranslate nohighlight">\(3\%\)</span> per quarter. The accumulated
+value in 1 year is <span class="math notranslate nohighlight">\(100 (1 + 3\%)^4 = 112.55\)</span>. After compound interest
+is taken into account, the interest income of an investor at the
+quarterly convertible nominal interest rate of 10% p.a. is 12.55 (or
+12.55%. p.a. effective)</p>
+</details>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Note</strong> <span class="math notranslate nohighlight">\(i^{(m)}\)</span> is a nominal rate of interest which is equivalent to <span class="math notranslate nohighlight">\(i^{(m)}/m\)</span> applied for
+each <span class="math notranslate nohighlight">\(m\)</span>th of a period. The interest is paid <span class="math notranslate nohighlight">\(m\)</span> times per measurement period.</p>
+</div>
+</section>
+<section id="span-style-color-dimgray-relationship-between-the-nominal-rate-and-the-effective-rate-span">
+<h2><span style="color: dimgray;"><strong>Relationship between the nominal rate and the effective rate</strong></span><a class="headerlink" href="#span-style-color-dimgray-relationship-between-the-nominal-rate-and-the-effective-rate-span" title="Permalink to this heading">#</a></h2>
+<p>The relationship between the nominal rate and the effective rate is influenced by the frequency of compounding. The effective rate takes into account how often the interest is compounded within a given period, whereas the nominal rate does not consider compounding.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The following formula can be used to convert between the effective rate
+<span class="math notranslate nohighlight">\(i\)</span> p.a. and the nominal rate <span class="math notranslate nohighlight">\(i^{(m)}\)</span> p.a.:</p>
+<div class="math notranslate nohighlight">
+\[( 1 + i) = \left( 1 + \frac{i^{(m)}}{m}\right)^m.\]</div>
+</div>
+<div class="admonition-example-3-13 admonition">
+<p class="admonition-title"><strong>Example 3.13</strong></p>
+<p>Consider the following problems.</p>
+<ol class="arabic simple">
+<li><p>Express a nominal annual interest rate of 9% convertible half-yearly as a monthly effective interest.</p></li>
+<li><p>Express a two-monthly effective interest of 3% as a nominal annual interest rate convertible two-monthly.</p></li>
+</ol>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Example 3.13</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<ol class="arabic simple">
+<li><p>The effective rate <span class="math notranslate nohighlight">\(i\)</span>% p.a. is $<span class="math notranslate nohighlight">\(i = ( 1 + \frac{0.09}{2})^2 - 1.\)</span>$</p></li>
+</ol>
+<p>Hence the monthly effective rate is</p>
+<p><span class="math notranslate nohighlight">\(j = (1 + i)^{1/12} - 1 = ( 1 + \frac{0.09}{2})^{2/12} - 1 = 0.007363\)</span>.</p>
+<ol class="arabic simple" start="2">
+<li><p>A nominal annual interest rate convertible two-monthly is</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(6 \cdot 3\% = 18\%\)</span>.</p>
+</details>
+</div>
+<div class="admonition-example-3-14 admonition">
+<p class="admonition-title"><strong>Example 3.14</strong></p>
+<p>Express each of the following effective rates per annum as a nominal
+rate, and vice versa.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><em><strong>Effective Rate</strong></em></p></th>
+<th class="head text-left"><p><em><strong>Nominal Rate</strong></em></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(i\)</span> = 0.04</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(i^{(4)} = 0.039412\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(i\)</span> = 0.10</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(i^{(12)} = 0.095690\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(i\)</span> = 0.06152</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(i^{(2)} = 0.06\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(i\)</span> = 0.126825</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(i^{(12)} = 0.12\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="span-style-color-dimgray-compounding-over-any-number-of-time-units-span">
+<h2><span style="color: dimgray;"><strong>Compounding over any number of time units</strong></span><a class="headerlink" href="#span-style-color-dimgray-compounding-over-any-number-of-time-units-span" title="Permalink to this heading">#</a></h2>
+<p>Suppose an amount ฿1 is invested at the rate of <span class="math notranslate nohighlight">\(i\)</span>% per time unit. At
+time <span class="math notranslate nohighlight">\(t\)</span> the accumulation is <span class="math notranslate nohighlight">\((1 + i)^t\)</span>.</p>
+<div class="admonition-example-3-15 admonition">
+<p class="admonition-title"><strong>Example 3.15</strong></p>
+<ol class="arabic simple">
+<li><p>An investor invests ฿4000 at* <span class="math notranslate nohighlight">\(8.5\)</span>% per quarter effective. What
+will be the deposit have accumulated to after 1 month.</p></li>
+<li><p>An investor invests ฿800 at* <span class="math notranslate nohighlight">\(6\)</span>% per half-year effective. What
+will be the deposit have accumulated to after 2.6 years.</p></li>
+</ol>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Example 3.15</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<ol class="arabic simple">
+<li><p>The accumulation after 1 month is
+<span class="math notranslate nohighlight">\(4000 \cdot 1.085^{1/3} = 4110.265768.\)</span></p></li>
+<li><p>The accumulation after 2.6 years is
+<span class="math notranslate nohighlight">\(800 \cdot 1.06^{5.2} = 1083.129754.\)</span></p></li>
+</ol>
+</details>
+</div>
+<div class="admonition-example-3-16 admonition">
+<p class="admonition-title"><strong>Example 3.16</strong></p>
+<p>(Excel)  Use Excel to create a table showing the accumulated amounts after 1 year under several different compounding frequencies (yearly, quarterly, monthly, daily) for a principal of ฿100 under with nominal rate of <span class="math notranslate nohighlight">\(r = 4\%\)</span> per annum.</p>
+<p>Discuss the results obtained. What happens if the compounding is made over infinitely small intervals (i.e. as <span class="math notranslate nohighlight">\(m \rightarrow \infty\)</span>)?</p>
+</div>
+</section>
+<section id="span-style-color-dimgray-changing-the-time-period-of-the-effective-rates-of-interest-span">
+<h2><span style="color: dimgray;"><strong>Changing the time period of the effective rates of interest</strong></span><a class="headerlink" href="#span-style-color-dimgray-changing-the-time-period-of-the-effective-rates-of-interest-span" title="Permalink to this heading">#</a></h2>
+<p>It is often very useful to change the effective rate of interest per
+time period to another.</p>
+<p>For example, if the effective rate of interest is defined per annum but cashflows occur monthly.</p>
+<p>Let <span class="math notranslate nohighlight">\(i\)</span> be the effective rate of interest per <span class="math notranslate nohighlight">\(t_i\)</span> years (which can be
+any positive number, for e.g. <span class="math notranslate nohighlight">\(t_i = 1/2\)</span>). Here <span class="math notranslate nohighlight">\(t_i\)</span> years can be
+regarded as one time unit. Let <span class="math notranslate nohighlight">\(j\)</span> be the effective rate of interest per
+<span class="math notranslate nohighlight">\(t_j\)</span> years.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The condition under which the two effective rates of interest* <span class="math notranslate nohighlight">\(i\)</span>
+and <span class="math notranslate nohighlight">\(j\)</span> are equivalent.</p>
+<p>Suppose we invest 1 for one year. Then at the end of the year under each rate of interest, we will have</p>
+<div class="math notranslate nohighlight">
+\[(1+i)^{1/t_i} \text{ and } (1+j)^{1/t_j}.\]</div>
+<p>Two rates of interest are
+equivalent if the given amount of principal invested for the same length
+of time produces the same accumulated value, i.e.</p>
+<div class="math notranslate nohighlight">
+\[(1+i)^{1/t_i} = (1+j)^{1/t_j}.\]</div>
+<p>Solving the equation for <span class="math notranslate nohighlight">\(j\)</span> yields</p>
+<div class="math notranslate nohighlight">
+\[j = (1+i)^{t_j/t_i} - 1.\]</div>
+</div>
+<div class="admonition-example-3-17 admonition">
+<p class="admonition-title"><strong>Example 3.17</strong></p>
+<ol class="arabic simple">
+<li><p>If the effective rate of interest is 6% per annum, what is the
+effective rate of interest per half-year?</p></li>
+<li><p>If the effective rate of interest is 12% per two-years effective,
+what is the effective rate of interest per quarter-year?</p></li>
+<li><p>If the effective rate of interest is 2% per month effective, what
+is the effective rate of interest per 1.5-years?</p></li>
+</ol>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Example 3.17</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(i = 6\%\)</span> p.a. Then</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[j = (1.06)^{1/2} -1 = 0.029563 \text{ per half-year}.\]</div>
+<ol class="arabic simple" start="2">
+<li><p><span class="math notranslate nohighlight">\(i = 12\%\)</span> per two-years. Then</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[j = (1.12)^{1/(2\times4)} -1 = 0.0142669 \text{ per quarter-year}.\]</div>
+<ol class="arabic simple" start="3">
+<li><p><span class="math notranslate nohighlight">\(i = 2\%\)</span> per month. Then</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[j = (1.02)^{1.5/(1/12)} -1 = 0.428246 \text{ per 1.5-years}.\]</div>
+</details>
+</div>
+</section>
+<section id="span-style-color-dimgray-non-constant-interest-rates-span">
+<h2><span style="color: dimgray;"><strong>Non-constant interest rates</strong></span><a class="headerlink" href="#span-style-color-dimgray-non-constant-interest-rates-span" title="Permalink to this heading">#</a></h2>
+<p>The effective rate may not be the same during every time period. We
+shall assume that the rates in every future time periods are known in
+advance.</p>
+<div class="admonition-example-3-18 admonition">
+<p class="admonition-title"><strong>Example 3.18</strong></p>
+<p>The effective rate of interest per annum was 4% during 2015, 4.5%
+during 2016 and 5% during 2017. Calculate the accumulation of ฿200
+invested on</p>
+<ol class="arabic simple">
+<li><p>01/01/2015 for 3 years</p></li>
+<li><p>01/07/2015 for 2 years</p></li>
+<li><p>01/04/2016 for 1.5 years</p></li>
+</ol>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Example 3.18</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<ol class="arabic simple">
+<li><p>Accumulating the ฿200 for the first year at the rate of 4% p.a. gives</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[200 \cdot 1.04.\]</div>
+<p>The accumulated value was then invested at the rate of 4.5% p.a. for another year, and its value at after 2 years was $<span class="math notranslate nohighlight">\(200 \cdot 1.04 \cdot 1.045.\)</span>$ At the rate of 5% in the final year, the value after 3 years was</p>
+<div class="math notranslate nohighlight">
+\[200 \cdot 1.04 \cdot 1.045 \cdot 1.05 = 228.228.\]</div>
+<ol class="arabic" start="2">
+<li><p>The accumulation is</p>
+<div class="math notranslate nohighlight">
+\[200 \cdot 1.04^{1/2} \cdot 1.045 \cdot 1.05^{1/2} = 218.4025.\]</div>
+</li>
+<li><p>The accumulation is</p>
+<div class="math notranslate nohighlight">
+\[200 \cdot 1.045^{9/12} \cdot 1.05^{3/4} = 214.416986.\]</div>
+</li>
+</ol>
+</details>
+</div>
+</section>
+<section id="span-style-color-dimgray-present-value-and-future-value-span">
+<h2><span style="color: dimgray;"><strong>Present Value and Future Value</strong></span><a class="headerlink" href="#span-style-color-dimgray-present-value-and-future-value-span" title="Permalink to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Definition of Present Value and Future Value</strong></p>
+<p><strong>Present Value (PV)</strong> is the current worth of a future sum of money, discounted at the effective rate of interest. It represents the amount required to invest today to accumulate to a desired future value.</p>
+<p><strong>Future Value (FV)</strong>  is the value of an investment or asset at a specified future date, compounded at the effective rate of interest. It represents the accumulation of the initial investment or principal, along with any interest or returns earned over time.</p>
+</div>
+<section id="span-style-color-dimgray-why-calculate-present-value-pv-span">
+<h3><span style="color: dimgray;"><strong>Why calculate Present Value (PV)?</strong></span><a class="headerlink" href="#span-style-color-dimgray-why-calculate-present-value-pv-span" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>PV is calculated to evaluate the attractiveness of an investment or a financial decision by comparing the present value of expected future cash flows to the initial investment or cost.</p></li>
+<li><p>It helps in assessing the feasibility of projects or investments by considering the time value of money.</p></li>
+<li><p>PV assists in determining the fair price of financial assets, such as bonds or stocks, by discounting their future cash flows to their present value.</p></li>
+</ul>
+</section>
+<section id="span-style-color-dimgray-why-calculate-future-value-fv-span">
+<h3><span style="color: dimgray;"><strong>Why calculate Future Value (FV)?</strong></span><a class="headerlink" href="#span-style-color-dimgray-why-calculate-future-value-fv-span" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>FV helps individuals and businesses estimate the growth potential of investments over time.</p></li>
+<li><p>It assists in setting financial goals and planning for long-term objectives, such as retirement savings or education funds.</p></li>
+<li><p>FV enables investors to compare different investment options by projecting their potential future returns.</p></li>
+</ul>
+<div class="admonition-example-3-19-present-value-example admonition">
+<p class="admonition-title"><strong>Example 3.19: Present Value Example</strong></p>
+<p>Suppose you want to accumulate $1,000 in 5 years, and you have the option to invest today in a savings account that offers an effective annual interest rate of 5%. You want to calculate the present value, which represents the amount you need to invest today to achieve the desired future value.</p>
+<p>Using the present value formula:</p>
+<div class="math notranslate nohighlight">
+\[PV = \frac{FV}{(1 + r)^n}\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(PV\)</span> = Present Value</p></li>
+<li><p><span class="math notranslate nohighlight">\(FV\)</span> = Future Value ($1,000 in this case)</p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> = Effective rate of interest per period (5% in this case)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> = Number of periods (5 years in this case)</p></li>
+</ul>
+<p>Substituting the values:</p>
+<div class="math notranslate nohighlight">
+\[PV = \frac{1,000}{(1 + 0.05)^5}\]</div>
+<div class="math notranslate nohighlight" id="equation-rounded-to-two-decimal-places">
+<span class="eqno">(1)<a class="headerlink" href="#equation-rounded-to-two-decimal-places" title="Permalink to this equation">#</a></span>\[PV ≈ \frac{1,000}{1.27628} ≈ 783.53\]</div>
+<p><strong>Interpretation</strong>:
+The present value of investing approximately $783.53 today, with an effective annual interest rate of 5% compounded annually, is required to accumulate to $1,000 in 5 years.</p>
+</div>
+<div class="admonition-example-3-20-future-value-example admonition">
+<p class="admonition-title"><strong>Example 3.20: Future Value Example</strong></p>
+<p>Suppose you invest $500 in a savings account that offers an effective annual interest rate of 8%, compounded annually. You want to calculate the future value of this investment after 3 years.</p>
+<p>Using the future value formula:</p>
+<div class="math notranslate nohighlight">
+\[FV = PV \times (1 + r)^n\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(FV\)</span> = Future Value</p></li>
+<li><p><span class="math notranslate nohighlight">\(PV\)</span> = Present Value ($500 in this case)</p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> = Effective rate of interest per period (8% in this case)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> = Number of periods (3 years in this case)</p></li>
+</ul>
+<p>Substituting the values:</p>
+<div class="math notranslate nohighlight">
+\[FV = 500 \times (1 + 0.08)^3\]</div>
+<div class="math notranslate nohighlight">
+\[FV ≈ 500 \times 1.259712 ≈ 629.86\]</div>
+<p>(rounded to two decimal places)</p>
+<p><strong>Interpretation</strong>:
+The future value of investing $500 today, with an effective annual interest rate of 8% compounded annually, will be approximately $629.86 after 3 years.</p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Chapter3_2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span style="color: dimgray;"><strong>3.2 Understanding Actuarial Models</strong></span></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Quiz1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Solutions to Quiz 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-interest-and-the-time-value-of-money-span"><span style="color: dimgray;"><strong>Interest and the Time Value of Money</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-simple-interest-span"><span style="color: dimgray;"><strong>Simple interest</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-compound-interest-span"><span style="color: dimgray;"><strong>Compound interest</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-frequency-of-compounding-span"><span style="color: dimgray;"><strong>Frequency of Compounding</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-relationship-between-the-nominal-rate-and-the-effective-rate-span"><span style="color: dimgray;"><strong>Relationship between the nominal rate and the effective rate</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-compounding-over-any-number-of-time-units-span"><span style="color: dimgray;"><strong>Compounding over any number of time units</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-changing-the-time-period-of-the-effective-rates-of-interest-span"><span style="color: dimgray;"><strong>Changing the time period of the effective rates of interest</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-non-constant-interest-rates-span"><span style="color: dimgray;"><strong>Non-constant interest rates</strong></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-present-value-and-future-value-span"><span style="color: dimgray;"><strong>Present Value and Future Value</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-why-calculate-present-value-pv-span"><span style="color: dimgray;"><strong>Why calculate Present Value (PV)?</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-why-calculate-future-value-fv-span"><span style="color: dimgray;"><strong>Why calculate Future Value (FV)?</strong></span></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pairote Satiracoo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
