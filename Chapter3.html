@@ -64,12 +64,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter3';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Solutions to Quiz 1" href="Quiz1.html" />
+    <link rel="next" title="3.1 Understanding Risk in Actuarial Science" href="Chapter3_1.html" />
     <link rel="prev" title="2.4 Exploring Probability Applications in General Insurance" href="Chapter2_4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -202,6 +200,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Principles Underlying Risk Management and Actuarial Modeling</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><span style="color: dimgray;"><strong>Chapter 3</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_1.html"><span style="color: dimgray;"><strong>3.1 Understanding Risk in Actuarial Science</strong></span></a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_2.html"><span style="color: dimgray;"><strong>3.2 Understanding Actuarial Models</strong></span></a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quiz Zone</span></p>
 <ul class="nav bd-sidenav">
@@ -405,26 +408,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-principles-underlying-risk-management-and-actuarial-modeling-span"><span style="color: dimgray;"><strong>Principles Underlying Risk Management and Actuarial Modeling</strong></span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-understanding-risk-in-actuarial-science-span"><span style="color: dimgray;"><strong>Understanding Risk in Actuarial Science</strong></span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-understanding-actuarial-models-span"><span style="color: dimgray;"><strong>Understanding Actuarial Models</strong></span></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-financial-dynamics-in-actuarial-modeling-span"><span style="color: dimgray;"><strong>Financial Dynamics in Actuarial Modeling</strong></span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-cashflows-interest-and-the-time-value-of-money-span"><span style="color: dimgray;"><strong>Cashflows, Interest and the Time Value of Money</strong></span></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-cashflows-span"><span style="color: dimgray;"><strong>Cashflows</strong></span></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-types-of-cashflows-based-on-contingency-span"><span style="color: dimgray;"><strong>Types of Cashflows Based on Contingency</strong></span></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-interest-and-the-time-value-of-money-span"><span style="color: dimgray;"><strong>Interest and the Time Value of Money</strong></span></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><span style="color: dimgray;"><strong>Interest and the Time Value of Money</strong></span></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-simple-interest-span"><span style="color: dimgray;"><strong>Simple interest</strong></span></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-compound-interest-span"><span style="color: dimgray;"><strong>Compound interest</strong></span></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-frequency-of-compounding-span"><span style="color: dimgray;"><strong>Frequency of Compounding</strong></span></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-principles-underlying-risk-management-and-actuarial-modeling-span"><span style="color: dimgray;"><strong>Principles Underlying Risk Management and Actuarial Modeling</strong></span></a></li>
 </ul>
             </nav>
         </div>
@@ -440,332 +424,10 @@ document.write(`
 <span id="chapter3-label"></span><h1><span style="color: dimgray;"><strong>Chapter 3</strong></span><a class="headerlink" href="#span-style-color-dimgray-chapter-3-span" title="Permalink to this heading">#</a></h1>
 <section id="span-style-color-dimgray-principles-underlying-risk-management-and-actuarial-modeling-span">
 <h2><span style="color: dimgray;"><strong>Principles Underlying Risk Management and Actuarial Modeling</strong></span><a class="headerlink" href="#span-style-color-dimgray-principles-underlying-risk-management-and-actuarial-modeling-span" title="Permalink to this heading">#</a></h2>
-<p>In finance and insurance, the concept of <strong>risk</strong> is central to decision-making. This chapter serves as a foundational exploration of the principles that govern how we understand and manage risk.</p>
-<p>We will start by defining what we mean by “risk” and how it relates to specific events or situations. Then, we’ll explore actuarial phenomena—events with uncertain outcomes that have economic consequences and the key variables that characterize them:</p>
-<ul class="simple">
-<li><p>frequency,</p></li>
-<li><p>timing, and</p></li>
-<li><p>severity.</p></li>
-</ul>
-<p>By examining these concepts, we aim to provide a solid academic footing for understanding how risk is quantified, managed, and navigated within economic systems.</p>
-<section id="span-style-color-dimgray-understanding-risk-in-actuarial-science-span">
-<h3><span style="color: dimgray;"><strong>Understanding Risk in Actuarial Science</strong></span><a class="headerlink" href="#span-style-color-dimgray-understanding-risk-in-actuarial-science-span" title="Permalink to this heading">#</a></h3>
-<p><strong>Risk management and actuarial modeling</strong> are essential in actuarial science, involving the identification, quantification, and management of risks.</p>
-<p>The term <strong>risk</strong> refers to both an event that can be observed and a particular entity, such as a person, object, or group of individuals, with which the event is associated.</p>
-<div class="admonition-example-3-1 admonition">
-<p class="admonition-title"><strong>Example 3.1</strong> </p>
-<p>Consider the risk of a car accident. In this scenario, “risk” refers to both the possibility of a car accident occurring (the event that can be observed) and the specific entity involved, such as the driver, passengers, or the vehicle itself (the particular entity with which the event is associated).</p>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Definition</p>
-<p><strong>An actuarial phenomenon</strong> is a stochastic phenomenon consisting of a random number of stochastic events, with outcomes occurring within specified time periods and being considered desirable or undesirable by participants in an economic system.</p>
-<p><strong>Actuarial risk variables</strong> include frequency (the number of component stochastic events), timing (when outcomes occur), and severity (the undesirability of outcomes).</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Actuarial phenomena occur within economic systems and have various possible outcomes, often measured in monetary units.</p>
-</div>
-<div class="admonition-example-3-2-car-insurance admonition">
-<p class="admonition-title"><strong>Example 3.2: Car Insurance</strong> </p>
-<p>In the context of car insurance, the phenomenon encompasses all incidents involving a particular insured vehicle within a specified period. Each incident may involve various stochastic events and outcomes, such as accidents, thefts, or damage due to natural disasters. The frequency of these incidents represents the number of occurrences within the insurance coverage period. Each incident involves multiple outcomes, including the event itself (accident or theft), the extent of damage to the vehicle, injuries to passengers or other parties, insurance payouts, and any legal proceedings resulting from the incident. Timing variables include the time of the incident, notification to the insurer, assessment of damage, processing of insurance claims, and resolution of legal matters. Severity variables measure the extent of damage to the vehicle, the severity of injuries, the amount of insurance coverage required, and any legal liabilities.</p>
-<ul class="simple">
-<li><p><strong>Phenomenon:</strong> Car insurance covers all incidents involving a specific insured vehicle over a designated time frame.</p></li>
-<li><p><strong>Frequency:</strong> The frequency of incidents represents the number of occurrences within the insurance coverage period.</p></li>
-<li><p><strong>Stochastic Events:</strong> Each incident, such as accidents or thefts, constitutes a stochastic event.</p></li>
-<li><p><strong>Outcomes:</strong> Various outcomes include the incident itself, damage to the vehicle, injuries, insurance payouts, and legal proceedings.</p></li>
-<li><p><strong>Timing:</strong> Timing variables encompass the occurrence of the incident, notification to the insurer, assessment of damage, claims processing, and legal resolution.</p></li>
-<li><p><strong>Severity:</strong> Severity variables measure the extent of damage, severity of injuries, required insurance coverage, and legal liabilities.</p></li>
-</ul>
-</div>
-<div class="admonition-example-3-3-life-insurance admonition">
-<p class="admonition-title"><strong>Example 3.3: Life Insurance</strong> </p>
-<p>In life insurance, the phenomenon encompasses all events related to the insured individual’s life and its consequences within a specified period. These events include death, disability, or critical illness. The frequency of such events represents the number of occurrences within the insurance coverage period, with each event constituting a stochastic phenomenon.</p>
-<ul class="simple">
-<li><p><strong>Phenomenon:</strong> Life insurance covers events related to the insured individual’s life, such as death, disability, or critical illness, within a specified period.</p></li>
-<li><p><strong>Frequency:</strong> The frequency of events represents the number of occurrences within the insurance coverage period.</p></li>
-<li><p><strong>Stochastic Events:</strong> Each event, such as death or disability, constitutes a stochastic phenomenon.</p></li>
-<li><p><strong>Outcomes:</strong> Various outcomes include the occurrence of the event itself (death, disability, critical illness), financial support for the insured or their beneficiaries, and any legal or administrative proceedings.</p></li>
-<li><p><strong>Timing:</strong> Timing variables encompass the occurrence of the event, notification to the insurer, processing of insurance claims, and distribution of benefits to beneficiaries.</p></li>
-<li><p><strong>Severity:</strong> Severity variables measure the financial impact of the event on the insured or their beneficiaries, the amount of insurance coverage provided, and any legal or administrative complexities involved.</p></li>
-</ul>
-</div>
-</section>
-<section id="span-style-color-dimgray-understanding-actuarial-models-span">
-<h3><span style="color: dimgray;"><strong>Understanding Actuarial Models</strong></span><a class="headerlink" href="#span-style-color-dimgray-understanding-actuarial-models-span" title="Permalink to this heading">#</a></h3>
-<p>Actuarial models play a crucial role in the world of risk management and insurance. Let’s break down what they are and how they work.</p>
-<p><strong>What is an Actuarial Model?</strong></p>
-<ul class="simple">
-<li><p>An actuarial model is essentially a mathematical representation of one or more risks that actuaries use to understand and manage those risks.</p></li>
-<li><p>Actuarial values are numerical values assigned to specific sets of risks, determined using these models.</p></li>
-<li><p>Participants in the process assign a degree of confidence to these values, believing that higher confidence reflects values closer to the truth.</p></li>
-</ul>
-<p><strong>Stochastic vs. Deterministic Models</strong></p>
-<ul class="simple">
-<li><p>Actuarial phenomena are inherently uncertain, but actuarial models can represent risks in two ways: stochastically or deterministically.</p></li>
-<li><p>Stochastic models incorporate probability distributions to represent risk variables, essential for determining failure probabilities.</p></li>
-<li><p>Deterministic models use sets of fixed values, often representing the means of underlying distributions.</p></li>
-</ul>
-<p><strong>Principles Behind Actuarial Modeling</strong></p>
-<ul class="simple">
-<li><p>Actuarial models can be based on outcomes of experiments, observations, or knowledge related to the phenomenon itself.</p></li>
-<li><p>They allow for understanding the likelihood of failure relative to specific criteria over a defined period.</p></li>
-</ul>
-<p><strong>Interconnected Components</strong></p>
-<ul class="simple">
-<li><p>Components of an actuarial model can be interdependent. For instance, certain risks may be related, and changing one variable may affect others.</p></li>
-<li><p>Actuarial risks often lead to rights or obligations involving cash transactions, such as insurance payouts or premiums.</p></li>
-</ul>
-<p>In essence, actuarial models serve as powerful tools for assessing risk, allowing for informed decision-making in the complex world of insurance and finance.</p>
-<div class="tip admonition">
-<p class="admonition-title">Participants in the Process Assign Confidence</p>
-<ul class="simple">
-<li><p>In actuarial modeling, various stakeholders are involved, including actuaries, insurance companies, policymakers, and individuals seeking insurance coverage.</p></li>
-<li><p>These participants rely on actuarial values provided by the models to make decisions regarding risk management, pricing of insurance policies, and setting financial reserves.</p></li>
-<li><p>When assigning actuarial values to specific risks, participants may have differing levels of confidence in the accuracy of these values.</p></li>
-<li><p>Higher confidence levels indicate a stronger belief that the assigned values accurately reflect the true underlying risks.</p></li>
-<li><p>Actuaries and other experts involved in the modeling process strive to produce values that inspire confidence among stakeholders, as higher confidence levels contribute to more informed decision-making and greater trust in the insurance industry.</p></li>
-</ul>
-</div>
-</section>
-</section>
-<section id="span-style-color-dimgray-financial-dynamics-in-actuarial-modeling-span">
-<h2><span style="color: dimgray;"><strong>Financial Dynamics in Actuarial Modeling</strong></span><a class="headerlink" href="#span-style-color-dimgray-financial-dynamics-in-actuarial-modeling-span" title="Permalink to this heading">#</a></h2>
-<p>In actuarial modeling, an understanding of <strong>financial dynamics</strong> is essential.</p>
-<p>We will begin our exploration by leveraging financial modeling techniques to analyze how cashflows and interest rates impact risk assessment and insurance product design.</p>
-<p>This section delves into the fundamental principles governing cashflows, interest rates, and the time value of money within actuarial contexts. By exploring these concepts, we gain insight into how financial factors influence risk valuation and insurance product design.</p>
-<section id="span-style-color-dimgray-cashflows-interest-and-the-time-value-of-money-span">
-<h3><span style="color: dimgray;"><strong>Cashflows, Interest and the Time Value of Money</strong></span><a class="headerlink" href="#span-style-color-dimgray-cashflows-interest-and-the-time-value-of-money-span" title="Permalink to this heading">#</a></h3>
-<p>In financial modeling, understanding <strong>cashflows</strong> is crucial because they represent the money a business receives or spends over time. By forecasting future cashflows, analysts can predict how well a company will perform, make investment decisions, and determine the value of assets or projects. Cashflows also help in budgeting, risk management, and assessing the financial health of a business. Essentially, cashflows provide valuable insights into the financial viability of investments, helping businesses plan for the future and make informed decisions about allocating resources.</p>
-<section id="span-style-color-dimgray-cashflows-span">
-<h4><span style="color: dimgray;"><strong>Cashflows</strong></span><a class="headerlink" href="#span-style-color-dimgray-cashflows-span" title="Permalink to this heading">#</a></h4>
-<p>Cashflows are amounts of money which are received (or income, positive
-cashflows) or paid (or outgo, negative cashflows) at particular times.
-Those payments arise from a financial transaction, e.g</p>
-<ul class="simple">
-<li><p>a bank account,</p></li>
-<li><p>a loan,</p></li>
-<li><p>an equity,</p></li>
-<li><p>a zero-coupon bond: A bond is a fixed income instrument that
-represents a loan from an investor to a debtor either a government
-or a corporation. A zero-coupon bond is a bond that pays no interest
-during its life.</p></li>
-<li><p>a fixed interest security: A fixed-income security is a debt
-instrument such as a bond or debenture that investors use to lend
-money to a company in exchange for interest payments.</p></li>
-<li><p>an index-linked security: An index-linked bonds pay interest that is
-tied to an underlying index, such as the consumer price index (CPI).
-Index-linked bonds are issued by governments to mitigate the effects
-of inflation by paying a real return plus accrued inflation.</p></li>
-<li><p>an annuity: An annuity is a series of payments made at regular
-intervals, such as equal monthly payments on a mortgage.</p></li>
-<li><p>a capital project etc.</p></li>
-</ul>
-<p>Cash received represents inflows, income or also called <strong>positive
-cashflows</strong>, while money spent represents outflows, outgo or <strong>negative
-cashflows</strong>. The net cashflow at a given point in time is the difference
-between expenses and income.</p>
-</section>
-<section id="span-style-color-dimgray-types-of-cashflows-based-on-contingency-span">
-<h4><span style="color: dimgray;"><strong>Types of Cashflows Based on Contingency</strong></span><a class="headerlink" href="#span-style-color-dimgray-types-of-cashflows-based-on-contingency-span" title="Permalink to this heading">#</a></h4>
-<p>Cashflows can be categorized based on their contingent nature, which refers to the conditions or events that trigger them. There are two main types of contingent cashflows:</p>
-<ol class="arabic simple">
-<li><p><strong>Certain Cashflows:</strong> These are cashflows that are expected to occur with certainty, meaning there is no uncertainty or risk associated with their timing or amount. For example, regular interest payments on a fixed-rate bond or scheduled dividend payments from a stable company are certain cashflows because they are contractually obligated and predictable.</p></li>
-<li><p><strong>Uncertain Cashflows:</strong> These cashflows are contingent upon certain events or conditions, making their occurrence uncertain. Examples of uncertain cashflows include insurance claim payments, legal settlements, or sales revenues from a new product launch. These cashflows depend on external factors such as market conditions, customer demand, or regulatory changes, making them inherently unpredictable and subject to risk.</p></li>
-</ol>
-<div class="admonition-example-3-4 admonition">
-<p class="admonition-title"><strong>Example 3.4</strong></p>
-<p>Identify whether the following financial instruments generate certain or uncertain cashflows: a bank account, a loan, an equity, a zero-coupon bond, a fixed interest security, an index-linked security, an annuity, and a capital project.</p>
-</div>
-<p>Let’s identify the type of cashflow associated with each financial instrument:</p>
-<ol class="arabic simple">
-<li><p><strong>Bank Account:</strong> Certain Cashflow - Deposits into a bank account typically represent certain cashflows, as they are predictable and occur regularly.</p></li>
-<li><p><strong>Loan:</strong> Certain Cashflow - Loan repayments from borrowers represent certain cashflows, as they are contractually obligated and predictable.</p></li>
-<li><p><strong>Equity:</strong> Uncertain Cashflow - Dividend payments from equity investments are uncertain cashflows, as they depend on the company’s performance and profitability.</p></li>
-<li><p><strong>Zero-Coupon Bond:</strong> Certain Cashflow - The final repayment of the principal amount at maturity represents a certain cashflow, as it is contractually obligated and predictable. However, zero-coupon bonds do not pay periodic interest, so they do not generate regular cashflows.</p></li>
-<li><p><strong>Fixed Interest Security:</strong> Certain Cashflow - Interest payments from fixed-interest securities represent certain cashflows, as they are contractually obligated and predictable.</p></li>
-<li><p><strong>Index-Linked Security:</strong> Uncertain Cashflow - Interest payments from index-linked securities are uncertain cashflows, as they depend on changes in the underlying index, such as the consumer price index (CPI).</p></li>
-<li><p><strong>Annuity:</strong> Certain Cashflow - Annuity payments represent certain cashflows, as they are predetermined and occur at regular intervals.</p></li>
-<li><p><strong>Capital Project:</strong> Uncertain Cashflow - Cashflows associated with a capital project, such as revenues from sales or cost savings, are uncertain cashflows, as they depend on various factors such as market conditions and project success.</p></li>
-</ol>
-<p>These examples illustrate how different financial instruments generate certain or uncertain cashflows based on their characteristics and contractual agreements.</p>
-<div class="admonition-example-3-5 admonition">
-<p class="admonition-title"><strong>Example 3.5</strong></p>
-<p>A series of payments into and out of a bank account is given as follows:</p>
-<ul class="simple">
-<li><p>payments into the account : ฿1000 on 1 January 2014 and ฿100 on 1
-January 2016</p></li>
-<li><p>payments out of the account : ฿200 on 1 July 2015, ฿300 on 1 July
-2016, and ฿400 on 1 January 2018</p></li>
-</ul>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>In practice, cashflows can be represented by a timeline as can be
-illustrated in this example.</p>
-</div>
-</section>
-<section id="span-style-color-dimgray-interest-and-the-time-value-of-money-span">
-<h4><span style="color: dimgray;"><strong>Interest and the Time Value of Money</strong></span><a class="headerlink" href="#span-style-color-dimgray-interest-and-the-time-value-of-money-span" title="Permalink to this heading">#</a></h4>
-<p>This section introduces the time value of money using the concepts of
-compound interest and discounting. The effect of interest rates on the
-present value of future cash flows is discussed. The value of distant
-cash flows in the present and current cash flows in the future are then
-considered.</p>
-<p>We illustrate the time value of money by considering the following
-examples.</p>
-<div class="admonition-example-3-6 admonition">
-<p class="admonition-title"><strong>Example 3.6</strong></p>
-<p>An investor want to make a payment of ฿10000 in 2 years. Suppose that a
-bank pays compound interest at 4% per annum effective. How much should
-the initial investment?</p>
-</div>
-<p><strong>Note</strong> The amount we need to invest now (i.e. the initial investment
-in this example) is called the <em>present value (PV)</em> or <em>discounted
-value</em> of the payments.</p>
-<div class="admonition-example-3-7 admonition">
-<p class="admonition-title"><strong>Example 3.7</strong></p>
-<p>Consider the following arguments</p>
-<ul class="simple">
-<li><p>It is obvious that you would prefer to have ฿1100 now than ฿1000
-now.</p></li>
-<li><p>If we receive and hold ฿1 now, then it is worth more than receiving
-and holding ฿1 at some time in the future? Why is this?</p></li>
-<li><p>Is it obvious that your would be better off with ฿1100 in 2 years
-than ฿1000 now?</p></li>
-</ul>
-</div>
-<p><strong>Solution:</strong></p>
-<p>For the second argument, this one baht will grow to <span class="math notranslate nohighlight">\(1 + r\)</span> in the first
-year, <span class="math notranslate nohighlight">\((1 + r)^2\)</span> in two years, and so on. These amounts are clearly
-worth more than receiving and holding ฿1 at the same time in the future.</p>
-<p>For the last argument, we need to compare the values of the amounts received at different times. To do this, we can look at the today’s
-values of ฿1100 received in 2 years assuming that we can invest at an
-annual interest rate of <span class="math notranslate nohighlight">\(r\)</span> percent.</p>
-<p>The present value of this amount <span class="math notranslate nohighlight">\(X\)</span> in year 2 is</p>
-<div class="math notranslate nohighlight">
-\[1100/(1 + r)^2.\]</div>
-<p>Assuming <span class="math notranslate nohighlight">\(r = 5\%\)</span>, the present value of <span class="math notranslate nohighlight">\(X\)</span> is <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">1100/(1</span> <span class="pre">+</span> <span class="pre">0.05)^2</span></code>.</p>
-<p>Comparing the values in today’s baths, it is better to
-have ฿1000 now than to have ฿1100 in 2 years.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p><strong>Notes</strong> From the above example,</p>
-<ol class="arabic simple">
-<li><p>One can deposit or invest ฿1 now and will receive ฿1 back and a
-reward called <em>interest</em> at some point in the future. Because of its
-potential earning power, money in the present is worth more than an
-equal amount in the future. This is a fundamental financial
-principle known as <strong>the time value of money</strong>.</p></li>
-<li><p>At a given point of time, cash has a monetary value, but also has a
-<em>time value</em>.</p></li>
-<li><p>The amount deposited or invested is called <em>capital</em> or <em>principal</em>.</p></li>
-</ol>
-</div>
-</section>
-<section id="id1">
-<h4><span style="color: dimgray;"><strong>Interest and the Time Value of Money</strong></span><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
-<section id="span-style-color-dimgray-simple-interest-span">
-<h5><span style="color: dimgray;"><strong>Simple interest</strong></span><a class="headerlink" href="#span-style-color-dimgray-simple-interest-span" title="Permalink to this heading">#</a></h5>
-<p><strong>Simple interest</strong> is a calculation of interest that does not take into
-account the effect of compounding. Under simple interest, the amount of interest that accrues over time is proportional to the length of the period.</p>
-<p>Suppose an amount <span class="math notranslate nohighlight">\(C\)</span> is deposited in
-an account that pays simple interest at the rate of <span class="math notranslate nohighlight">\(i\)</span>% per annum. Then
-after <span class="math notranslate nohighlight">\(n\)</span> years the deposit will have accumulated to</p>
-<div class="math notranslate nohighlight">
-\[C( 1 + i \cdot n).\]</div>
-<p>Hence, the interest accrued over <span class="math notranslate nohighlight">\(n\)</span> years is</p>
-<div class="math notranslate nohighlight">
-\[\text{Simple Interest}  = C \cdot i \cdot n.\]</div>
-<p><strong>Note</strong> Auto loans and short-term personal loans are usually simple
-interest loans.</p>
-<div class="admonition-example-3-8 admonition">
-<p class="admonition-title"><strong>Example 3.8</strong></p>
-<p>An investor deposits ฿10000 in a bank account that pays simple interest
-at a rate of 5% per annum. Calculate</p>
-<ol class="arabic simple">
-<li><p>interest he will earn after the first two years.</p></li>
-<li><p>interest he will earn after the first three months.</p></li>
-</ol>
-</div>
-<p><strong>Note</strong> When <span class="math notranslate nohighlight">\(n\)</span> is not an integer, interest is paid on a pro-rate
-basis (in proportion).</p>
-<p><strong>Solution:</strong></p>
-<ol class="arabic">
-<li><p>At the end of 2 years the interest earned is</p>
-<div class="math notranslate nohighlight">
-\[10000 \cdot 0.05 \cdot 2 = 1000.\]</div>
-</li>
-<li><p>At the end of 3 months the interest earned is</p>
-<div class="math notranslate nohighlight">
-\[10000 \cdot 0.05 \cdot \frac{3}{12} = 125.\]</div>
-<p>Alternatively, the
-interest per month is 5%/12 = 0.4167% and hence the interest earned
-can be calculated as</p>
-<div class="math notranslate nohighlight">
-\[10000 \cdot 0.004167 \cdot 3 = 125.\]</div>
-</li>
-</ol>
-</section>
-<section id="span-style-color-dimgray-compound-interest-span">
-<h5><span style="color: dimgray;"><strong>Compound interest</strong></span><a class="headerlink" href="#span-style-color-dimgray-compound-interest-span" title="Permalink to this heading">#</a></h5>
-<p>In compound interest, the accumulated amount over a period of time is the capital of the following period. Therefore, a capital of 1 unit at the end of the year increases to <span class="math notranslate nohighlight">\(1 + i\)</span> units, which becomes the capital for the following year.</p>
-<p>For year 2, the principal is <span class="math notranslate nohighlight">\(1 + i\)</span> and the interest for the year is
-<span class="math notranslate nohighlight">\(( 1 + i ) \cdot i\)</span>. By the end of 2 years, an initial payment of 1 will have accumuulated to</p>
-<div class="math notranslate nohighlight">
-\[ (1+i) + ( 1 + i ) \cdot i = (1+i)^2.\]</div>
-<p>As this progression continues, the accumulated amount of <span class="math notranslate nohighlight">\(X\)</span> units at the end of year <span class="math notranslate nohighlight">\(n\)</span> becomes</p>
-<div class="math notranslate nohighlight">
-\[ X\cdot(1 + i)^n. \]</div>
-<p><strong>Note</strong> In this case, we can take money out and reinvest it as new capital illustrated in the timeline.</p>
-<div class="admonition-example-3-9 admonition">
-<p class="admonition-title"><strong>Example 3.9</strong></p>
-<p>(Excel)  Use Excel to create a table showing the accumulated amounts at the end of each year for 15 years for a principal of ฿100 under the simple interest approach and the compound interest approach with <span class="math notranslate nohighlight">\(r = 6\%\)</span> for both cases.
-Discuss the results obtained (How long does it take to double the investment? How much will the principal grow over a 15-year period?)</p>
-</div>
-</section>
-<section id="span-style-color-dimgray-frequency-of-compounding-span">
-<h5><span style="color: dimgray;"><strong>Frequency of Compounding</strong></span><a class="headerlink" href="#span-style-color-dimgray-frequency-of-compounding-span" title="Permalink to this heading">#</a></h5>
-<p>Even though the interest rate is typically expressed in annual terms, an investment’s interest is frequently paid more frequently than once per year. For example, a savings account may offer an interest rate of 4% per year, credited quarterly. This interest rate is usually referred to as <strong>nominal rate of interest</strong>, i.e., 4% due four times per year.</p>
-<p>We will see that the frequency of interest payments, also known as the <strong>frequency of compounding</strong>, has a significant impact on the total amount accrued and the interest collected. Consequently, it is crucial to precisely specify the rate of interest.</p>
-<p>We use <span class="math notranslate nohighlight">\(i^{(m)}\)</span> to represent the nominal rate of interest payable <span class="math notranslate nohighlight">\(m\)</span> times a year in order to underline the significance of the frequency of compounding. Therefore, <span class="math notranslate nohighlight">\(m\)</span> is the
-frequency of compounding per year and <span class="math notranslate nohighlight">\(1/m\)</span> year is the <strong>compounding period</strong> or <strong>conversion period</strong>.</p>
-<p><strong>Note</strong> The nominal rate of interest payable <span class="math notranslate nohighlight">\(m\)</span> times per period is also known as the rate of interest convertible <span class="math notranslate nohighlight">\(m\)</span>thly or compounded <span class="math notranslate nohighlight">\(m\)</span>thly.</p>
-<div class="admonition-example-3-10 admonition">
-<p class="admonition-title"><strong>Example 3.10</strong></p>
-<p>Calculate the accumulated value in 1 year of a deposit of ฿100 in a saving account that earns interest at 10% payable quarterly.</p>
-</div>
-<p><strong>Solution:</strong> In this example, the nominal rate of interest of <span class="math notranslate nohighlight">\(i^{(4)} = 10\%\)</span> p.a. convertible
-quarterly means an interest rate of 10%/4 = 2.5% per quarter. In this case, the interest rate of 2.5% is <em>effective interest</em>. The effective interest rate of <span class="math notranslate nohighlight">\(i\)</span> per unit of time (which may be month, quarter, etc.) is the amount of interest received at the end of a unit of time per ฿1 invested at the beginning of that unit.</p>
-<p>Therefore, the nominal interest rate <span class="math notranslate nohighlight">\(i^{(4)} = 10\%\)</span> is equivalent to an
-<em>effective interest rate</em> of <span class="math notranslate nohighlight">\(2.5\%\)</span> per quarter.
-The accumulated value in
-1 year is <span class="math notranslate nohighlight">\(100 (1 + \frac{10\%}{4})^4 = 100 (1 + 2.5\%)^4 = 110.3813\)</span>.</p>
-<p>Note that after compound interest is
-taken into account, the interest income of an investor at the quarterly
-convertible nominal interest rate of 10% p.a. is 10.3813 (or 10.3813%.p.a. effective)</p>
-<div class="admonition-example-3-11 admonition">
-<p class="admonition-title"><strong>Example 3.11</strong></p>
-<p>At a rate of 12% p.a. effective, draw a timeline to show cashflows if
-฿100 is invested at the start of the year.</p>
-</div>
-<p><strong>Solution:</strong> The accumulated value of ฿100 at the end of the year is
-<span class="math notranslate nohighlight">\(100 (1 + 12\%) = 112\)</span>.</p>
-<div class="admonition-example-3-12 admonition">
-<p class="admonition-title"><strong>Example 3.12</strong></p>
-<p>At a rate of 12% p.a. compounding quarterly, draw a time line to show
-cashflows if ฿100 is invested at the start of the year.</p>
-</div>
-<p><strong>Solution:</strong> The nominal interest rate <span class="math notranslate nohighlight">\(i^{(4)} = 12\%\)</span> is equivalent
-to an effective interest rate of <span class="math notranslate nohighlight">\(3\%\)</span> per quarter. The accumulated
-value in 1 year is <span class="math notranslate nohighlight">\(100 (1 + 3\%)^4 = 112.55\)</span>. After compound interest
-is taken into account, the interest income of an investor at the
-quarterly convertible nominal interest rate of 10% p.a. is 12.55 (or
-12.55%. p.a. effective)</p>
-<p><strong>Note</strong> <span class="math notranslate nohighlight">\(i^{(m)}\)</span> is a nominal rate of interest which is equivalent to <span class="math notranslate nohighlight">\(i^{(m)}/m\)</span> applied for
-each <span class="math notranslate nohighlight">\(m\)</span>th of a period. The interest is paid <span class="math notranslate nohighlight">\(m\)</span> times per measurement period.</p>
-</section>
-</section>
-</section>
+<p>In the world of finance and insurance, understanding risk is like exploring a vast landscape full of unknowns. Risk management and actuarial modeling are like the compass and map, guiding us through this terrain. These are the tools we use to navigate the twists and turns, helping us make decisions with confidence. This chapter explores the basic principles that serve as the foundation for both risk management and actuarial modeling. Think of it as learning by example in actuarial science, providing us with real-world scenarios to understand how to navigate through uncertainty. By grasping these principles, we gain a clearer understanding of how to manage risk effectively and make better financial decisions. Let’s embark on this exploration together, unraveling the mysteries of risk in simple terms.</p>
+<p>In this chapter, we will explore:</p>
+<p>3.1 Understanding Risk Management in Economic Systems</p>
+<p>3.2 Understanding Actuarial Models</p>
 </section>
 </section>
 
@@ -778,16 +440,16 @@ each <span class="math notranslate nohighlight">\(m\)</span>th of a period. The 
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "r"
+            mode: "python"
         },
         kernelOptions: {
-            name: "ir",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'ir'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -809,11 +471,11 @@ each <span class="math notranslate nohighlight">\(m\)</span>th of a period. The 
       </div>
     </a>
     <a class="right-next"
-       href="Quiz1.html"
+       href="Chapter3_1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Solutions to Quiz 1</p>
+        <p class="prev-next-title"><span style="color: dimgray;"><strong>3.1 Understanding Risk in Actuarial Science</strong></span></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -833,26 +495,7 @@ each <span class="math notranslate nohighlight">\(m\)</span>th of a period. The 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-principles-underlying-risk-management-and-actuarial-modeling-span"><span style="color: dimgray;"><strong>Principles Underlying Risk Management and Actuarial Modeling</strong></span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-understanding-risk-in-actuarial-science-span"><span style="color: dimgray;"><strong>Understanding Risk in Actuarial Science</strong></span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-understanding-actuarial-models-span"><span style="color: dimgray;"><strong>Understanding Actuarial Models</strong></span></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-financial-dynamics-in-actuarial-modeling-span"><span style="color: dimgray;"><strong>Financial Dynamics in Actuarial Modeling</strong></span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-cashflows-interest-and-the-time-value-of-money-span"><span style="color: dimgray;"><strong>Cashflows, Interest and the Time Value of Money</strong></span></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-cashflows-span"><span style="color: dimgray;"><strong>Cashflows</strong></span></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-types-of-cashflows-based-on-contingency-span"><span style="color: dimgray;"><strong>Types of Cashflows Based on Contingency</strong></span></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-interest-and-the-time-value-of-money-span"><span style="color: dimgray;"><strong>Interest and the Time Value of Money</strong></span></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><span style="color: dimgray;"><strong>Interest and the Time Value of Money</strong></span></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-simple-interest-span"><span style="color: dimgray;"><strong>Simple interest</strong></span></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-compound-interest-span"><span style="color: dimgray;"><strong>Compound interest</strong></span></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-frequency-of-compounding-span"><span style="color: dimgray;"><strong>Frequency of Compounding</strong></span></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-principles-underlying-risk-management-and-actuarial-modeling-span"><span style="color: dimgray;"><strong>Principles Underlying Risk Management and Actuarial Modeling</strong></span></a></li>
 </ul>
   </nav></div>
 
