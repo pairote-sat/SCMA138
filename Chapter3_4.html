@@ -202,6 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Principles Underlying Risk Management and Actuarial Modeling</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Chapter3.html"><span style="color: dimgray;"><strong>Chapter 3</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_1_Exercise.html">Exercises for Chapter 3.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Chapter3_1.html"><span style="color: dimgray;"><strong>3.1 Understanding Risk in Actuarial Science</strong></span></a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Chapter3_2.html"><span style="color: dimgray;"><strong>3.2 Understanding Actuarial Models</strong></span></a></li>
@@ -413,10 +414,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-present-value-and-future-value-of-cash-flows-and-annuities-span"><span style="color: dimgray;"><strong>Present Value and Future Value of Cash Flows and Annuities</strong></span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-actuarial-notation-for-annuities-span"><span style="color: dimgray;"><strong>Actuarial Notation for Annuities</strong></span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-present-value-of-annuities-pva-span"><span style="color: dimgray;"><strong>Present Value of Annuities (PVA)</strong></span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-future-value-of-annuities-fva-span"><span style="color: dimgray;"><strong>Future Value of Annuities (FVA)</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-present-value-of-annuities-span"><span style="color: dimgray;"><strong>Present Value of Annuities</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-future-value-of-annuities-span"><span style="color: dimgray;"><strong>Future Value of Annuities</strong></span></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-importance-of-calculating-the-present-and-future-value-of-annuities-span"><span style="color: dimgray;"><strong>Importance of Calculating the Present and Future Value of Annuities</strong></span></a></li>
 </ul>
             </nav>
         </div>
@@ -493,17 +495,17 @@ document.write(`
 <h2><span style="color: dimgray;"><strong>Present Value and Future Value of Cash Flows and Annuities</strong></span><a class="headerlink" href="#span-style-color-dimgray-present-value-and-future-value-of-cash-flows-and-annuities-span" title="Permalink to this heading">#</a></h2>
 <p><strong>Present Value of Annuities (PVA)</strong> Present value of annuities is the current worth of a series of future cash flows received or paid at regular intervals, discounted at the effective rate of interest.</p>
 <p><strong>Future Value of Annuities (FVA)</strong> Future value of annuities is the value of a series of equal payments or cash flows received or paid at regular intervals, compounded at the effective rate of interest to a specified future date.</p>
-<div class="admonition-example-3-21-present-value-of-annuities-pva-example admonition">
-<p class="admonition-title"><strong>Example 3.21: Present Value of Annuities (PVA) Example</strong></p>
+<div class="admonition-example-3-21-present-value-of-annuities-pv-a-example admonition">
+<p class="admonition-title"><strong>Example 3.21: Present Value of Annuities (<span class="math notranslate nohighlight">\(PV A\)</span>) Example</strong></p>
 <p>Suppose you have an annuity that pays $200 at the end of each year for 5 years, and the effective annual interest rate is 6%. You want to calculate the present value of this annuity.</p>
 <p>Using the present value of annuities formula:</p>
 <div class="math notranslate nohighlight">
-\[PVA = PMT \times \left( \frac{1 - (1 + r)^{-n}}{r} \right)\]</div>
+\[PVA = PMT \times \left( \frac{1 - (1 + i)^{-n}}{i} \right)\]</div>
 <p>Where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(PVA\)</span> = Present Value of Annuities</p></li>
 <li><p><span class="math notranslate nohighlight">\(PMT\)</span> = Payment per period ($200 in this case)</p></li>
-<li><p><span class="math notranslate nohighlight">\(r\)</span> = Effective rate of interest per period (6% in this case)</p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> = Effective rate of interest per period (6% in this case)</p></li>
 <li><p><span class="math notranslate nohighlight">\(n\)</span> = Number of periods (5 years in this case)</p></li>
 </ul>
 <p>Substituting the values:</p>
@@ -542,36 +544,54 @@ The present value of receiving $200 at the end of each year for 5 years, with an
 <span class="n">present_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">payment</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)])</span>
 
 <span class="c1"># Plotting</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">payment</span><span class="p">]</span><span class="o">*</span><span class="n">years</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>  <span class="c1"># Adjusted width to 2 cm</span>
+
+<span class="c1"># Adding arrows</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">payment</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">payment</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">payment</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">payment</span> <span class="o">*</span> <span class="mf">0.9</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="n">payment</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adjusted x and y data to remove dot at 0</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)],</span> <span class="p">[</span><span class="n">payment</span><span class="p">]</span><span class="o">*</span><span class="n">years</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adjusted text position</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">payment</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;+</span><span class="si">{</span><span class="n">payment</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Years&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cash Flow ($)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Timeline of Annuity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Timeline of Annuity&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.3</span><span class="p">)</span>  <span class="c1"># Adding small space above the figure</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;$PV = </span><span class="si">{</span><span class="n">present_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+
+
+<span class="c1"># Adjusted text position</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">payment</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;$PV = </span><span class="si">{</span><span class="n">present_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/984bb8f6d90da26281d78400ac1a414c58fa26040b34fde88ac9184226a42002.png" src="_images/984bb8f6d90da26281d78400ac1a414c58fa26040b34fde88ac9184226a42002.png" />
+<img alt="_images/46d29d08f7c0be9390d2bf36d09addc4218ffe7b218c03f2d657b371a1ca9ef6.png" src="_images/46d29d08f7c0be9390d2bf36d09addc4218ffe7b218c03f2d657b371a1ca9ef6.png" />
 </div>
 </div>
-<div class="admonition-example-3-22-future-value-of-annuities-fva-example admonition">
-<p class="admonition-title"><strong>Example 3.22: Future Value of Annuities (FVA) Example</strong></p>
+<div class="admonition-example-3-22-future-value-of-annuities-fv-a-example admonition">
+<p class="admonition-title"><strong>Example 3.22: Future Value of Annuities (<span class="math notranslate nohighlight">\(FV A\)</span>) Example</strong></p>
 <p>Suppose you invest $500 at the end of each year for 3 years in an account with an effective annual interest rate of 8%. You want to calculate the future value of this annuity.</p>
 <p>Using the future value of annuities formula:</p>
 <div class="math notranslate nohighlight">
-\[FVA = PMT \times \left( \frac{(1 + r)^n - 1}{r} \right)\]</div>
+\[FVA = PMT \times \left( \frac{(1 + i)^n - 1}{i} \right)\]</div>
 <p>Where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(FVA\)</span> = Future Value of Annuities</p></li>
 <li><p><span class="math notranslate nohighlight">\(PMT\)</span> = Payment per period ($500 in this case)</p></li>
-<li><p><span class="math notranslate nohighlight">\(r\)</span> = Effective rate of interest per period (8% in this case)</p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> = Effective rate of interest per period (8% in this case)</p></li>
 <li><p><span class="math notranslate nohighlight">\(n\)</span> = Number of periods (3 years in this case)</p></li>
 </ul>
 <p>Substituting the values:</p>
@@ -610,25 +630,112 @@ The future value of investing $500 at the end of each year for 3 years, with an 
 <span class="n">future_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">investment</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">interest_rate</span><span class="p">)</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">years</span><span class="p">)])</span>
 
 <span class="c1"># Plotting</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">investment</span><span class="p">]</span><span class="o">*</span><span class="n">years</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>  <span class="c1"># Adjusted height to 2 cm</span>
+
+<span class="c1"># Adding arrows</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">investment</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">investment</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">investment</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">investment</span> <span class="o">*</span> <span class="mf">0.8</span> <span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="n">investment</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adjusted y-coordinate for the dots and text</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)],</span> <span class="p">[</span><span class="n">investment</span> <span class="o">-</span> <span class="mi">20</span><span class="p">]</span><span class="o">*</span><span class="n">years</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>  
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">investment</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;+</span><span class="si">{</span><span class="n">investment</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span> 
+
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Years&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cash Flow ($)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Timeline of Future Value Annuity&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">years</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">investment</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;$FV = </span><span class="si">{</span><span class="n">future_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Timeline of Future Value Annuity&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.3</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">investment</span> <span class="o">+</span> <span class="mi">65</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;$FV = </span><span class="si">{</span><span class="n">future_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>  
+
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/c453da447ca3ee024cf310347d9cbf5b9ccfb36358337caf5c737580c598794e.png" src="_images/c453da447ca3ee024cf310347d9cbf5b9ccfb36358337caf5c737580c598794e.png" />
+<img alt="_images/f1308616ee511de290e190de26cf94381f5d96007aa3d3b97e0e2c394fdeac2e.png" src="_images/f1308616ee511de290e190de26cf94381f5d96007aa3d3b97e0e2c394fdeac2e.png" />
 </div>
 </div>
+</section>
+<section id="span-style-color-dimgray-actuarial-notation-for-annuities-span">
+<h2><span style="color: dimgray;"><strong>Actuarial Notation for Annuities</strong></span><a class="headerlink" href="#span-style-color-dimgray-actuarial-notation-for-annuities-span" title="Permalink to this heading">#</a></h2>
+<p>In actuarial science, the present value and future value of annuities are often represented using specific notation. This notation helps actuaries and financial professionals to succinctly express these calculations.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>The expression <span class="math notranslate nohighlight">\(a_{\overline{n|}i}\)</span></strong></p>
+<p>The expression <span class="math notranslate nohighlight">\(a_{\overline{n|}i}\)</span> (read a-angle-n at i) denotes the present value of an annuity-immediate, which is a series of unit payments at the end of each year for <span class="math notranslate nohighlight">\(n\)</span> years. Mathematically, it represents the sum of the present values of these unit payments.</p>
+<p>The formula to calculate <span class="math notranslate nohighlight">\(a_{\overline{n|}i}\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[a_{\overline{n|}i} = v + v^2 + \cdots + v^n = \frac{1 - v^n}{i}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(v\)</span> is the discount factor for one period (often denoted as <span class="math notranslate nohighlight">\(\frac{1}{1+i}\)</span>, where <span class="math notranslate nohighlight">\(i\)</span> is the interest rate or discount rate).</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> is the number of periods (years in this case).</p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> is the interest rate or discount rate.</p></li>
+</ul>
+<p>So, <span class="math notranslate nohighlight">\(a_{\overline{n|}i}\)</span> represents the present value of receiving <span class="math notranslate nohighlight">\(n\)</span> unit payments at the end of each year, discounted at an interest rate <span class="math notranslate nohighlight">\(i\)</span>. It’s essentially the sum of a geometric series of payments.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>The expression <span class="math notranslate nohighlight">\(s_{\overline{n|}i}\)</span></strong></p>
+<p>The expression <span class="math notranslate nohighlight">\(s_{\overline{n|}i}\)</span>
+(read s-angle-n at i) represents the value at the time of the last payment of an annuity-immediate, which is a series of unit payments at the end of each year for <span class="math notranslate nohighlight">\(n\)</span> years. This value is obtained from:</p>
+<div class="math notranslate nohighlight">
+\[s_{\overline{n|}i} = (1 + i)^{n-1} + (1 + i)^{n-2} + \cdots + 1 = \frac{1 - v^n}{i} = \frac{(1 + i)^n - 1}{i}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(v\)</span> is the discount factor for one period (often denoted as <span class="math notranslate nohighlight">\(\frac{1}{1+i}\)</span>, where <span class="math notranslate nohighlight">\(i\)</span> is the interest rate or discount rate).</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> is the number of periods (years in this case).</p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> is the interest rate or discount rate.</p></li>
+</ul>
+<p>So, <span class="math notranslate nohighlight">\(s_{\overline{n|}i}\)</span> represents the value at the time of the last payment of an annuity-immediate, discounted at an interest rate <span class="math notranslate nohighlight">\(i\)</span>. It’s essentially the sum of a geometric series of payments plus the initial payment at time 0.</p>
+</div>
+<figure class="align-default" id="figure-tikz-ex9-1-png">
+<img alt="_images/tikz-ex9-1.png" src="_images/tikz-ex9-1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">a series of unit payments at the end of each year for <span class="math notranslate nohighlight">\(n\)</span> years</span><a class="headerlink" href="#figure-tikz-ex9-1-png" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="span-style-color-dimgray-present-value-of-annuities-span">
+<h3><span style="color: dimgray;"><strong>Present Value of Annuities</strong></span><a class="headerlink" href="#span-style-color-dimgray-present-value-of-annuities-span" title="Permalink to this heading">#</a></h3>
+<p>The present value of annuities represents the current worth of a series of future cash flows received or paid at regular intervals, discounted at a specified interest rate.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Formula for the present value of annuities</strong></p>
+<p>The formula for the present value of annuities is expressed as:</p>
+<div class="math notranslate nohighlight">
+\[PV = PMT \times a_{\overline{n|}i} = PMT \times \left( \frac{1 - v^n}{i} \right)\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(PV\)</span> = Present Value of Annuities with <span class="math notranslate nohighlight">\(n\)</span> payments at an interest rate of <span class="math notranslate nohighlight">\(i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(PMT\)</span> = Payment per period</p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> = Interest rate per period</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> = Number of periods</p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> = The discount factor for one period (often denoted as <span class="math notranslate nohighlight">\(\frac{1}{1+i}\)</span>, where <span class="math notranslate nohighlight">\(i\)</span> is the interest rate or discount rate).</p></li>
+</ul>
+</div>
+</section>
+<section id="span-style-color-dimgray-future-value-of-annuities-span">
+<h3><span style="color: dimgray;"><strong>Future Value of Annuities</strong></span><a class="headerlink" href="#span-style-color-dimgray-future-value-of-annuities-span" title="Permalink to this heading">#</a></h3>
+<p>The future value of annuities represents the value of a series of equal payments or cash flows received or paid at regular intervals, compounded at a specified interest rate to a future date.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Formula for the future value of annuities</strong></p>
+<p>The formula for the future value of annuities is expressed as:</p>
+<div class="math notranslate nohighlight">
+\[FV = PMT \times s_{\overline{n|}i} = PMT \times \left( \frac{(1 + i)^n - 1}{i} \right)\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(FV\)</span> = Future Value of Annuities with <span class="math notranslate nohighlight">\(n\)</span> payments at an interest rate of <span class="math notranslate nohighlight">\(i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(PMT\)</span> = Payment per period</p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> = Interest rate per period</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> = Number of periods</p></li>
+</ul>
+</div>
+<p>These notations are commonly used in actuarial calculations and financial analysis to represent the present and future values of annuities.</p>
 <div class="admonition-example-3-23-present-and-future-values-of-annuities admonition">
 <p class="admonition-title"><strong>Example 3.23: Present and Future Values of Annuities</strong></p>
 <p>Given the effective rate of interest of <span class="math notranslate nohighlight">\(8\%\)</span> p.a., calculate</p>
@@ -667,44 +774,19 @@ the next 12.5 years.</p></li>
 </details>
 </div>
 </section>
-<section id="span-style-color-dimgray-actuarial-notation-for-annuities-span">
-<h2><span style="color: dimgray;"><strong>Actuarial Notation for Annuities</strong></span><a class="headerlink" href="#span-style-color-dimgray-actuarial-notation-for-annuities-span" title="Permalink to this heading">#</a></h2>
-<p>In actuarial science, the present value and future value of annuities are often represented using specific notation. This notation helps actuaries and financial professionals to succinctly express these calculations.</p>
-<section id="span-style-color-dimgray-present-value-of-annuities-pva-span">
-<h3><span style="color: dimgray;"><strong>Present Value of Annuities (PVA)</strong></span><a class="headerlink" href="#span-style-color-dimgray-present-value-of-annuities-pva-span" title="Permalink to this heading">#</a></h3>
-<p>The present value of annuities is denoted using the actuarial symbol <span class="math notranslate nohighlight">\(PV A\)</span>. It represents the current worth of a series of future cash flows received or paid at regular intervals, discounted at a specified interest rate.</p>
-<div class="tip admonition">
-<p class="admonition-title"><strong>Formula for the present value of annuities</strong></p>
-<p>The formula for the present value of annuities is expressed as:</p>
-<div class="math notranslate nohighlight">
-\[PV A_{\overline{n}|}^{(i)} = PMT \times \left( \frac{1 - (1 + i)^{-n}}{i} \right)\]</div>
-<p>Where:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(PV A_{\overline{n}|}^{(i)}\)</span> = Present Value of Annuities with <span class="math notranslate nohighlight">\(n\)</span> payments at an interest rate of <span class="math notranslate nohighlight">\(i\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(PMT\)</span> = Payment per period</p></li>
-<li><p><span class="math notranslate nohighlight">\(i\)</span> = Interest rate per period</p></li>
-<li><p><span class="math notranslate nohighlight">\(n\)</span> = Number of periods</p></li>
-</ul>
-</div>
 </section>
-<section id="span-style-color-dimgray-future-value-of-annuities-fva-span">
-<h3><span style="color: dimgray;"><strong>Future Value of Annuities (FVA)</strong></span><a class="headerlink" href="#span-style-color-dimgray-future-value-of-annuities-fva-span" title="Permalink to this heading">#</a></h3>
-<p>The future value of annuities is denoted using the actuarial symbol <span class="math notranslate nohighlight">\(FV A\)</span>. It represents the value of a series of equal payments or cash flows received or paid at regular intervals, compounded at a specified interest rate to a future date.</p>
-<div class="tip admonition">
-<p class="admonition-title"><strong>Formula for the future value of annuities</strong></p>
-<p>The formula for the future value of annuities is expressed as:</p>
-<div class="math notranslate nohighlight">
-\[FV A_{\overline{n}|}^{(i)} = PMT \times \left( \frac{(1 + i)^n - 1}{i} \right)\]</div>
-<p>Where:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(FV A_{\overline{n}|}^{(i)}\)</span> = Future Value of Annuities with <span class="math notranslate nohighlight">\(n\)</span> payments at an interest rate of <span class="math notranslate nohighlight">\(i\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(PMT\)</span> = Payment per period</p></li>
-<li><p><span class="math notranslate nohighlight">\(i\)</span> = Interest rate per period</p></li>
-<li><p><span class="math notranslate nohighlight">\(n\)</span> = Number of periods</p></li>
-</ul>
-</div>
-<p>These notations are commonly used in actuarial calculations and financial analysis to represent the present and future values of annuities.</p>
-</section>
+<section id="span-style-color-dimgray-importance-of-calculating-the-present-and-future-value-of-annuities-span">
+<h2><span style="color: dimgray;"><strong>Importance of Calculating the Present and Future Value of Annuities</strong></span><a class="headerlink" href="#span-style-color-dimgray-importance-of-calculating-the-present-and-future-value-of-annuities-span" title="Permalink to this heading">#</a></h2>
+<p>Calculating the present value (PV) and future value (FV) of annuities is essential for several reasons:</p>
+<ol class="arabic simple">
+<li><p><strong>Financial Planning</strong>: PV and FV calculations help individuals and businesses in financial planning. By knowing the present and future worth of annuities, they can make informed decisions about saving, investing, borrowing, or lending money.</p></li>
+<li><p><strong>Investment Analysis</strong>: Investors use PV and FV calculations to evaluate the attractiveness of investment opportunities. Comparing the present value of expected cash flows (such as dividends or interest payments) to the initial investment helps determine the profitability of an investment.</p></li>
+<li><p><strong>Budgeting</strong>: Understanding the present value of annuities allows individuals to budget their finances effectively. It helps them plan for regular expenses or income streams, ensuring financial stability over time.</p></li>
+<li><p><strong>Loan and Mortgage Decisions</strong>: Lenders and borrowers use PV and FV calculations to assess the affordability and terms of loans or mortgages. Knowing the present value of loan payments helps borrowers understand the total cost of borrowing, while lenders can determine the profitability of lending.</p></li>
+<li><p><strong>Retirement Planning</strong>: For retirement planning, individuals need to calculate the future value of annuities to ensure they have sufficient funds to maintain their desired lifestyle after retirement. Knowing the future value helps them set savings goals and make contributions to retirement accounts accordingly.</p></li>
+<li><p><strong>Insurance Planning</strong>: Insurance companies use PV and FV calculations to determine premiums and payouts for annuity products. Understanding the present and future value of annuities helps insurers manage risk and ensure they can meet their financial obligations to policyholders.</p></li>
+</ol>
+<p>Overall, calculating the present and future value of annuities provides valuable insights into the timing and magnitude of cash flows, enabling better financial decision-making and planning for both individuals and businesses.</p>
 </section>
 </section>
 
@@ -774,10 +856,11 @@ the next 12.5 years.</p></li>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-present-value-and-future-value-of-cash-flows-and-annuities-span"><span style="color: dimgray;"><strong>Present Value and Future Value of Cash Flows and Annuities</strong></span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-actuarial-notation-for-annuities-span"><span style="color: dimgray;"><strong>Actuarial Notation for Annuities</strong></span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-present-value-of-annuities-pva-span"><span style="color: dimgray;"><strong>Present Value of Annuities (PVA)</strong></span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-future-value-of-annuities-fva-span"><span style="color: dimgray;"><strong>Future Value of Annuities (FVA)</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-present-value-of-annuities-span"><span style="color: dimgray;"><strong>Present Value of Annuities</strong></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-future-value-of-annuities-span"><span style="color: dimgray;"><strong>Future Value of Annuities</strong></span></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-importance-of-calculating-the-present-and-future-value-of-annuities-span"><span style="color: dimgray;"><strong>Importance of Calculating the Present and Future Value of Annuities</strong></span></a></li>
 </ul>
   </nav></div>
 
