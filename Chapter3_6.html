@@ -1,0 +1,724 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>3.6 Exploring Actuarial Models in Life Insurance &#8212; SCMA138 Principles of Actuarial Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter3_6';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="SCMA138 Principles of Actuarial Science - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="SCMA138 Principles of Actuarial Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to SCMA 138 Principles of Actuarial Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Actuarial Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Introduction.html"><span style="color: dimgray;"><strong>Chapter 1</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Exercise.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_EndNote.html">End Note for Chapter 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical and Probabilistic Framework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter2.html"><span style="color: dimgray;"><strong>Chapter 2</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Part2.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics (Part 2)</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise.html">Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise_Solution.html">Solutions to Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_2.html"><span style="color: dimgray;"><strong>2.2 Probability Basics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_2_Exercise.html">Exercises for Chapter 2.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_3.html"><span style="color: dimgray;"><strong>2.3 Probability Distributions</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_3_Exercise.html">Exercises for Chapter 2.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_4.html"><span style="color: dimgray;"><strong>2.4 Exploring Probability Applications in General Insurance</strong></span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Principles Underlying Risk Management and Actuarial Modeling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter3.html"><span style="color: dimgray;"><strong>Chapter 3</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_1.html"><span style="color: dimgray;"><strong>3.1 Understanding Risk in Actuarial Science</strong></span></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_1_Exercise.html">Exercises for Chapter 3.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_2.html"><span style="color: dimgray;"><strong>3.2 Understanding Actuarial Models</strong></span></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_2_Exercise.html">Exercises for Chapter 3.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_3.html"><span style="color: dimgray;"><strong>3.3 Fundamentals of Finance: Cashflow Models, Time Value of Money, and Interest Rates</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_4.html"><span style="color: dimgray;"><strong>3.4 Cashflows and Annuities</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_4_Exercise.html">Exercises for Chapter 3.3 and 3.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_5.html"><span style="color: dimgray;"><strong>3.5  Equations of Value</strong></span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quiz Zone</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Quiz1.html">Solutions to Quiz 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mock Final Exam</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="MockFinal2023.html">Mock Final Examination</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliography</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter_Bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html/issues/new?title=Issue%20on%20page%20%2FChapter3_6.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Chapter3_6.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><span style="color: dimgray;">3.6  Exploring Actuarial Models in Life Insurance</span></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><span style="color: dimgray;"><strong>3.6  Exploring Actuarial Models in Life Insurance</strong></span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-3-6-introduction-to-survival-models-span"><span style="color: dimgray;"><strong>3.6  Introduction to Survival Models</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-the-probability-density-function-of-t-x-span"><span style="color: dimgray;"><strong>The probability density function of <span class="math notranslate nohighlight">\(T_x\)</span></strong></span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-force-of-mortality-span"><span style="color: dimgray;"><strong>Force of mortality</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-summary-of-model-span"><span style="color: dimgray;"><strong>Summary of model</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-life-table-span"><span style="color: dimgray;"><strong>Life Table</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-structure-of-a-life-table-span"><span style="color: dimgray;"><strong>Structure of a Life Table</strong></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="span-style-color-dimgray-3-6-exploring-actuarial-models-in-life-insurance-span">
+<h1><span style="color: dimgray;"><strong>3.6  Exploring Actuarial Models in Life Insurance</strong></span><a class="headerlink" href="#span-style-color-dimgray-3-6-exploring-actuarial-models-in-life-insurance-span" title="Permalink to this heading">#</a></h1>
+<section id="span-style-color-dimgray-3-6-introduction-to-survival-models-span">
+<h2><span style="color: dimgray;"><strong>3.6  Introduction to Survival Models</strong></span><a class="headerlink" href="#span-style-color-dimgray-3-6-introduction-to-survival-models-span" title="Permalink to this heading">#</a></h2>
+<p>The <strong>survival model</strong> is a foundational concept in actuarial science and statistical modeling.</p>
+<p>The survival model treats the <strong>future lifetime</strong> of an individual as a continuous random variable, forming the basis for various actuarial and statistical analyses. Let us explore its key components and applications:</p>
+<ol class="arabic simple">
+<li><p><strong>Continuous Random Variable</strong>: The lifetime of an individual is represented as a continuous random variable, allowing for precise modeling and analysis.</p></li>
+<li><p><strong>Survival Function</strong>: Denoted as <span class="math notranslate nohighlight">\( S(t) \)</span>, the survival function represents the probability that an individual survives beyond time <span class="math notranslate nohighlight">\( t \)</span>. It is defined as <span class="math notranslate nohighlight">\( S(t) = \mathbb{P}(T &gt; t) \)</span>, where <span class="math notranslate nohighlight">\( T \)</span> is the random variable representing lifetime.</p></li>
+<li><p><strong>Hazard Function</strong>: The hazard function, denoted as <span class="math notranslate nohighlight">\( \mu(t) \)</span> or <span class="math notranslate nohighlight">\( h(t) \)</span>, represents the instantaneous rate of mortality at time <span class="math notranslate nohighlight">\( t \)</span>, given survival up to that time. It is defined as <span class="math notranslate nohighlight">\( \mu(t) = \frac{f(t)}{S(t)} \)</span>, where <span class="math notranslate nohighlight">\( f(t) \)</span> is the probability density function of the lifetime.</p></li>
+<li><p><strong>Applications</strong>:</p>
+<ul class="simple">
+<li><p><strong>Life Insurance</strong>: Assessing risk, determining premiums, and managing financial obligations.</p></li>
+<li><p><strong>Pension Plans</strong>: Estimating liabilities, making strategic investment decisions.</p></li>
+<li><p><strong>Healthcare Planning</strong>: Resource allocation, preventive healthcare strategies.</p></li>
+</ul>
+</li>
+<li><p><strong>Extensions</strong>:</p>
+<ul class="simple">
+<li><p><strong>Insurance Policy Duration</strong>: Analyzing policyholder behavior, predicting policy durations.</p></li>
+<li><p><strong>Healthcare Analysis</strong>: Assessing disease progression, planning interventions.</p></li>
+</ul>
+</li>
+</ol>
+<p>The survival model’s versatility extends beyond mortality to other domains such as insurance policy duration and healthcare analysis.</p>
+<div class="admonition-example-3-25-the-timeline-of-the-whole-life-insurance-contract admonition">
+<p class="admonition-title"><strong>Example 3.25: The timeline of the whole life insurance contract</strong></p>
+<p>Draw a timeline to illustrate this insurance benefit: Whole Life Insurance, payable immediately upon death, has the following conditions:</p>
+<ul class="simple">
+<li><p>death benefit (sum insured) of 1</p></li>
+<li><p>payable immediately on the death</p></li>
+<li><p>of an individual currently aged x</p></li>
+<li><p>for death occurring any time in the future.</p></li>
+</ul>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Example 3.25</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>We need to define a random variable</p>
+<div class="math notranslate nohighlight">
+\[T_x = \text{the remaining future life time of a life aged }x.\]</div>
+<p>In this timeline below:</p>
+<ul class="simple">
+<li><p><strong>Age x</strong>: Represents the current age of the insured individual when the insurance policy is taken out.</p></li>
+<li><p><strong>Time passes</strong>: Represents the period during which the insured individual continues to hold the insurance policy.</p></li>
+<li><p><strong>Death of Insured</strong>: Represents the occurrence of death at any time in the future.</p></li>
+<li><p><strong>Benefit Payable Immediately upon Death</strong>: Indicates that the death benefit (sum insured) of 1 is payable immediately upon the death of the insured individual, regardless of when it occurs in the future.</p></li>
+</ul>
+<p>This timeline visually demonstrates the conditions of Whole Life Insurance, where the death benefit is guaranteed and payable immediately upon the death of the insured individual.</p>
+<figure class="align-default" id="figure-tikz-sol2-1-png">
+<img alt="_images/tikz-sol2-1.png" src="_images/tikz-sol2-1.png" />
+<figcaption>
+<p><span class="caption-text">The timeline of the whole life insurance contract</span><a class="headerlink" href="#figure-tikz-sol2-1-png" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Further information can be found in the course <strong>Life Contingencies I</strong>.</p>
+</div>
+</section>
+</section>
+<section id="span-style-color-dimgray-the-probability-density-function-of-t-x-span">
+<h1><span style="color: dimgray;"><strong>The probability density function of <span class="math notranslate nohighlight">\(T_x\)</span></strong></span><a class="headerlink" href="#span-style-color-dimgray-the-probability-density-function-of-t-x-span" title="Permalink to this heading">#</a></h1>
+<p>The (remaining) future lifetime of a life aged <span class="math notranslate nohighlight">\(x\)</span> is a random variable <span class="math notranslate nohighlight">\(T_x\)</span>, which is continuously distributed on an interval <span class="math notranslate nohighlight">\([0,w], \, 0 &lt; w &lt; \infty\)</span>. The value <span class="math notranslate nohighlight">\(w\)</span> is called the <strong>limiting age</strong>, which is in practice taken the value in the range <span class="math notranslate nohighlight">\([100,120]\)</span>. It is the maximum age beyond which it is not possible to live.</p>
+<p>The distribution of <span class="math notranslate nohighlight">\(T_x\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[F_x(t) = \Pr(T_x \le t) = \Pr(\text{a life aged } (x) \text{ dies not later than } x+ t).\]</div>
+<p>The survival function <span class="math notranslate nohighlight">\(S_x(t)\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[S_x(t) = \Pr(T_x &gt; t) = \Pr(\text{a life aged } (x) \text{ dies after (or survives to) age } x+ t).\]</div>
+<figure class="align-default" id="figure-futurelifetime-png">
+<img alt="_images/FutureLifeTime.png" src="_images/FutureLifeTime.png" />
+<figcaption>
+<p><span class="caption-text">Future life time random variable</span><a class="headerlink" href="#figure-futurelifetime-png" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>These two functions define transition probabilities between Alive and Dead states in the mortality model (as given in the above diagram). Actuaries have their own notation as follows:</p>
+<div class="math notranslate nohighlight">
+\[{}_{t}q_{x} = F_x(t) = \Pr(T_0 \le x + t | T_0 &gt; x),\]</div>
+<p>where <span class="math notranslate nohighlight">\(T_0\)</span> is the remaining future lifetime from birth.
+and</p>
+<div class="math notranslate nohighlight">
+\[{}_{t}p_{x} = S_x(t) = \Pr(T_0 &gt; x + t | T_0 &gt; x) .\]</div>
+<section id="span-style-color-dimgray-force-of-mortality-span">
+<h2><span style="color: dimgray;"><strong>Force of mortality</strong></span><a class="headerlink" href="#span-style-color-dimgray-force-of-mortality-span" title="Permalink to this heading">#</a></h2>
+<p>The probability that a life alive at a given age will be dead at any subsequent age is governed by the <strong>force of mortality</strong> (or <strong>transition intensity</strong> or <strong>hazard rate</strong> or <strong>instantaneous rate of death</strong>). For age <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(0 \le x \le w\)</span>, we define</p>
+<div class="math notranslate nohighlight">
+\[\mu_x = \lim_{h \rightarrow 0^+} \frac{1}{h} \times \Pr(T_0 \le x + h | T_0 &gt; x).\]</div>
+<p>It follows that for small <span class="math notranslate nohighlight">\(h\)</span>, the transition probability <span class="math notranslate nohighlight">\({}_{h}q_{x}\)</span> can be approximated by</p>
+<div class="math notranslate nohighlight">
+\[{}_{h}q_{x} \approx h \cdot \mu_x.\]</div>
+<p>The force of mortality is measured with respect to a time unit. We will assume the time unit is year.</p>
+<div class="admonition-example-3-26-approximation-of-transition-probability admonition">
+<p class="admonition-title"><strong>Example 3.26: Approximation of transition probability</strong></p>
+<p>Given that <span class="math notranslate nohighlight">\(\mu_{70} \approx 0.05\)</span> per year for males in Thailand, calculate approximately the probability that a 70 year old male dies within</p>
+<p>(a) one day;
+(b) one week.</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Example 3.2</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>The transition probability <span class="math notranslate nohighlight">\({}_{h}q_{x}\)</span> can be approximated by</p>
+<div class="math notranslate nohighlight">
+\[{}_{h}q_{x} \approx h \cdot \mu_x.\]</div>
+<p>Hence,</p>
+<div class="math notranslate nohighlight">
+\[{}_{\frac{1}{365}}q_{70} \approx \left( \frac{1}{365} \right) \times  \mu_{70}  =  \left( \frac{1}{365} \right)  \times 0.05 = 0.000137,\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[{}_{\frac{7}{365}}q_{70} \approx \left( \frac{7}{365} \right) \times  \mu_{70}  =  \left( \frac{7}{365} \right)  \times 0.05 = 0.000959.\]</div>
+</div>
+<section id="span-style-color-dimgray-summary-of-model-span">
+<h3><span style="color: dimgray;"><strong>Summary of model</strong></span><a class="headerlink" href="#span-style-color-dimgray-summary-of-model-span" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T_x\)</span> is the (random) future lifetime after age <span class="math notranslate nohighlight">\(x\)</span>. It is, by assumption, a continuous random variable taking values in <span class="math notranslate nohighlight">\([0, \omega - x]\)</span>. Its distribution function is <span class="math notranslate nohighlight">\(F_x(t) = {}_{t} q_x\)</span>.</p></li>
+<li><p>Its probability density function is <span class="math notranslate nohighlight">\(f_x(t) = {}_{t}p_x \cdot \mu_{x+t}\)</span>.</p></li>
+<li><p>The force of mortality is interpreted by the approximate relationship:
+<span class="math notranslate nohighlight">\({}_{h}q_x \approx h \cdot \mu_x\)</span> (for small <span class="math notranslate nohighlight">\(h\)</span>).</p></li>
+<li><p>The survival functions <span class="math notranslate nohighlight">\(S_x(t)\)</span> or <span class="math notranslate nohighlight">\({}_{t}p_x\)</span> satisfy the relationship:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[{}_{s+t}p_x = {}_{s}p_x \cdot {}_{t}p_{x + s} = {}_{t}p_x \cdot {}_{s}p_{x + t},\]</div>
+<p>for any <span class="math notranslate nohighlight">\(s &gt; 0, t &gt; 0.\)</span></p>
+</section>
+</section>
+<section id="span-style-color-dimgray-life-table-span">
+<h2><span style="color: dimgray;"><strong>Life Table</strong></span><a class="headerlink" href="#span-style-color-dimgray-life-table-span" title="Permalink to this heading">#</a></h2>
+<p>A <strong>life table</strong> is a statistical tool used to represent the mortality and survival patterns of a population. It organizes data on</p>
+<ul class="simple">
+<li><p>the probability of death and</p></li>
+<li><p>the number of survivors at each age for a given population over a specific period, typically one year.</p></li>
+</ul>
+<p>Life tables are commonly used in demography, actuarial science, epidemiology, and public health to analyze population dynamics, forecast future trends, and calculate life expectancies.</p>
+<section id="span-style-color-dimgray-structure-of-a-life-table-span">
+<h3><span style="color: dimgray;"><strong>Structure of a Life Table</strong></span><a class="headerlink" href="#span-style-color-dimgray-structure-of-a-life-table-span" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Age</strong>: This signifies individual ages, often expressed as single years or grouped into intervals.</p></li>
+<li><p><strong>Number of Deaths (<span class="math notranslate nohighlight">\(d_x\)</span>)</strong>: This represents the expected number of individuals who die within the age interval.</p></li>
+<li><p><strong>Expected Number of Lives (<span class="math notranslate nohighlight">\(l_x\)</span>)</strong>: <span class="math notranslate nohighlight">\(l_x\)</span> denotes the expected number of lives at age <span class="math notranslate nohighlight">\(x\)</span></p></li>
+<li><p><strong>Probability of Dying (<span class="math notranslate nohighlight">\(q_x\)</span>)</strong>: This is the probability of dying within the specific age interval.</p></li>
+<li><p><strong>Life Expectancy (<span class="math notranslate nohighlight">\(\mathring{e}_x\)</span> (read “e-circle-x”))</strong>: This is the expected future lifetime after age <span class="math notranslate nohighlight">\(x\)</span> , which is referred to by demographers as the expectation of life at age <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+</ol>
+<div class="admonition-example-3-27-life-table admonition">
+<p class="admonition-title"><strong>Example 3.27: Life table</strong></p>
+<p>The table represents the mortality rates of the population of England and Wales during the years 1990, 1991, and 1992.</p>
+<p>We can observe the survival patterns, mortality rates, and life expectancies for different age groups within the population.</p>
+</div>
+<figure class="align-default" id="figure-elt-png">
+<img alt="_images/elt15.png" src="_images/elt15.png" />
+<figcaption>
+<p><span class="caption-text">The mortality of the population of England and Wales during the years 1990, 1991 and 1992</span><a class="headerlink" href="#figure-elt-png" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><span style="color: dimgray;"><strong>3.6  Exploring Actuarial Models in Life Insurance</strong></span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-3-6-introduction-to-survival-models-span"><span style="color: dimgray;"><strong>3.6  Introduction to Survival Models</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-the-probability-density-function-of-t-x-span"><span style="color: dimgray;"><strong>The probability density function of <span class="math notranslate nohighlight">\(T_x\)</span></strong></span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-force-of-mortality-span"><span style="color: dimgray;"><strong>Force of mortality</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-summary-of-model-span"><span style="color: dimgray;"><strong>Summary of model</strong></span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-life-table-span"><span style="color: dimgray;"><strong>Life Table</strong></span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-dimgray-structure-of-a-life-table-span"><span style="color: dimgray;"><strong>Structure of a Life Table</strong></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pairote Satiracoo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
