@@ -32,9 +32,13 @@ parts:
     - file: Chapter3_3.ipynb  
     - file: Chapter3_4.ipynb 
     - file: Chapter3_4_Exercise.ipynb    
+    - file: Chapter3_5.ipynb     
   - caption: Quiz Zone
     chapters:
     - file: Quiz1.ipynb
+  - caption: Mock Final Exam 
+    chapters:   
+    - file: MockFinal2023.ipynb
   - caption: Bibliography  
     chapters:
     - file: Chapter_Bibliography.ipynb
