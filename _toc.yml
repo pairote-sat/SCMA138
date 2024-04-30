@@ -33,7 +33,8 @@ parts:
     - file: Chapter3_2_Exercise_Solution.ipynb       
     - file: Chapter3_3.ipynb  
     - file: Chapter3_4.ipynb 
-    - file: Chapter3_4_Exercise.ipynb    
+    - file: Chapter3_4_Exercise.ipynb   
+    - file: Chapter3_4_Exercise_Solution.ipynb    
     - file: Chapter3_5.ipynb     
   - caption: Quiz Zone
     chapters:
