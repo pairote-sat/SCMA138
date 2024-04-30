@@ -572,6 +572,142 @@ Mean (first moment):</p></li>
 <span class="math notranslate nohighlight">\(\lambda = 5.36\)</span></p>
 <p>Therefore, the estimated parameter (<span class="math notranslate nohighlight">\(\lambda\)</span>) for the Poisson distribution representing the number of daily claims is approximately 5.36.</p>
 <p>This process provides an estimate of the parameter of the Poisson distribution that <strong>best fits</strong> the given data set.</p>
+<p><strong>Exploring Poisson Distribution Fitting with Method of Moments in R</strong></p>
+<p>In this exploration, we illusrtate how to fit a Poisson distribution to a set of daily claims data using the <strong>Method of Moments</strong> in R.</p>
+<p>The provided R code showcases key steps including</p>
+<ul class="simple">
+<li><p>data summary,</p></li>
+<li><p>visualization,</p></li>
+<li><p>parameter estimation,</p></li>
+<li><p>PMF calculation, and</p></li>
+<li><p>plotting.</p></li>
+</ul>
+<p>The explanation below guides through each step, elucidating the process of fitting the distribution and comparing it with the observed data. Let us dive into the code and understand how the Method of Moments is employed to estimate the parameters of the Poisson distribution and visualize its fit to the data.</p>
+<p><strong>Code explanation</strong></p>
+<ul class="simple">
+<li><p><strong>Data Summary</strong>: The initial step involves summarizing the provided daily claims data by computing its sample mean and variance.</p></li>
+<li><p><strong>Visualization</strong>: To gain insights into the distribution of the data, a histogram is created, displaying the frequency distribution of the daily claims.</p></li>
+<li><p><strong>Parameter Estimation</strong>: Employing the Method of Moments, an estimation of the parameter lambda for the Poisson distribution is made, using the sample mean as its estimate.</p></li>
+<li><p><strong>Probability Mass Function (PMF)</strong>: A PMF function for the Poisson distribution is defined to calculate the probability of observing a specific number of claims.</p></li>
+<li><p><strong>PMF Calculation</strong>: Using the estimated lambda and a range of claim values, the PMF values for the fitted Poisson distribution are computed.</p></li>
+<li><p><strong>Plotting</strong>: The sample histogram is plotted again, this time without frequencies, and the PMF curve for the fitted Poisson distribution is superimposed on it. This allows for visual comparison between the observed data and the fitted distribution.</p></li>
+</ul>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">claims</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">9</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">9</span><span class="p">)</span>
+
+<span class="c1"># Sample mean</span>
+<span class="n">mean_claims</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">claims</span><span class="p">)</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Sample mean:&quot;</span><span class="p">,</span> <span class="n">mean_claims</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+
+<span class="c1"># Sample variance</span>
+<span class="n">var_claims</span> <span class="o">&lt;-</span> <span class="nf">var</span><span class="p">(</span><span class="n">claims</span><span class="p">)</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Sample variance:&quot;</span><span class="p">,</span> <span class="n">var_claims</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+
+<span class="c1"># Visualize data</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">claims</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Histogram of Daily Claims&quot;</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Claims&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Method of Moments estimation for lambda</span>
+<span class="n">lambda_mm</span> <span class="o">&lt;-</span> <span class="n">mean_claims</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Method of Moments estimation for lambda:&quot;</span><span class="p">,</span> <span class="n">lambda_mm</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+
+<span class="c1"># PMF function for Poisson distribution</span>
+<span class="n">pmf_poisson</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">lambda</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">return</span><span class="p">(</span><span class="nf">dpois</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">lambda</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="c1"># Generate x values for PMF</span>
+<span class="n">x_values</span> <span class="o">&lt;-</span> <span class="m">0</span><span class="o">:</span><span class="nf">max</span><span class="p">(</span><span class="n">claims</span><span class="p">)</span>
+
+<span class="c1"># Calculate PMF for fitted Poisson distribution</span>
+<span class="n">pmf_values</span> <span class="o">&lt;-</span> <span class="nf">pmf_poisson</span><span class="p">(</span><span class="n">x_values</span><span class="p">,</span> <span class="n">lambda_mm</span><span class="p">)</span>
+
+<span class="c1"># Plot sample histogram</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">claims</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Sample Data and Fitted Poisson PMF&quot;</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Claims&quot;</span><span class="p">,</span> <span class="n">freq</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+
+<span class="c1"># Superimpose PMF on histogram</span>
+<span class="nf">lines</span><span class="p">(</span><span class="n">x_values</span><span class="p">,</span> <span class="n">pmf_values</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample mean: 5.36 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample variance: 5.073333 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Method of Moments estimation for lambda: 5.36 
+</pre></div>
+</div>
+<img alt="_images/20c5574e2b2b6f0b8844bc7dbbf72a57eb42b9acb83379fc7dc66a8cbfa46caf.png" src="_images/20c5574e2b2b6f0b8844bc7dbbf72a57eb42b9acb83379fc7dc66a8cbfa46caf.png" />
+<img alt="_images/3b2cc704838e1246223a87fad5c3e906771e3142719c38e6406a2933020394c2.png" src="_images/3b2cc704838e1246223a87fad5c3e906771e3142719c38e6406a2933020394c2.png" />
+</div>
+</div>
+<div class="admonition-notes-leveraging-fitted-poisson-distribution-for-probability-questions admonition">
+<p class="admonition-title">Notes: Leveraging Fitted Poisson Distribution for Probability Questions</p>
+<details>
+  <summary>Click to toggle notes</summary>
+<p>Given that the Poisson distribution provides a satisfactory fit to the sample daily claim numbers dataset, how can we use the fitted model to address probability questions?</p>
+<p>Consider questions such as:</p>
+<ol class="arabic simple">
+<li><p>What is the anticipated number of daily claims?</p></li>
+<li><p>What is the probability that the daily claims number will surpass 10?</p></li>
+</ol>
+<p>Exploring these questions involves leveraging the fitted Poisson distribution to estimate probabilities and make informed decisions based on the data.</p>
+<p>The R code below shows how we can use the fitted model to tackle such probability questions.</p>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fitted lambda value from Method of Moments estimation</span>
+<span class="n">lambda_mm</span> <span class="o">&lt;-</span> <span class="n">mean_claims</span>  <span class="c1"># Assuming lambda is estimated using Method of Moments</span>
+
+<span class="c1"># (1) Expected number of daily claims</span>
+<span class="n">expected_claims</span> <span class="o">&lt;-</span> <span class="n">lambda_mm</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Expected number of daily claims:&quot;</span><span class="p">,</span> <span class="n">expected_claims</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+
+<span class="c1"># (2) Probability of daily claims exceeding 10</span>
+<span class="n">prob_exceed_10</span> <span class="o">&lt;-</span> <span class="m">1</span> <span class="o">-</span> <span class="nf">ppois</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="n">lambda_mm</span><span class="p">)</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Probability of daily claims exceeding 10:&quot;</span><span class="p">,</span> <span class="n">prob_exceed_10</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Expected number of daily claims: 5.36 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Probability of daily claims exceeding 10: 0.02148183 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-notes-limitations-of-using-only-sample-data-for-probability-questions admonition">
+<p class="admonition-title">Notes: Limitations of Using Only Sample Data for Probability Questions</p>
+<details>
+  <summary>Click to toggle notes</summary>
+<p><strong>Limitations of Using Only Sample Data for Probability Questions</strong></p>
+<p>Using only the sample daily claims data without fitting a model, such as the Poisson distribution, presents limitations in answering probability questions directly. Here’s why:</p>
+<ol class="arabic simple">
+<li><p><strong>Expected Number of Daily Claims</strong>: Without fitting a distribution model, determining the expected number of daily claims becomes challenging. While the sample mean provides an estimate, it might not accurately represent the underlying distribution. Variability in the data might exist, making the sample mean less reliable as a predictor of future claims.</p></li>
+<li><p><strong>Probability of Exceeding a Certain Number of Claims</strong>: Calculating the probability of exceeding a specific number of claims without a fitted model involves making assumptions about the underlying distribution. For instance, one might assume a normal distribution and calculate probabilities based on mean and standard deviation. However, if the data does not follow a normal distribution, these probabilities might be inaccurate.</p></li>
+</ol>
+<p>In summary, while basic statistics from the sample data like mean and variance offer insights, they might not suffice for precise probability calculations. Utilizing a fitted distribution model, such as the Poisson distribution in this case, provides a more robust framework for addressing probability questions and making informed decisions based on the data’s underlying distribution.</p>
 </details>
 </div>
 <div class="tip admonition">
@@ -722,7 +858,105 @@ Mean (first moment):</p></li>
 <p class="admonition-title"><strong>Solution to Question 5</strong></p>
 <details>
   <summary>Click to toggle answer</summary>
+<p>To fit the individual claims amounts dataset using the Method of Moments, we first compute the sample mean (<span class="math notranslate nohighlight">\(\bar{x}\)</span>) and sample variance <span class="math notranslate nohighlight">\((s^2\)</span>) of the dataset. In this case, the sample mean is calculated to be approximately 1029.358 and the sample variance is approximately 11535.67.</p>
+<p>Next, we employ the Method of Moments to estimate the parameters of the normal distribution, namely the mean (<span class="math notranslate nohighlight">\(\mu\)</span>) and standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>), using the sample mean and variance. The sample mean is used as the estimate for the population mean (<span class="math notranslate nohighlight">\(\mu\)</span>), and the square root of the sample variance is used as the estimate for the population standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>).</p>
+<p>The formula for the sample mean (<span class="math notranslate nohighlight">\(\bar{x}\)</span>) is:</p>
+<div class="math notranslate nohighlight">
+\[
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_i\)</span> is the <span class="math notranslate nohighlight">\(i\)</span>th observation in the dataset and <span class="math notranslate nohighlight">\(n\)</span> is the total number of observations.</p>
+<p>The formula for the sample variance (<span class="math notranslate nohighlight">\(s^2\)</span>) is:</p>
+<div class="math notranslate nohighlight">
+\[
+s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_i\)</span> is the <span class="math notranslate nohighlight">\(i\)</span>th observation in the dataset, <span class="math notranslate nohighlight">\(\bar{x}\)</span> is the sample mean, and <span class="math notranslate nohighlight">\(n\)</span> is the total number of observations.</p>
+<p>The <strong>estimated parameters of the normal distribution</strong>, derived through the Method of Moments using the sample mean (<span class="math notranslate nohighlight">\(\bar{x}\)</span>) and sample variance (<span class="math notranslate nohighlight">\(s^2\)</span>) of the individual claims amounts dataset, are approximately 1029.358 and 11535.67, respectively.</p>
+<p>By utilizing the Method of Moments, we obtain estimates for the parameters of the normal distribution that best describe the dataset’s distribution. These estimated parameters allow us to model the dataset using a normal distribution, providing insights into the underlying distribution of the individual claims amounts.</p>
+<p><strong>Exploring Normal Distribution Fitting with Method of Moments in R</strong></p>
+<p>In this exploration, we illusrtate how the Method of Moments be employed to estimate the parameters of a probability distribution for the individual claims amounts using the provided dataset of 100 individual claims.</p>
+<p>Let us explore fitting a normal distribution to the data and understand how the Method of Moments can help estimate its parameters.</p>
+<p><strong>Explanation of Main Steps</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Data Initialization</strong>: Initialize a vector <code class="docutils literal notranslate"><span class="pre">claims</span></code> with the provided individual claims amounts dataset.</p></li>
+<li><p><strong>Sample Mean and Variance Calculation</strong>: Compute the sample mean and variance of the claims data.</p></li>
+<li><p><strong>Parameter Estimation</strong>: Use the Method of Moments to estimate the parameters of the normal distribution, namely the mean (μ) and standard deviation (σ), using the sample mean and variance.</p></li>
+<li><p><strong>PDF Function Definition</strong>: Define a function <code class="docutils literal notranslate"><span class="pre">pdf_normal</span></code> to calculate the Probability Density Function (PDF) of the normal distribution.</p></li>
+<li><p><strong>Comparison Between Fitted Model and Sample Data</strong>: Generate x values for the PDF of the fitted normal distribution and calculate the PDF values. Then, plot the sample histogram of claim amounts along with the PDF curve for the fitted normal distribution to visually compare the distribution of the sample data with the fitted model.</p></li>
+</ol>
 </details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize claims data</span>
+<span class="n">claims</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span>
+  <span class="m">1063.76</span><span class="p">,</span> <span class="m">1077.21</span><span class="p">,</span> <span class="m">877.98</span><span class="p">,</span> <span class="m">1016.89</span><span class="p">,</span> <span class="m">1096.54</span><span class="p">,</span>
+  <span class="m">1106.83</span><span class="p">,</span> <span class="m">1257.81</span><span class="p">,</span> <span class="m">866.99</span><span class="p">,</span> <span class="m">1055.64</span><span class="p">,</span> <span class="m">1080.94</span><span class="p">,</span>
+  <span class="m">1250.91</span><span class="p">,</span> <span class="m">1077.39</span><span class="p">,</span> <span class="m">844.44</span><span class="p">,</span> <span class="m">1086.88</span><span class="p">,</span> <span class="m">1171.13</span><span class="p">,</span>
+  <span class="m">968.36</span><span class="p">,</span> <span class="m">1104.12</span><span class="p">,</span> <span class="m">1068.82</span><span class="p">,</span> <span class="m">1116.36</span><span class="p">,</span> <span class="m">1035.07</span><span class="p">,</span>
+  <span class="m">951.28</span><span class="p">,</span> <span class="m">856.52</span><span class="p">,</span> <span class="m">922.12</span><span class="p">,</span> <span class="m">1009.02</span><span class="p">,</span> <span class="m">998.69</span><span class="p">,</span>
+  <span class="m">1137.45</span><span class="p">,</span> <span class="m">1012.21</span><span class="p">,</span> <span class="m">1230.22</span><span class="p">,</span> <span class="m">983.76</span><span class="p">,</span> <span class="m">991.36</span><span class="p">,</span>
+  <span class="m">887.74</span><span class="p">,</span> <span class="m">1038.94</span><span class="p">,</span> <span class="m">955.66</span><span class="p">,</span> <span class="m">823.67</span><span class="p">,</span> <span class="m">1144.09</span><span class="p">,</span>
+  <span class="m">1100.25</span><span class="p">,</span> <span class="m">1057.96</span><span class="p">,</span> <span class="m">1005.27</span><span class="p">,</span> <span class="m">1015.41</span><span class="p">,</span> <span class="m">799.31</span><span class="p">,</span>
+  <span class="m">938.18</span><span class="p">,</span> <span class="m">1161.93</span><span class="p">,</span> <span class="m">891.14</span><span class="p">,</span> <span class="m">983.42</span><span class="p">,</span> <span class="m">1101.29</span><span class="p">,</span>
+  <span class="m">974.55</span><span class="p">,</span> <span class="m">1253.01</span><span class="p">,</span> <span class="m">835.68</span><span class="p">,</span> <span class="m">869.14</span><span class="p">,</span> <span class="m">1093.06</span><span class="p">,</span>
+  <span class="m">1220.84</span><span class="p">,</span> <span class="m">1051.88</span><span class="p">,</span> <span class="m">1106.61</span><span class="p">,</span> <span class="m">1071.09</span><span class="p">,</span> <span class="m">1022.18</span><span class="p">,</span>
+  <span class="m">1065.24</span><span class="p">,</span> <span class="m">983.89</span><span class="p">,</span> <span class="m">1128.74</span><span class="p">,</span> <span class="m">1133.64</span><span class="p">,</span> <span class="m">1003.42</span><span class="p">,</span>
+  <span class="m">905.89</span><span class="p">,</span> <span class="m">1044.67</span><span class="p">,</span> <span class="m">1031.41</span><span class="p">,</span> <span class="m">1016.04</span><span class="p">,</span> <span class="m">858.35</span><span class="p">,</span>
+  <span class="m">977.67</span><span class="p">,</span> <span class="m">983.48</span><span class="p">,</span> <span class="m">962.29</span><span class="p">,</span> <span class="m">1025.42</span><span class="p">,</span> <span class="m">1020.88</span><span class="p">,</span>
+  <span class="m">1042.97</span><span class="p">,</span> <span class="m">833.07</span><span class="p">,</span> <span class="m">873.13</span><span class="p">,</span> <span class="m">1068.19</span><span class="p">,</span> <span class="m">1046.24</span><span class="p">,</span>
+  <span class="m">1128.57</span><span class="p">,</span> <span class="m">1148.35</span><span class="p">,</span> <span class="m">938.06</span><span class="p">,</span> <span class="m">1040.09</span><span class="p">,</span> <span class="m">1040.72</span><span class="p">,</span>
+  <span class="m">1102.64</span><span class="p">,</span> <span class="m">904.82</span><span class="p">,</span> <span class="m">967.89</span><span class="p">,</span> <span class="m">1112.22</span><span class="p">,</span> <span class="m">960.01</span><span class="p">,</span>
+  <span class="m">883.34</span><span class="p">,</span> <span class="m">1263.42</span><span class="p">,</span> <span class="m">1185.60</span><span class="p">,</span> <span class="m">1165.66</span><span class="p">,</span> <span class="m">990.54</span><span class="p">,</span>
+  <span class="m">1200.24</span><span class="p">,</span> <span class="m">872.72</span><span class="p">,</span> <span class="m">921.81</span><span class="p">,</span> <span class="m">1116.09</span><span class="p">,</span> <span class="m">961.53</span><span class="p">,</span>
+  <span class="m">1154.97</span><span class="p">,</span> <span class="m">1028.86</span><span class="p">,</span> <span class="m">986.72</span><span class="p">,</span> <span class="m">1093.95</span><span class="p">,</span> <span class="m">1043.34</span>
+<span class="p">)</span>
+
+<span class="c1"># Sample mean and variance calculation</span>
+<span class="n">mean_claims</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">claims</span><span class="p">)</span>
+<span class="n">var_claims</span> <span class="o">&lt;-</span> <span class="nf">var</span><span class="p">(</span><span class="n">claims</span><span class="p">)</span>
+
+<span class="c1"># Print sample mean and sample variance</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Sample Mean:&quot;</span><span class="p">,</span> <span class="n">mean_claims</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Sample Variance:&quot;</span><span class="p">,</span> <span class="n">var_claims</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+
+<span class="c1"># Parameter estimation using Method of Moments</span>
+<span class="n">mu_mm</span> <span class="o">&lt;-</span> <span class="n">mean_claims</span>
+<span class="n">sigma_mm</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">var_claims</span><span class="p">)</span>
+
+<span class="c1"># PDF function for Normal distribution</span>
+<span class="n">pdf_normal</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">sd</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">return</span><span class="p">(</span><span class="nf">dnorm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">sd</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="c1"># Generate x values for PDF</span>
+<span class="n">x_values</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="nf">min</span><span class="p">(</span><span class="n">claims</span><span class="p">),</span> <span class="nf">max</span><span class="p">(</span><span class="n">claims</span><span class="p">),</span> <span class="n">length.out</span> <span class="o">=</span> <span class="m">100</span><span class="p">)</span>
+
+<span class="c1"># Calculate PDF for fitted Normal distribution</span>
+<span class="n">pdf_values</span> <span class="o">&lt;-</span> <span class="nf">pdf_normal</span><span class="p">(</span><span class="n">x_values</span><span class="p">,</span> <span class="n">mu_mm</span><span class="p">,</span> <span class="n">sigma_mm</span><span class="p">)</span>
+
+<span class="c1"># Plotting</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">claims</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">freq</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Histogram of Individual Claims Amounts&quot;</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Claim Amounts&quot;</span><span class="p">)</span>
+<span class="nf">lines</span><span class="p">(</span><span class="n">x_values</span><span class="p">,</span> <span class="n">pdf_values</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample Mean: 1029.358 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample Variance: 11535.67 
+</pre></div>
+</div>
+<img alt="_images/9c12031ceb3985d695bc8a2b485b02e38786a818994ab176dad5669fb1358216.png" src="_images/9c12031ceb3985d695bc8a2b485b02e38786a818994ab176dad5669fb1358216.png" />
+</div>
 </div>
 <div class="tip admonition">
 <p class="admonition-title"><strong>Question 6</strong></p>
@@ -734,7 +968,7 @@ Mean (first moment):</p></li>
   <summary>Click to toggle answer</summary>
 <p>To calculate the sample skewness, the following formula can be used:</p>
 <div class="math notranslate nohighlight">
-\[\text{Sample Skewness} = \frac{n}{(n-1)(n-2)} \sum_{i=1}^{n} \left( \frac{X_i - \bar{X}}{S} \right)^3\]</div>
+\[\text{Sample Skewness} = \frac{1}{(n-1)\cdot S^3} \sum_{i=1}^{n} \left( X_i - \bar{X} \right)^3\]</div>
 <p>Where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( n \)</span> is the number of observations.</p></li>
@@ -953,9 +1187,9 @@ Overall, insurance companies employ a combination of risk identification, assess
 <p>The <strong>time value of money</strong> is a fundamental financial concept that states that a dollar today is worth more than a dollar in the future due to its potential earning capacity or interest-bearing potential over time.</p>
 <p>This concept is based on the premise that money has the <strong>ability to earn interest</strong> or generate returns, and therefore, the value of money changes over time.</p>
 <p>The time value of money affects financial decision-making in various ways, including investment analysis, loan pricing, and capital budgeting.</p>
-<p>For example, when evaluating investment opportunities, investors consider the time value of money to determine the present value of future cash flows. By discounting future cash flows back to their present value using an appropriate discount rate, investors can compare the value of different investment options and make informed decisions about where to allocate their capital.</p>
+<p>For example, when <strong>evaluating investment opportunities</strong>, investors consider the time value of money to determine the present value of future cash flows. By discounting future cash flows back to their present value using an appropriate discount rate, investors can compare the value of different investment options and make informed decisions about where to allocate their capital.</p>
 <p><strong>Example</strong></p>
-<p>The time value of money dictates that money available today is worth more than the same amount in the future due to its potential to earn interest or returns. For instance, <span class="math notranslate nohighlight">\(100 received today is more valuable than \)</span>100 received one year from now because the $100 received today can be invested and earn interest over the year, increasing its value.</p>
+<p>The time value of money dictates that money available today is worth more than the same amount in the future due to its potential to earn interest or returns. For instance, $100 received today is more valuable than $100 received one year from now because the $100 received today can be invested and earn interest over the year, increasing its value.</p>
 <p>Therefore, considering the time value of money is essential for making informed financial decisions regarding investments, loans, and capital budgeting.</p>
 </details>
 </div>
@@ -1141,16 +1375,16 @@ Schedule</strong> as follows:</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "r"
         },
         kernelOptions: {
-            name: "python3",
+            name: "ir",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ir'</script>
 
                 </article>
               
