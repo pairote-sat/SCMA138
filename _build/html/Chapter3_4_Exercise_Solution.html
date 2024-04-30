@@ -1,0 +1,856 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Solutions to Exercises for Chapter 3.3 and 3.4 &#8212; SCMA138 Principles of Actuarial Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter3_4_Exercise_Solution';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="SCMA138 Principles of Actuarial Science - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="SCMA138 Principles of Actuarial Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to SCMA 138 Principles of Actuarial Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Actuarial Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Introduction.html"><span style="color: dimgray;"><strong>Chapter 1</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_Exercise.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter1_EndNote.html">End Note for Chapter 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical and Probabilistic Framework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter2.html"><span style="color: dimgray;"><strong>Chapter 2</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Part2.html"><span style="color: dimgray;"><strong>2.1 Data Collection and Descriptive Statistics (Part 2)</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise.html">Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_1_Exercise_Solution.html">Solutions to Exercises for Chapter 2.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_2.html"><span style="color: dimgray;"><strong>2.2 Probability Basics</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_2_Exercise.html">Exercises for Chapter 2.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_3.html"><span style="color: dimgray;"><strong>2.3 Probability Distributions</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_3_Exercise.html">Exercises for Chapter 2.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter2_4.html"><span style="color: dimgray;"><strong>2.4 Exploring Probability Applications in General Insurance</strong></span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Principles Underlying Risk Management and Actuarial Modeling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter3.html"><span style="color: dimgray;"><strong>Chapter 3</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_1.html"><span style="color: dimgray;"><strong>3.1 Understanding Risk in Actuarial Science</strong></span></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_1_Exercise.html">Exercises for Chapter 3.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_1_Exercise_Solution.html">Solutions to Exercises for Chapter 3.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_2.html"><span style="color: dimgray;"><strong>3.2 Understanding Actuarial Models</strong></span></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_2_Exercise.html">Exercises for Chapter 3.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_2_Exercise_Solution.html">Solutions to Exercises for Chapter 3.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_3.html"><span style="color: dimgray;"><strong>3.3 Fundamentals of Finance: Cashflow Models, Time Value of Money, and Interest Rates</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_4.html"><span style="color: dimgray;"><strong>3.4 Cashflows and Annuities</strong></span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_4_Exercise.html">Exercises for Chapter 3.3 and 3.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter3_5.html"><span style="color: dimgray;"><strong>3.5  Equations of Value</strong></span></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quiz Zone</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Quiz1.html">Solutions to Quiz 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mock Final Exam</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="MockFinal2023.html">Mock Final Examination</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliography</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter_Bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://pairote-sat.github.io/SCMA138/intro.html/issues/new?title=Issue%20on%20page%20%2FChapter3_4_Exercise_Solution.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Chapter3_4_Exercise_Solution.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Solutions to Exercises for Chapter 3.3 and 3.4</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="solutions-to-exercises-for-chapter-3-3-and-3-4">
+<h1>Solutions to Exercises for Chapter 3.3 and 3.4<a class="headerlink" href="#solutions-to-exercises-for-chapter-3-3-and-3-4" title="Permalink to this heading">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Exercise 3.10</strong></p>
+<p>Calculate the following accumulation:</p>
+<ol class="arabic simple">
+<li><p>Accumulate ฿5,000 for 4 years at 7.5% per annum effective.</p></li>
+<li><p>Accumulate ฿800 for 2.7 years at 3% per quarter-year effective.</p></li>
+<li><p>Accumulate ฿10,000 for 27 months at 4.25% per half-year effective.</p></li>
+</ol>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 3.10</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>The solutions to each question are as follows:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(5000 (1.075)^4 = 6677.345703\)</span></p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(i\%\)</span> be the annual rate effective equivalent to <span class="math notranslate nohighlight">\(3\%\)</span> per quarter-effective, <span class="math notranslate nohighlight">\(i = (1.03)^4 - 1\)</span>.</p></li>
+</ol>
+<p>Hence, the accumulation is</p>
+<div class="math notranslate nohighlight">
+\[800(1+i)^{2.7} = 800(1.03)^{4\times2.7} = 1100.859802.\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Let <span class="math notranslate nohighlight">\(j\%\)</span> be the monthly rate effective equivalent to <span class="math notranslate nohighlight">\(4.25\%\)</span> per half-year effective, <span class="math notranslate nohighlight">\(j = (1.0425)^{2/12} - 1\)</span>.</p></li>
+</ol>
+<p>Hence, the accumulation is</p>
+<div class="math notranslate nohighlight">
+\[10000(1.0425)^{(2/12)\times27} = 12059.86056.\]</div>
+</details>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Exercise 3.11</strong></p>
+<p>Calculate the present values on 1 January 2015 of the following payments at the given rates of interest:</p>
+<ol class="arabic simple">
+<li><p>฿1,000 on 1 January 2016, at 7.5% per annum effective.</p></li>
+<li><p>฿100 on 1 October 2016, at 3% per quarter-year effective.</p></li>
+<li><p>฿10,000 on 1 April 2016, at 4.25% per half-year effective.</p></li>
+</ol>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 3.11</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>The solutions to each question are as follows:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{1000}{1.075} = 930.232558\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{100}{(1.03)^7} = 81.309151\)</span>.</p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(j\%\)</span> be the quarterly rate effective equivalent to         <span class="math notranslate nohighlight">\(4.25\%\)</span> per half-year effective, <span class="math notranslate nohighlight">\(j = (1.0425)^{2/4} - 1\)</span>.</p></li>
+</ol>
+<p>Hence, the present value is</p>
+<div class="math notranslate nohighlight">
+\[10000\times (1+j)^{-5} = 10000(1.0425)^{-(5/2)} = 9011.764643.\]</div>
+</details>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Exercise 3.12</strong></p>
+<ol class="arabic simple">
+<li><p>If the effective rate of interest is 4% per annum, calculate the effective rate of interest per month?</p></li>
+<li><p>If the effective rate of interest is 6.5% per half-year, calculate the effective rate of interest per quarter-year?</p></li>
+</ol>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 3.12</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>The solutions to each question are as follows:</p>
+<ol class="arabic simple">
+<li><p>0.3274%</p></li>
+<li><p>3.1988%</p></li>
+</ol>
+</details>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Exercise 3.13</strong></p>
+<p>The effective rate of interest per annum was 4% during 2015, 5% during 2016 and 6% thereafter.</p>
+<ol class="arabic simple">
+<li><p>Calculate the accumulation of ฿500 from 1 January 2015 to 1 January 2018.</p></li>
+<li><p>Calculate the accumulation of ฿2000 from 1 April 2015 to 1 October 2017.</p></li>
+<li><p>Calculate the accumulation factor from 1 January 2015 to 1 January 2018.</p></li>
+</ol>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 3.13</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>The solutions to each question are as follows:</p>
+<ol class="arabic simple">
+<li><p>500(1.04)(1.05)(1.06) =578.76</p></li>
+<li><p><span class="math notranslate nohighlight">\(2000(1.04)^{3/4}(1.05)(1.06)^{3/4} =2259.299\)</span></p></li>
+<li><p>(1.04)(1.05)(1.06) = 1.15752</p></li>
+</ol>
+</details>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Exercise 3.14</strong></p>
+<p>You deposit ฿3000 to an account that earns 2.5% compounded annually. How much will you have in three years?</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 3.14</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>The account balance in 3 years is <span class="math notranslate nohighlight">\(3000(1.025)^{3} = 3230.67\)</span>.</p>
+</details>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Exercise 3.15</strong></p>
+<p>A person borrows a sum of ฿5,000 and agrees to pay this back at the end of 1 year with interest calculated at an effective rate of 10% per annum. Calculate the amount to be repaid for the loan.</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 3.15</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>The amount to be repaid for the loan is 5000(1.1) = 5500.</p>
+</details>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Exercise 3.16</strong></p>
+<p>You want to have ฿1000 in 2 years and ฿2000 in 4 years. How much should you deposit now into an account earning the effective rate of 5.75% semiannually?</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 3.16</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>Let <span class="math notranslate nohighlight">\(X\)</span> be the amount to be deposited now.</p>
+<div class="math notranslate nohighlight">
+\[X = \frac{1000}{(1.0575)^4} + \frac{2000}{(1.0575)^8} = 2078.36. \]</div>
+</details>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Exercise 3.17</strong></p>
+<p>An ordinary annuity is a series of equal payments made at the end of consecutive periods over a fixed length of time. Draw a timeline for the following annuity having cashflow of 1 unit at the end of each of the next n time units.</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 3.17</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<figure class="align-default" id="figure-tikz-ex9-1-png">
+<img alt="_images/tikz-ex9-1.png" src="_images/tikz-ex9-1.png" />
+<figcaption>
+<p><span class="caption-text">A series of unit payments at the end of each year for <span class="math notranslate nohighlight">\(n\)</span> years</span><a class="headerlink" href="#figure-tikz-ex9-1-png" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</details>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Exercise 3.18</strong></p>
+<p>Draw a timeline to illustrate this insurance benefit:</p>
+<p>Whole Life Insurance - payable immediately on death - has following conditions:</p>
+<ul class="simple">
+<li><p>death benefit (sum insured) of 1</p></li>
+<li><p>payable immediately on the death</p></li>
+<li><p>of an individual currently aged x</p></li>
+<li><p>for death occurring any time in the future.</p></li>
+</ul>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 3.18</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>We need to define a random variable</p>
+<div class="math notranslate nohighlight">
+\[T_x = \text{the remaining future life time of a life aged }x.\]</div>
+<p>In this timeline below:</p>
+<ul class="simple">
+<li><p><strong>Age x</strong>: Represents the current age of the insured individual when the insurance policy is taken out.</p></li>
+<li><p><strong>Time passes</strong>: Represents the period during which the insured individual continues to hold the insurance policy.</p></li>
+<li><p><strong>Death of Insured</strong>: Represents the occurrence of death at any time in the future.</p></li>
+<li><p><strong>Benefit Payable Immediately upon Death</strong>: Indicates that the death benefit (sum insured) of 1 is payable immediately upon the death of the insured individual, regardless of when it occurs in the future.</p></li>
+</ul>
+<p>This timeline visually demonstrates the conditions of Whole Life Insurance, where the death benefit is guaranteed and payable immediately upon the death of the insured individual.</p>
+<figure class="align-default" id="figure-tikz-sol2-1-png">
+<img alt="_images/tikz-sol2-1.png" src="_images/tikz-sol2-1.png" />
+<figcaption>
+<p><span class="caption-text">The timeline of the whole life insurance contract</span><a class="headerlink" href="#figure-tikz-sol2-1-png" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</details><div class="tip admonition">
+<p class="admonition-title"><strong>Exercise 3.19</strong></p>
+<p>Starting at 1 January 2015, the effective rate of interest per annum was 3% per quarter-year for 9 months, 4% per half-year for 15 months and and 2% per month thereafter.</p>
+<ol class="arabic simple">
+<li><p>Calculate the accumulation factor from 1 January 2015 to 1 January 2018.</p></li>
+<li><p>Calculate the accumulation of ฿5,000 from 1 July 2015 to 1 October 2017.</p></li>
+<li><p>Calculate the accumulation of ฿100 from 1 March 2016 to 1 August 2018.</p></li>
+<li><p>Calculate the present value at 1 January 2015 of ฿25,000 receivable on 1 July 2016.</p></li>
+<li><p>Calculate the present value at 1 April 2015 of ฿8,000 receivable on 1 October 2017.</p></li>
+<li><p>Calculate the discount factor from 1 July 2015 to 1 October 2016.</p></li>
+</ol>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 3.19</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>The solutions to each question are as follows:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\((1.03)^3(1.04)^{2.5} (1.02)^{12} = 1.528611\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(5000A(0.5,2.75) = 5000(1.03)(1.04)^{2.5} (1.02)^{9} = 6788.786068\)</span></p></li>
+<li><p>We first find the rate <span class="math notranslate nohighlight">\(j\%\)</span> per month effective that is equivalent to the rate of <span class="math notranslate nohighlight">\(4\%\)</span> per half-year effective.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[j = (1.04)^{1/6} - 1 = 0.00656.\]</div>
+<p>The accumulated value is <span class="math notranslate nohighlight">\(100A(1+2/12, 3 + 7/12 ) = 100(1+j)^{10}(1.02)^{19} = 155.522118.\)</span></p>
+<ol class="arabic simple" start="4">
+<li><p><span class="math notranslate nohighlight">\(25000V(0,1.5) = \frac{25000}{(1.03)^3(1.04)^{1.5}} = 21571.39968.\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(8000V(0.25,2.75) = \frac{8000}{(1.03)^2(1.04)^{2.5}(1.02)^{9}} = 5720.455921.\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(V(0.5,1.75) = \frac{1}{(1.03)(1.04)^{2}} = 0.897627.\)</span></p></li>
+</ol>
+</details>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Exercise 3.20</strong></p>
+<p>Calculate the present value now of an annuity payable monthly in advance. The annual amount of the annuity will be ฿2,400 for the first 10 years and ฿3,600 for the next 15 years, after which payment will cease. Assume that the effective rate of interest is 2% per annum.</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 3.20</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>Let <span class="math notranslate nohighlight">\(j\)</span> be the effective rate per month equivalent to <span class="math notranslate nohighlight">\(i = 2\)</span>%. We have</p>
+<div class="math notranslate nohighlight">
+\[ j = (1.02)^{1/12}  - 1= 0.001652. \]</div>
+<p>Hence,</p>
+<div class="math notranslate nohighlight">
+\[ PV(0) = 200 \ddot{a}^{j}_{120} + 300 \ddot{a}^{j}_{180} \left( \frac{1}{1.02} \right)^{10} = 60148.03. \]</div>
+</details>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Exercise 3.21</strong></p>
+<p>Assume that the effective rate of interest will be 3% for 5 years from now, 4% for the next 5 years and 5% thereafter. Calculate the following values:</p>
+<ol class="arabic simple">
+<li><p>The present value of an annuity of ฿1,000 per annum, payable in arrear for 15 years.</p></li>
+<li><p>The present value of an annuity due of ฿500 per annum, payable at the beginning of the year for 20 years.</p></li>
+<li><p>The accumulation value of an increasing annuity payable yearly in arrear for 30 years. The first annual payment is ฿100, and payments will be increased by ฿100 each year.</p></li>
+<li><p>The accumulation value of an increasing annuity payable yearly in advance for 18 years. The first annual payment is ฿1,000, and payments will be increased by 2% each year (compound).</p></li>
+<li><p>The present value of an annuity of ฿200, payable in arrear for 10 years and deferred for 3 years.</p></li>
+</ol>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 3.21</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>The solutions to each question are as follows:</p>
+<ol class="arabic simple">
+<li><p>The cashflows have been splitted into three periods: (a) from time point 0-5, (b) 5-10 and (c) time point 10 onward.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[PV(0) = 1000 ( a^{3\%}_{5} + 1.03^{-5} a^{4\%}_{5} +  1.03^{-5} 1.04^{-5} a^{5\%}_{5}) = 11489.49  \]</div>
+<ol class="arabic simple" start="2">
+<li><p>We have</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[PV(0) = 500 ( \ddot{a}^{3\%}_{5} + 1.03^{-5} \ddot{a}^{4\%}_{5} +  1.03^{-5} 1.04^{-5} \ddot{a}^{5\%}_{10}) = 7229.67  \]</div>
+<ol class="arabic" start="3">
+<li><p>The accumuated value is</p>
+<div class="math notranslate nohighlight">
+\[100 (Is)^{3\%}_{5} (1.04)^5 (1.05)^{20} + \left[100 (Is)^{4\%}_{5} + 500 s^{4\%}_{5} \right] (1.05)^{20}  + \left[100 (Is)^{5\%}_{20} + 1000 s^{5\%}_{20} \right]= 78929.01  \]</div>
+</li>
+<li><p>Let <span class="math notranslate nohighlight">\(i_1 = 3\%, i_2 = 4\%\)</span> and <span class="math notranslate nohighlight">\(i_3 = 5\%\)</span>. The accumuated value is given by</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned} 
+    V(18) &amp;= \left[1000(1+i_1)^5 + 1000(1.02)(1+i_1)^4 + 1000(1.02)^2(1+i_1)^3 + \ldots + 1000(1.02)^4(1+i_1)\right](1.04)^5(1.05)^8   \\
+    &amp;+ \left[1000(1.02)^5(1+i_2)^5 + 1000(1.02)^6(1+i_2)^4 + 1000(1.02)^7(1+i_2)^3 + \ldots + 1000(1.02)^9(1+i_2)\right](1.05)^8   \\
+    &amp;+ \left[1000(1.02)^{10}(1+i_3)^8 + 1000(1.02)^{11}(1+i_3)^7 + 1000(1.02)^{12}(1+i_3)^6 + \ldots + 1000(1.02)^{17}(1+i_3)\right]  \\
+    &amp;= 1000(1.02)^5 \left[ \left(\frac{1+i_1}{1.02}\right)^5   + \left(\frac{1+i_1}{1.02}\right)^4 + \ldots + \left(\frac{1+i_1}{1.02}\right) \right](1.04)^5(1.05)^8 \\
+    &amp;+ 1000(1.02)^{10} \left[ \left(\frac{1+i_2}{1.02}\right)^5   + \left(\frac{1+i_2}{1.02}\right)^4 + \ldots + \left(\frac{1+i_2}{1.02}\right) \right](1.05)^8 \\
+     &amp;+ 1000(1.02)^{18} \left[ \left(\frac{1+i_3}{1.02}\right)^8   + \left(\frac{1+i_3}{1.02}\right)^7 + \ldots + \left(\frac{1+i_3}{1.02}\right) \right] 
+    \end{aligned}\end{split}\]</div>
+<p>Let <span class="math notranslate nohighlight">\(1+j_1  = \frac{1+i_1}{1.02}\)</span>. Then, <span class="math notranslate nohighlight">\(j_1 = 0.009804\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[ \left[ \left(\frac{1+i_1}{1.02}\right)^5   + \left(\frac{1+i_1}{1.02}\right)^4 + \ldots + \left(\frac{1+i_1}{1.02}\right) \right] = \frac{(1+j_1)^5 - 1}{j_1/(1+j_1)} =
+5.148995.\]</div>
+<p>Let <span class="math notranslate nohighlight">\(1+j_2  = \frac{1+i_2}{1.02}\)</span>. Then, <span class="math notranslate nohighlight">\(j_2 = 0.019608\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[ \left[ \left(\frac{1+i_2}{1.02}\right)^5   + \left(\frac{1+i_2}{1.02}\right)^4 + \ldots + \left(\frac{1+i_2}{1.02}\right) \right] = 5.301921.\]</div>
+<p>Let <span class="math notranslate nohighlight">\(1+j_3  = \frac{1+i_3}{1.02}\)</span>. Then, <span class="math notranslate nohighlight">\(j_3 = 0.029412\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[ \left[ \left(\frac{1+i_3}{1.02}\right)^8   + \left(\frac{1+i_3}{1.02}\right)^7 + \ldots + \left(\frac{1+i_3}{1.02}\right) \right]  = 9.134790.\]</div>
+<p>Therefore, <span class="math notranslate nohighlight">\(V(18) = 32814.45\)</span>.</p>
+<ol class="arabic simple" start="5">
+<li><p>The present value is</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    PV(0) &amp;= \left( \frac{200}{(1.03)^4} + \frac{200}{(1.03)^5}\right) + 200 a^{0.04}_5 (1.03)^{-5} + 200 a^{0.05}_{3} (1.03)^{-5} (1.04)^{-5} \\
+    &amp;= 350.2192 + 768.0362 + 386.1574 = 1504.413
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Exercise 3.22</strong></p>
+<p>You borrow ฿240,000 from a bank to be repaid by the end of 5 years. Assume that the interest rate is 4% per annum. Consider the following four possible options for the loan to be repaid.</p>
+<ol class="arabic simple">
+<li><p>Calculate the amount of the repayments to repay if you choose to repay the loan as late as possible.</p></li>
+<li><p>You may choose to repay interest only during the 6 years term of loan and repay the capital at the end of the term. Calculate interest to be repaid and draw the timeline to illustrate the cash flows for the repayment of the loan.</p></li>
+<li><p>Calculate the amount X of level instalments to repay the loan which will be paid at the end of each year for 5 years and draw the timeline to illustrate the cash flows for the repayment of the loan.</p></li>
+<li><p>Calculate the amount Y of level instalments to repay the loan which will be paid at the end of each month for 5 years and draw the timeline to illustrate the cash flows for the repayment of the loan.</p></li>
+</ol>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 3.22</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>The solutions to each question are as follows:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(240000 (1.04)^5 = 291996.7\)</span></p></li>
+<li><p>The interest amounts are <span class="math notranslate nohighlight">\(0.04\times 240000 = 9600.\)</span></p></li>
+<li><p>By the Principle of Equivalence, we have</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ 240000 = X a^{0.04}_{5}. \]</div>
+<p>This gives X = 53910.51.</p>
+<ol class="arabic simple" start="4">
+<li><p>Level installments are payable monthly, which follows</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ 240000 = Y a^{j}_{60}, \]</div>
+<p>where <span class="math notranslate nohighlight">\(j = (1.04)^{1/12} - 1\)</span>. This gives Y = 4412.23.</p>
+</details>
+</div>
+<div class="tip admonition">
+<p class="admonition-title"><strong>Exercise 3.23</strong></p>
+<p>A person now age 30 has received a pension from a company. When he retires at age 60, he will be paid on each birthday from the 60th to the 85th inclusive. The first annual payment will be half of his salary when he retires, and payments will then increase by 2% compounding each year. Currently, he receives a salary of ฿20,000 and will increase by 3% each year compounding in line with inflation. Assume that the effective rate of interest will be 4% for the next 20 years and 5% thereafter. Calculate the present value now of this pension.</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Solution to Exercise 3.23</strong></p>
+<details>
+  <summary>Click to toggle answer</summary>
+<p>The person retires in 30 years, when his salary is expected to be
+<span class="math notranslate nohighlight">\(20000 \times (1.03)^{30} = 48545.25.\)</span></p>
+<p>The first payment will be half of this which is equal to 24272.62.
+The present value at age 60 of his pension is</p>
+<div class="math notranslate nohighlight">
+\[  24272.62 \times \ddot{a}^{0.029412}_{26} = 449717.9\]</div>
+<p>(the precise value is 449719.051954).</p>
+<p>Here we use <span class="math notranslate nohighlight">\(\frac{1.05}{1.02} = 1.029412\)</span> and the annuity is paid from the 60th to the 85th birthday inclusive so there are 26 payments made in advance.</p>
+<p>Therefore, the present value of this at age 30 is</p>
+<div class="math notranslate nohighlight">
+\[ 449717.9 \times (1.05)^{-10} \times (1.04)^{-20} = 126002.9. \]</div>
+<p>(the precise value is 126003.181173)</p>
+</details>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pairote Satiracoo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
