@@ -21,7 +21,8 @@ parts:
     - file: Chapter2_2_Exercise.ipynb  
     - file: Chapter2_3.ipynb   
     - file: Chapter2_3_Exercise.ipynb
-    - file: Chapter2_4.ipynb   
+    - file: Chapter2_4.ipynb 
+    - file: Chapter2_5.ipynb     
   - caption: Principles Underlying Risk Management and Actuarial Modeling
     chapters:
     - file: Chapter3.ipynb 
@@ -35,7 +36,11 @@ parts:
     - file: Chapter3_4.ipynb 
     - file: Chapter3_4_Exercise.ipynb   
     - file: Chapter3_4_Exercise_Solution.ipynb    
-    - file: Chapter3_5.ipynb     
+    - file: Chapter3_5.ipynb    
+    - file: Chapter3_6.ipynb
+  - caption: Principles Underlying Financial Security System
+    chapters:
+    - file: Chapter4_1.ipynb
   - caption: Quiz Zone
     chapters:
     - file: Quiz1.ipynb
